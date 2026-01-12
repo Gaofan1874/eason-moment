@@ -1,0 +1,29 @@
+{
+  "name": "eason-moment",
+  "version": "0.1.0",
+  "description": "Eason Moment - Capture your mood with lyrics and posters.",
+  "main": "dist-electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build && electron-builder",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.292.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.3",
+    "electron": "^28.3.3",
+    "electron-builder": "^24.9.1",
+    "typescript": "^5.0.2",
+    "vite": "^5.0.0",
+    "vite-plugin-electron": "^0.28.2",
+    "vite-plugin-electron-renderer": "^0.14.5"
+  }
+}
