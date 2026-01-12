@@ -9,6 +9,55 @@ let win: BrowserWindow | null
 let tray: Tray | null
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL']
 
+// --- Data & State ---
+interface Lyric {
+  content: string;
+  song: string;
+  album: string;
+  tags?: string[];
+}
+
+const MOOD_MAP: Record<string, string> = {
+  random: '🎲 随机漫步',
+  sad: '🌧️ 深夜抑郁',
+  healing: '☕ 治愈哲理',
+  romance: '💕 爱与浪漫',
+  crazy: '🔥 浮夸热血',
+  classic: '📀 岁月金曲'
+};
+
+// Define tag groups for better filtering
+const MOOD_GROUPS: Record<string, string[]> = {
+  sad: ['sad', 'lonely', 'dark', 'pain', 'regret'],
+  healing: ['healing', 'philosophy', 'life', 'brightness', 'soul', 'humanity', 'self'],
+  romance: ['love', 'promise'],
+  crazy: ['crazy', 'power', 'freedom', 'social'],
+  classic: ['classic', 'memory']
+};
+
+const UPDATE_INTERVALS = [
+  { label: '1 分钟', value: 1 * 60 * 1000 },
+  { label: '5 分钟', value: 5 * 60 * 1000 },
+  { label: '15 分钟', value: 15 * 60 * 1000 },
+  { label: '30 分钟', value: 30 * 60 * 1000 },
+  { label: '1 小时', value: 60 * 60 * 1000 }
+];
+
+let lyrics: Lyric[] = []
+let currentMood = 'random'
+let currentInterval = 5 * 60 * 1000 // Default 5 mins
+let timer: NodeJS.Timeout | null = null
+let currentLyric: Lyric | null = null
+
+// Load Lyrics
+const lyricsPath = path.join(__dirname, '../src/assets/lyrics.json')
+try {
+  const data = fs.readFileSync(lyricsPath, 'utf-8')
+  lyrics = JSON.parse(data)
+} catch (e) {
+  console.error('Failed to load lyrics', e)
+}
+
 // --- IPC Handlers ---
 ipcMain.on('save-poster', async (event, dataUrl: string) => {
   console.log('Main Process: Received save-poster event');
@@ -21,25 +70,114 @@ ipcMain.on('save-poster', async (event, dataUrl: string) => {
 
   if (filePath) {
     fs.writeFile(filePath, base64Data, 'base64', (err) => {
-      if (err) {
-        console.error('Failed to save image', err)
-      } else {
-        console.log('Image saved successfully to:', filePath);
-      }
+      if (err) console.error('Failed to save image', err)
+      else console.log('Image saved successfully to:', filePath);
     })
-  } else {
-    console.log('User cancelled save dialog');
   }
 })
 
-// Load Lyrics
-const lyricsPath = path.join(__dirname, '../src/assets/lyrics.json')
-let lyrics: any[] = []
-try {
-  const data = fs.readFileSync(lyricsPath, 'utf-8')
-  lyrics = JSON.parse(data)
-} catch (e) {
-  console.error('Failed to load lyrics', e)
+// --- Helper Functions ---
+function resetTimer() {
+  if (timer) clearInterval(timer);
+  timer = setInterval(updateTrayLyric, currentInterval);
+}
+
+function getFilteredLyrics(mood: string) {
+  if (mood === 'random' || !mood) return lyrics;
+  
+  const targetTags = MOOD_GROUPS[mood] || [mood];
+  
+  return lyrics.filter(l => 
+    l.tags && l.tags.some(tag => targetTags.includes(tag))
+  );
+}
+
+function updateTrayLyric() {
+  if (!tray || lyrics.length === 0) return;
+  
+  const pool = getFilteredLyrics(currentMood);
+  // Fallback to all lyrics if pool is empty
+  const finalPool = pool.length > 0 ? pool : lyrics;
+  
+  currentLyric = finalPool[Math.floor(Math.random() * finalPool.length)];
+  
+  // Update Tray Title (macOS menu bar text)
+  // Limit length to avoid taking too much space
+  const displayTitle = `🎤 ${currentLyric.content.substring(0, 20)}${currentLyric.content.length > 20 ? '...' : ''}`;
+  
+  if (process.platform === 'darwin') {
+    tray.setTitle(displayTitle);
+  } else {
+    tray.setToolTip(`${currentLyric.content}\n—— ${currentLyric.song}`);
+  }
+
+  updateTrayMenu();
+}
+
+function updateTrayMenu() {
+  if (!tray) return;
+
+  const moodSubmenu = Object.keys(MOOD_MAP).map(key => ({
+    label: MOOD_MAP[key],
+    type: 'radio' as const,
+    checked: currentMood === key,
+    click: () => {
+      currentMood = key;
+      updateTrayLyric(); // Switch immediately
+    }
+  }));
+
+  const intervalSubmenu = UPDATE_INTERVALS.map(item => ({
+    label: item.label,
+    type: 'radio' as const,
+    checked: currentInterval === item.value,
+    click: () => {
+      currentInterval = item.value;
+      resetTimer();
+      updateTrayMenu(); // Update checkmark
+    }
+  }));
+
+  const contextMenu = Menu.buildFromTemplate([
+    { 
+      label: currentLyric ? `${currentLyric.content}` : 'No Lyric', 
+      enabled: false 
+    }, 
+    { 
+      label: currentLyric ? `—— ${currentLyric.song}` : '', 
+      enabled: false 
+    },
+    { type: 'separator' },
+    { 
+      label: '切歌 (Next)', 
+      icon: nativeImage.createFromPath(path.join(__dirname, '../src/assets/icon.png')).resize({width: 12, height: 12}), // Optional icon usage
+      click: updateTrayLyric 
+    },
+    {
+      label: '制作海报 (Create Poster)',
+      click: () => {
+        if (win) {
+          win.show();
+          if (currentLyric) {
+            win.webContents.send('update-lyric', currentLyric);
+          }
+        }
+      }
+    },
+    {
+      label: '切换心情 (Mood)',
+      submenu: moodSubmenu
+    },
+    {
+      label: '轮播间隔 (Interval)',
+      submenu: intervalSubmenu
+    },
+    { type: 'separator' },
+    { label: '显示主界面', click: () => win?.show() },
+    { label: '退出', click: () => app.quit() }
+  ]);
+
+  tray.setContextMenu(contextMenu);
 }
 
 function createWindow() {
@@ -63,34 +201,10 @@ function createTray() {
   const iconPath = path.join(__dirname, '../src/assets/icon.png')
   const icon = nativeImage.createFromPath(iconPath).resize({ width: 16, height: 16 })
   tray = new Tray(icon)
-
-  const contextMenu = Menu.buildFromTemplate([
-    { label: 'Show App', click: () => win?.show() },
-    { type: 'separator' },
-    { label: 'Quit', click: () => app.quit() }
-  ])
-
   tray.setToolTip('Eason Moment')
-  tray.setContextMenu(contextMenu)
-
-  // Initial Lyric
-  updateTrayLyric()
-
-  // Update every 5 minutes
-  setInterval(updateTrayLyric, 5 * 60 * 1000)
-}
-
-function updateTrayLyric() {
-  if (!tray || lyrics.length === 0) return
-  const randomLyric = lyrics[Math.floor(Math.random() * lyrics.length)]
-  const displayTitle = `🎤 ${randomLyric.content}`
   
-  // On macOS, tray.setTitle displays text next to the icon
-  if (process.platform === 'darwin') {
-    tray.setTitle(displayTitle)
-  } else {
-    tray.setToolTip(displayTitle)
-  }
+  updateTrayLyric(); // This will also build the initial menu
+  resetTimer();
 }
 
 app.on('window-all-closed', () => {

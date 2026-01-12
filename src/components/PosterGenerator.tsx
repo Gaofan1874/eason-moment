@@ -66,6 +66,13 @@ const PosterGenerator: React.FC = () => {
       setImg(image);
       fitImageToLayout(image, theme);
     };
+
+    // Listen for lyric updates from Tray
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.on('update-lyric', (event: any, newLyric: LyricData) => {
+        setLyric(newLyric);
+      });
+    }
   }, []);
 
   const handleRandomLyric = () => {
