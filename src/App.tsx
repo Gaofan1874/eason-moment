@@ -1,9 +1,7 @@
-import PosterGenerator from './components/PosterGenerator'
+import PosterGenerator from './components/PosterGenerator';
 
 function App() {
-  return (
-    <PosterGenerator />
-  )
+  return <PosterGenerator />;
 }
 
-export default App
+export default App;

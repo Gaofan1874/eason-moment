@@ -1,18 +1,10 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { 
-  Type, 
-  Image as ImageIcon, 
-  Settings, 
-  RefreshCw, 
-  Shuffle, 
-  Layers
-} from 'lucide-react';
+import { Type, Image as ImageIcon, Settings, RefreshCw, Shuffle, Layers } from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
 import appIcon from '../assets/icon.png';
 import './PosterGenerator.css';
 
 interface ThemeConfig {
-
   fontSize: number;
   lineHeight: number;
   fontFace: string;
@@ -22,7 +14,7 @@ interface ThemeConfig {
 const THEME_DEFAULTS: Record<string, ThemeConfig> = {
   classic: { fontSize: 36, lineHeight: 60, fontFace: 'Microsoft YaHei', color: '#ffffff' },
   polaroid: { fontSize: 26, lineHeight: 42, fontFace: 'Times New Roman', color: '#333333' },
-  cinema: { fontSize: 24, lineHeight: 35, fontFace: 'sans-serif', color: '#FFC90E' }
+  cinema: { fontSize: 24, lineHeight: 35, fontFace: 'sans-serif', color: '#FFC90E' },
 };
 
 interface LyricData {
@@ -34,7 +26,7 @@ interface LyricData {
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
   song: lyricsData[0].song,
-  album: lyricsData[0].album
+  album: lyricsData[0].album,
 };
 
 const PosterGenerator: React.FC = () => {
@@ -49,9 +41,9 @@ const PosterGenerator: React.FC = () => {
   const [isExporting, setIsExporting] = useState(false);
   const [loadingIcon, setLoadingIcon] = useState(appIcon);
   const [animationType, setAnimationType] = useState<'pulse' | 'rotate'>('rotate');
-  
+
   const loadingIconInputRef = useRef<HTMLInputElement>(null);
-  
+
   // Image and transform state
   const [img, setImg] = useState<HTMLImageElement | null>(null);
   const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
@@ -81,7 +73,7 @@ const PosterGenerator: React.FC = () => {
     setLyric({
       content: randomLyric.content,
       song: randomLyric.song,
-      album: randomLyric.album
+      album: randomLyric.album,
     });
   };
 
@@ -132,39 +124,39 @@ const PosterGenerator: React.FC = () => {
     const area = getDrawingArea(themeType);
     const areaRatio = area.w / area.h;
     const imgRatio = image.width / image.height;
-    
+
     let scale;
     if (imgRatio > areaRatio) {
       scale = area.h / image.height;
     } else {
       scale = area.w / image.width;
     }
-    
+
     setTransform({
       scale: scale,
       x: area.x + (area.w - image.width * scale) / 2,
-      y: area.y + (area.h - image.height * scale) / 2
+      y: area.y + (area.h - image.height * scale) / 2,
     });
   };
 
-      const wrapText = (ctx: CanvasRenderingContext2D, text: string, x: number, y: number, maxWidth: number, lHeight: number) => {
-
-        // Split by newline OR space to replicate original behavior
-
-        const segments = text.split(/[\n\r\s]+/);
-
-        let currentY = y;
-
-    
-
-  
+  const wrapText = (
+    ctx: CanvasRenderingContext2D,
+    text: string,
+    x: number,
+    y: number,
+    maxWidth: number,
+    lHeight: number,
+  ) => {
+    // Split by newline OR space to replicate original behavior
+    const segments = text.split(/[\n\r\s]+/);
+    let currentY = y;
     let totalLines = 0;
 
     for (const segment of segments) {
       const chars = segment.split('');
       let line = '';
-      
-      for(let n = 0; n < chars.length; n++) {
+
+      for (let n = 0; n < chars.length; n++) {
         const testLine = line + chars[n];
         const metrics = ctx.measureText(testLine);
         if (metrics.width > maxWidth && n > 0) {
@@ -217,7 +209,7 @@ const PosterGenerator: React.FC = () => {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.font = `bold ${fontSize}px "${config.fontFace}", sans-serif`;
-    
+
     ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
     ctx.shadowBlur = 6;
     ctx.shadowOffsetX = 2;
@@ -265,13 +257,17 @@ const PosterGenerator: React.FC = () => {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'top';
     ctx.font = `normal ${fontSize}px "${config.fontFace}", serif`;
-    
+
     const linesDrawn = wrapText(ctx, lyric.content, 300, textStartY, 510, lineHeight);
 
     ctx.fillStyle = '#777777';
     ctx.textAlign = 'right';
     ctx.font = 'italic 18px serif';
-    ctx.fillText(`—— ${lyric.song} · ${lyric.album}`, 550, textStartY + (linesDrawn * lineHeight) + 15);
+    ctx.fillText(
+      `—— ${lyric.song} · ${lyric.album}`,
+      550,
+      textStartY + linesDrawn * lineHeight + 15,
+    );
 
     if (showWatermark) {
       ctx.textAlign = 'center';
@@ -297,21 +293,21 @@ const PosterGenerator: React.FC = () => {
     }
     ctx.restore();
 
-    ctx.fillStyle = config.color; 
+    ctx.fillStyle = config.color;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
-            ctx.font = `normal ${fontSize}px sans-serif`;
-            
-            // Cinema mode also splits by spaces
-            const lines = lyric.content.split(/[\n\r\s]+/);
-            let currentY = (area.y + area.h - 30) + textOffsetY;
-            for (let i = lines.length - 1; i >= 0; i--) {
+    ctx.font = `normal ${fontSize}px sans-serif`;
+
+    // Cinema mode also splits by spaces
+    const lines = lyric.content.split(/[\n\r\s]+/);
+    let currentY = area.y + area.h - 30 + textOffsetY;
+    for (let i = lines.length - 1; i >= 0; i--) {
       ctx.strokeText(lines[i], 300, currentY);
       ctx.fillText(lines[i], 300, currentY);
       currentY -= lineHeight;
     }
 
-    ctx.fillStyle = '#bbbbbb'; 
+    ctx.fillStyle = '#bbbbbb';
     ctx.font = '12px sans-serif';
     ctx.fillText(`${lyric.song} - ${lyric.album}`, 300, 750);
 
@@ -330,7 +326,7 @@ const PosterGenerator: React.FC = () => {
     if (!isDragging) return;
     const dx = e.nativeEvent.offsetX - lastMousePos.x;
     const dy = e.nativeEvent.offsetY - lastMousePos.y;
-    setTransform(prev => ({ ...prev, x: prev.x + dx, y: prev.y + dy }));
+    setTransform((prev) => ({ ...prev, x: prev.x + dx, y: prev.y + dy }));
     setLastMousePos({ x: e.nativeEvent.offsetX, y: e.nativeEvent.offsetY });
   };
 
@@ -338,7 +334,7 @@ const PosterGenerator: React.FC = () => {
 
   const handleWheel = (e: React.WheelEvent) => {
     const delta = e.deltaY < 0 ? 1.1 : 0.9;
-    setTransform(prev => ({ ...prev, scale: prev.scale * delta }));
+    setTransform((prev) => ({ ...prev, scale: prev.scale * delta }));
   };
 
   const handleThemeChange = (newTheme: 'classic' | 'polaroid' | 'cinema') => {
@@ -362,22 +358,26 @@ const PosterGenerator: React.FC = () => {
         return;
       }
       const dataUrl = canvas.toDataURL('image/png');
-      
+
       if ((window as any).ipcRenderer) {
         (window as any).ipcRenderer.send('save-poster', dataUrl);
       }
-      
+
       // Reset state after a short while or listen for main process reply
       setTimeout(() => setIsExporting(false), 1000);
     }, 1500);
   };
 
   const getThemeLabel = (t: string) => {
-    switch(t) {
-      case 'classic': return '经典';
-      case 'polaroid': return '拍立得';
-      case 'cinema': return '电影感';
-      default: return t;
+    switch (t) {
+      case 'classic':
+        return '经典';
+      case 'polaroid':
+        return '拍立得';
+      case 'cinema':
+        return '电影感';
+      default:
+        return t;
     }
   };
 
@@ -396,38 +396,37 @@ const PosterGenerator: React.FC = () => {
       {/* Left Workspace: Canvas */}
       <div className="workspace">
         <div className="canvas-wrapper">
-                    <canvas
-                      ref={canvasRef}
-                      width={600}
-                      height={800}
-                      style={{ 
-                        cursor: isDragging ? 'grabbing' : 'grab',
-                        height: '80vh', /* Scale to fit viewport height */
-                        width: 'auto',
-                        display: 'block'
-                      }}
-                      onMouseDown={handleMouseDown}
-                      onMouseMove={handleMouseMove}
-                      onMouseUp={handleMouseUp}
-                      onMouseLeave={handleMouseUp}
-                      onWheel={handleWheel}
-                    />
-                                        {isExporting && (
-                                          <div className="loading-overlay">
-                                            <img 
-                                              src={loadingIcon} 
-                                              className={`loading-icon ${animationType === 'rotate' ? 'rotate' : ''}`} 
-                                              alt="Loading" 
-                                            />
-                                            <div className="loading-text">正在生成海报...</div>
-                                          </div>
-                                        )}
-                                                </div>
-                </div>
-          
-                {/* Right Inspector: Controls */}
-                <aside className="inspector">
-          
+          <canvas
+            ref={canvasRef}
+            width={600}
+            height={800}
+            style={{
+              cursor: isDragging ? 'grabbing' : 'grab',
+              height: '80vh' /* Scale to fit viewport height */,
+              width: 'auto',
+              display: 'block',
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseUp}
+            onWheel={handleWheel}
+          />
+          {isExporting && (
+            <div className="loading-overlay">
+              <img
+                src={loadingIcon}
+                className={`loading-icon ${animationType === 'rotate' ? 'rotate' : ''}`}
+                alt="Loading"
+              />
+              <div className="loading-text">正在生成海报...</div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Right Inspector: Controls */}
+      <aside className="inspector">
         <div className="inspector-header">
           <h2 className="inspector-title">海报设置</h2>
         </div>
@@ -436,10 +435,12 @@ const PosterGenerator: React.FC = () => {
           {/* Theme Section */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><Layers size={14} /> 主题风格</span>
+              <span className="control-label">
+                <Layers size={14} /> 主题风格
+              </span>
             </div>
             <div className="theme-grid">
-              {(['classic', 'polaroid', 'cinema'] as const).map(t => (
+              {(['classic', 'polaroid', 'cinema'] as const).map((t) => (
                 <div
                   key={t}
                   onClick={() => handleThemeChange(t)}
@@ -454,7 +455,9 @@ const PosterGenerator: React.FC = () => {
           {/* Lyric Section */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><Type size={14} /> 歌词内容</span>
+              <span className="control-label">
+                <Type size={14} /> 歌词内容
+              </span>
               <button className="btn-secondary" onClick={handleRandomLyric}>
                 <Shuffle size={12} /> 随机
               </button>
@@ -470,19 +473,24 @@ const PosterGenerator: React.FC = () => {
           {/* Typography Section */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><Settings size={14} /> 排版样式</span>
+              <span className="control-label">
+                <Settings size={14} /> 排版样式
+              </span>
               <button className="btn-icon" onClick={resetTypography} title="重置排版参数">
                 <RefreshCw size={14} />
               </button>
             </div>
-            
+
             <div>
               <div className="label-row" style={{ marginBottom: 4 }}>
                 <span className="control-value">字体大小</span>
                 <span className="control-value">{fontSize}px</span>
               </div>
               <input
-                type="range" min="12" max="100" value={fontSize}
+                type="range"
+                min="12"
+                max="100"
+                value={fontSize}
                 onChange={(e) => setFontSize(parseInt(e.target.value))}
               />
             </div>
@@ -493,18 +501,24 @@ const PosterGenerator: React.FC = () => {
                 <span className="control-value">{lineHeight}px</span>
               </div>
               <input
-                type="range" min="20" max="150" value={lineHeight}
+                type="range"
+                min="20"
+                max="150"
+                value={lineHeight}
                 onChange={(e) => setLineHeight(parseInt(e.target.value))}
               />
             </div>
-            
+
             <div>
               <div className="label-row" style={{ marginBottom: 4 }}>
                 <span className="control-value">垂直偏移</span>
                 <span className="control-value">{textOffsetY}</span>
               </div>
               <input
-                type="range" min="-300" max="300" value={textOffsetY}
+                type="range"
+                min="-300"
+                max="300"
+                value={textOffsetY}
                 onChange={(e) => setTextOffsetY(parseInt(e.target.value))}
               />
             </div>
@@ -513,8 +527,14 @@ const PosterGenerator: React.FC = () => {
           {/* Image & Extras */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><ImageIcon size={14} /> 背景图片</span>
-              <button className="btn-icon" onClick={() => img && fitImageToLayout(img, theme)} title="重置布局">
+              <span className="control-label">
+                <ImageIcon size={14} /> 背景图片
+              </span>
+              <button
+                className="btn-icon"
+                onClick={() => img && fitImageToLayout(img, theme)}
+                title="重置布局"
+              >
                 <RefreshCw size={14} />
               </button>
             </div>
@@ -524,7 +544,7 @@ const PosterGenerator: React.FC = () => {
               <span className="upload-trigger-text">上传你的照片</span>
               <span className="upload-trigger-hint">支持 JPG、PNG、WebP 格式</span>
             </div>
-            
+
             <input
               type="file"
               ref={fileInputRef}
@@ -532,7 +552,7 @@ const PosterGenerator: React.FC = () => {
               accept="image/*"
               style={{ display: 'none' }}
             />
-            
+
             <label className="checkbox-wrapper" style={{ marginTop: 8 }}>
               <input
                 type="checkbox"
@@ -546,29 +566,43 @@ const PosterGenerator: React.FC = () => {
           {/* Export Preferences */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><Settings size={14} /> 导出偏好</span>
+              <span className="control-label">
+                <Settings size={14} /> 导出偏好
+              </span>
             </div>
-            
+
             <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-              <div 
-                className="theme-card" 
-                style={{ width: 48, height: 48, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
+              <div
+                className="theme-card"
+                style={{
+                  width: 48,
+                  height: 48,
+                  padding: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  overflow: 'hidden',
+                }}
                 onClick={() => loadingIconInputRef.current?.click()}
                 title="更换加载图标"
               >
-                <img src={loadingIcon} alt="Icon" style={{ width: 32, height: 32, objectFit: 'contain' }} />
+                <img
+                  src={loadingIcon}
+                  alt="Icon"
+                  style={{ width: 32, height: 32, objectFit: 'contain' }}
+                />
               </div>
-              
+
               <div style={{ flex: 1 }}>
                 <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>加载动画</div>
                 <div className="theme-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
-                  <div 
+                  <div
                     className={`theme-card ${animationType === 'rotate' ? 'active' : ''}`}
                     onClick={() => setAnimationType('rotate')}
                   >
                     旋转
                   </div>
-                  <div 
+                  <div
                     className={`theme-card ${animationType === 'pulse' ? 'active' : ''}`}
                     onClick={() => setAnimationType('pulse')}
                   >
@@ -577,7 +611,7 @@ const PosterGenerator: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <input
               type="file"
               ref={loadingIconInputRef}
@@ -589,8 +623,8 @@ const PosterGenerator: React.FC = () => {
         </div>
 
         <div className="inspector-footer">
-          <button 
-            className="btn-primary" 
+          <button
+            className="btn-primary"
             onClick={handleExport}
             disabled={isExporting}
             style={{ opacity: isExporting ? 0.7 : 1, cursor: isExporting ? 'wait' : 'pointer' }}
