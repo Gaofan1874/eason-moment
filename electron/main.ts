@@ -75,8 +75,20 @@ ipcMain.on('save-poster', async (event, dataUrl: string) => {
       if (err) console.error('Failed to save image', err);
       else console.log('Image saved successfully to:', filePath);
     });
+  } else {
+    console.log('User cancelled save dialog');
   }
-});
+})
+
+ipcMain.on('get-current-lyric', (event) => {
+  if (currentLyric) {
+    event.sender.send('update-lyric', currentLyric);
+  } else {
+    // If no lyric is selected yet, force an update or send default
+    updateTrayLyric();
+    if (currentLyric) event.sender.send('update-lyric', currentLyric);
+  }
+})
 
 // --- Helper Functions ---
 function resetTimer() {

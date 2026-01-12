@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Type, Image as ImageIcon, Settings, RefreshCw, Shuffle, Layers } from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
 import appIcon from '../assets/icon.png';
+import defaultBg from '../assets/light&eason.png';
 import './PosterGenerator.css';
 
 interface ThemeConfig {
@@ -53,7 +54,7 @@ const PosterGenerator: React.FC = () => {
   useEffect(() => {
     const image = new Image();
     image.crossOrigin = 'anonymous'; // Fix for tainted canvas
-    image.src = 'https://picsum.photos/seed/eason/800/800'; // Placeholder
+    image.src = defaultBg;
     image.onload = () => {
       setImg(image);
       fitImageToLayout(image, theme);
@@ -64,6 +65,9 @@ const PosterGenerator: React.FC = () => {
       (window as any).ipcRenderer.on('update-lyric', (event: any, newLyric: LyricData) => {
         setLyric(newLyric);
       });
+      
+      // Request initial lyric from main process
+      (window as any).ipcRenderer.send('get-current-lyric');
     }
   }, []);
 
