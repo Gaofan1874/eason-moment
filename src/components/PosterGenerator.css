@@ -254,13 +254,48 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   transform: scale(0.98);
 }
 
+.upload-trigger {
+  width: 100%;
+  padding: 16px;
+  background: #ffffff;
+  border: 2px dashed #e5e5e7;
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 8px;
+}
+
+.upload-trigger:hover {
+  border-color: var(--accent-color);
+  background: rgba(0, 122, 255, 0.02);
+}
+
+.upload-trigger-text {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.upload-trigger-hint {
+  font-size: 11px;
+  color: var(--text-secondary);
+}
+
 .btn-icon {
   background: none;
   border: none;
   cursor: pointer;
   color: var(--text-secondary);
-  padding: 4px;
+  padding: 4px 8px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
 }
 .btn-icon:hover {
   background: rgba(0,0,0,0.05);

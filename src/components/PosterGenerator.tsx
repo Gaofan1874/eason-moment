@@ -37,6 +37,7 @@ const DEFAULT_LYRIC: LyricData = {
 
 const PosterGenerator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema'>('classic');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
   const [fontSize, setFontSize] = useState(THEME_DEFAULTS.classic.fontSize);
@@ -59,6 +60,23 @@ const PosterGenerator: React.FC = () => {
       fitImageToLayout(image, theme);
     };
   }, []);
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const result = event.target?.result as string;
+      const image = new Image();
+      image.src = result;
+      image.onload = () => {
+        setImg(image);
+        fitImageToLayout(image, theme);
+      };
+    };
+    reader.readAsDataURL(file);
+  };
 
   const handleRandomLyric = () => {
     const randomIndex = Math.floor(Math.random() * lyricsData.length);
@@ -194,7 +212,7 @@ const PosterGenerator: React.FC = () => {
     if (showWatermark) {
       ctx.fillStyle = '#FFD700';
       ctx.font = 'normal 12px "Courier New", monospace';
-      ctx.fillText('E  A  S  O  N     C  O  D  E     D  A  I  L  Y', 300, 780);
+      ctx.fillText('E  A  S  O  N     M  O  M  E  N  T     D  A  I  L  Y', 300, 780);
     }
   };
 
@@ -234,7 +252,7 @@ const PosterGenerator: React.FC = () => {
     if (showWatermark) {
       ctx.textAlign = 'center';
       ctx.font = 'normal 10px "Courier New", monospace';
-      ctx.fillText('S  H  O  T     O  N     E  A  S  O  N     C  O  D  E', 300, 780);
+      ctx.fillText('S  H  O  T     O  N     E  A  S  O  N     M  O  M  E  N  T', 300, 780);
     }
   };
 
@@ -275,7 +293,7 @@ const PosterGenerator: React.FC = () => {
 
     if (showWatermark) {
       ctx.font = 'normal 10px "Courier New", monospace';
-      ctx.fillText('P R E S E N T E D   B Y   E A S O N   C O D E', 300, 780);
+      ctx.fillText('P R E S E N T E D   B Y   E A S O N   M O M E N T', 300, 780);
     }
   };
 
@@ -333,6 +351,13 @@ const PosterGenerator: React.FC = () => {
       case 'cinema': return '电影感';
       default: return t;
     }
+  };
+
+  const resetTypography = () => {
+    const defaults = THEME_DEFAULTS[theme];
+    setFontSize(defaults.fontSize);
+    setLineHeight(defaults.lineHeight);
+    setTextOffsetY(0);
   };
 
   return (
@@ -407,6 +432,9 @@ const PosterGenerator: React.FC = () => {
           <div className="control-group">
             <div className="label-row">
               <span className="control-label"><Settings size={14} /> 排版样式</span>
+              <button className="btn-icon" onClick={resetTypography} title="重置排版参数">
+                <RefreshCw size={14} />
+              </button>
             </div>
             
             <div>
@@ -446,19 +474,33 @@ const PosterGenerator: React.FC = () => {
           {/* Image & Extras */}
           <div className="control-group">
             <div className="label-row">
-              <span className="control-label"><ImageIcon size={14} /> 图片与布局</span>
+              <span className="control-label"><ImageIcon size={14} /> 背景图片</span>
               <button className="btn-icon" onClick={() => img && fitImageToLayout(img, theme)} title="重置布局">
                 <RefreshCw size={14} />
               </button>
             </div>
+
+            <div className="upload-trigger" onClick={() => fileInputRef.current?.click()}>
+              <ImageIcon size={24} color="#007AFF" />
+              <span className="upload-trigger-text">上传你的照片</span>
+              <span className="upload-trigger-hint">支持 JPG、PNG、WebP 格式</span>
+            </div>
             
-            <label className="checkbox-wrapper">
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleImageUpload}
+              accept="image/*"
+              style={{ display: 'none' }}
+            />
+            
+            <label className="checkbox-wrapper" style={{ marginTop: 8 }}>
               <input
                 type="checkbox"
                 checked={showWatermark}
                 onChange={(e) => setShowWatermark(e.target.checked)}
               />
-              <span className="control-value">显示 Eason Code 水印</span>
+              <span className="control-value">显示 Eason Moment 水印</span>
             </label>
           </div>
         </div>
