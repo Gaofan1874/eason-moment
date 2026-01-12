@@ -102,14 +102,16 @@ function updateTrayLyric() {
   currentLyric = finalPool[Math.floor(Math.random() * finalPool.length)];
 
   // Update Tray Title (macOS menu bar text)
-  // Limit length to avoid taking too much space
-  const displayTitle = `  ${currentLyric.content.substring(0, 15)}${currentLyric.content.length > 15 ? '...' : ''}`;
+  // Clean look: only lyric, truncated properly
+  const cleanContent = currentLyric.content.replace(/\s+/g, ' '); // Replace newlines with spaces for single line display
+  const displayTitle = `  ${cleanContent.substring(0, 15)}${cleanContent.length > 15 ? '...' : ''}`;
 
   if (process.platform === 'darwin') {
     tray.setTitle(displayTitle);
-  } else {
-    tray.setToolTip(`${currentLyric.content}\n—— ${currentLyric.song}-${currentLyric.album}`);
   }
+
+  // Set ToolTip for all platforms so hover detail is always available
+  tray.setToolTip(`${currentLyric.content}\n—— ${currentLyric.song} · ${currentLyric.album}`);
 
   updateTrayMenu();
 }
@@ -117,17 +119,17 @@ function updateTrayLyric() {
 function updateTrayMenu() {
   if (!tray) return;
 
-  const moodSubmenu = Object.keys(MOOD_MAP).map((key) => ({
+  const moodSubmenu = Object.keys(MOOD_MAP).map(key => ({
     label: MOOD_MAP[key],
     type: 'radio' as const,
     checked: currentMood === key,
     click: () => {
       currentMood = key;
       updateTrayLyric(); // Switch immediately
-    },
+    }
   }));
 
-  const intervalSubmenu = UPDATE_INTERVALS.map((item) => ({
+  const intervalSubmenu = UPDATE_INTERVALS.map(item => ({
     label: item.label,
     type: 'radio' as const,
     checked: currentInterval === item.value,
@@ -135,17 +137,13 @@ function updateTrayMenu() {
       currentInterval = item.value;
       resetTimer();
       updateTrayMenu(); // Update checkmark
-    },
+    }
   }));
 
   const contextMenu = Menu.buildFromTemplate([
     {
       label: currentLyric ? `${currentLyric.content}` : 'No Lyric',
-      enabled: false,
-    },
-    {
-      label: currentLyric ? `—— ${currentLyric.song}` : '',
-      enabled: false,
+      enabled: false
     },
     { type: 'separator' },
     {
