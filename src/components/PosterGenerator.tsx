@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import {
-  Type,
-  Image as ImageIcon,
-  Settings,
-  RefreshCw,
-  Shuffle,
+import { 
+  Type, 
+  Image as ImageIcon, 
+  Settings, 
+  RefreshCw, 
+  Shuffle, 
   Layers
 } from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
+import appIcon from '../assets/icon.png';
 import './PosterGenerator.css';
 
 interface ThemeConfig {
+
   fontSize: number;
   lineHeight: number;
   fontFace: string;
@@ -44,6 +46,11 @@ const PosterGenerator: React.FC = () => {
   const [lineHeight, setLineHeight] = useState(THEME_DEFAULTS.classic.lineHeight);
   const [textOffsetY, setTextOffsetY] = useState(0);
   const [showWatermark, setShowWatermark] = useState(true);
+  const [isExporting, setIsExporting] = useState(false);
+  const [loadingIcon, setLoadingIcon] = useState(appIcon);
+  const [animationType, setAnimationType] = useState<'pulse' | 'rotate'>('rotate');
+  
+  const loadingIconInputRef = useRef<HTMLInputElement>(null);
   
   // Image and transform state
   const [img, setImg] = useState<HTMLImageElement | null>(null);
@@ -60,6 +67,16 @@ const PosterGenerator: React.FC = () => {
       fitImageToLayout(image, theme);
     };
   }, []);
+
+  const handleRandomLyric = () => {
+    const randomIndex = Math.floor(Math.random() * lyricsData.length);
+    const randomLyric = lyricsData[randomIndex];
+    setLyric({
+      content: randomLyric.content,
+      song: randomLyric.song,
+      album: randomLyric.album
+    });
+  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -78,14 +95,14 @@ const PosterGenerator: React.FC = () => {
     reader.readAsDataURL(file);
   };
 
-  const handleRandomLyric = () => {
-    const randomIndex = Math.floor(Math.random() * lyricsData.length);
-    const randomLyric = lyricsData[randomIndex];
-    setLyric({
-      content: randomLyric.content,
-      song: randomLyric.song,
-      album: randomLyric.album
-    });
+  const handleLoadingIconUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      if (ev.target?.result) setLoadingIcon(ev.target.result as string);
+    };
+    reader.readAsDataURL(file);
   };
 
   const getDrawingArea = (themeType: string) => {
@@ -327,21 +344,25 @@ const PosterGenerator: React.FC = () => {
   };
 
   const handleExport = () => {
-    console.log('Export button clicked');
-    const canvas = canvasRef.current;
-    if (!canvas) {
-      console.error('Canvas ref is null');
-      return;
-    }
-    const dataUrl = canvas.toDataURL('image/png');
-    console.log('Data URL generated, length:', dataUrl.length);
-    
-    if ((window as any).ipcRenderer) {
-      console.log('Sending save-poster event to main process');
-      (window as any).ipcRenderer.send('save-poster', dataUrl);
-    } else {
-      console.error('ipcRenderer not found on window object');
-    }
+    if (isExporting) return;
+    setIsExporting(true);
+
+    // Simulate generating delay for better UX
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      if (!canvas) {
+        setIsExporting(false);
+        return;
+      }
+      const dataUrl = canvas.toDataURL('image/png');
+      
+      if ((window as any).ipcRenderer) {
+        (window as any).ipcRenderer.send('save-poster', dataUrl);
+      }
+      
+      // Reset state after a short while or listen for main process reply
+      setTimeout(() => setIsExporting(false), 1000);
+    }, 1500);
   };
 
   const getThemeLabel = (t: string) => {
@@ -368,27 +389,38 @@ const PosterGenerator: React.FC = () => {
       {/* Left Workspace: Canvas */}
       <div className="workspace">
         <div className="canvas-wrapper">
-          <canvas
-            ref={canvasRef}
-            width={600}
-            height={800}
-            style={{
-              cursor: isDragging ? 'grabbing' : 'grab',
-              height: '80vh', /* Scale to fit viewport height */
-              width: 'auto',
-              display: 'block'
-            }}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseUp}
-            onWheel={handleWheel}
-          />
-        </div>
-      </div>
-
-      {/* Right Inspector: Controls */}
-      <aside className="inspector">
+                    <canvas
+                      ref={canvasRef}
+                      width={600}
+                      height={800}
+                      style={{ 
+                        cursor: isDragging ? 'grabbing' : 'grab',
+                        height: '80vh', /* Scale to fit viewport height */
+                        width: 'auto',
+                        display: 'block'
+                      }}
+                      onMouseDown={handleMouseDown}
+                      onMouseMove={handleMouseMove}
+                      onMouseUp={handleMouseUp}
+                      onMouseLeave={handleMouseUp}
+                      onWheel={handleWheel}
+                    />
+                                        {isExporting && (
+                                          <div className="loading-overlay">
+                                            <img 
+                                              src={loadingIcon} 
+                                              className={`loading-icon ${animationType === 'rotate' ? 'rotate' : ''}`} 
+                                              alt="Loading" 
+                                            />
+                                            <div className="loading-text">正在生成海报...</div>
+                                          </div>
+                                        )}
+                                                </div>
+                </div>
+          
+                {/* Right Inspector: Controls */}
+                <aside className="inspector">
+          
         <div className="inspector-header">
           <h2 className="inspector-title">海报设置</h2>
         </div>
@@ -503,11 +535,60 @@ const PosterGenerator: React.FC = () => {
               <span className="control-value">显示 Eason Moment 水印</span>
             </label>
           </div>
+
+          {/* Export Preferences */}
+          <div className="control-group">
+            <div className="label-row">
+              <span className="control-label"><Settings size={14} /> 导出偏好</span>
+            </div>
+            
+            <div style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
+              <div 
+                className="theme-card" 
+                style={{ width: 48, height: 48, padding: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}
+                onClick={() => loadingIconInputRef.current?.click()}
+                title="更换加载图标"
+              >
+                <img src={loadingIcon} alt="Icon" style={{ width: 32, height: 32, objectFit: 'contain' }} />
+              </div>
+              
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 12, color: '#666', marginBottom: 4 }}>加载动画</div>
+                <div className="theme-grid" style={{ gridTemplateColumns: '1fr 1fr' }}>
+                  <div 
+                    className={`theme-card ${animationType === 'rotate' ? 'active' : ''}`}
+                    onClick={() => setAnimationType('rotate')}
+                  >
+                    旋转
+                  </div>
+                  <div 
+                    className={`theme-card ${animationType === 'pulse' ? 'active' : ''}`}
+                    onClick={() => setAnimationType('pulse')}
+                  >
+                    脉动
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <input
+              type="file"
+              ref={loadingIconInputRef}
+              onChange={handleLoadingIconUpload}
+              accept="image/*"
+              style={{ display: 'none' }}
+            />
+          </div>
         </div>
 
         <div className="inspector-footer">
-          <button className="btn-primary" onClick={handleExport}>
-            导出海报
+          <button 
+            className="btn-primary" 
+            onClick={handleExport}
+            disabled={isExporting}
+            style={{ opacity: isExporting ? 0.7 : 1, cursor: isExporting ? 'wait' : 'pointer' }}
+          >
+            {isExporting ? '生成中...' : '导出海报'}
           </button>
         </div>
       </aside>

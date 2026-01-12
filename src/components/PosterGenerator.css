@@ -303,8 +303,179 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 .checkbox-wrapper {
+
   display: flex;
+
   align-items: center;
+
   gap: 8px;
+
   cursor: pointer;
+
 }
+
+
+
+/* Export Loading Overlay */
+
+.loading-overlay {
+
+  position: absolute;
+
+  top: 0;
+
+  left: 0;
+
+  right: 0;
+
+  bottom: 0;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 4px;
+
+  backdrop-filter: blur(4px);
+
+  z-index: 10;
+
+  animation: fadeIn 0.3s ease;
+
+}
+
+
+
+.loading-icon {
+
+
+
+  width: 48px;
+
+
+
+  height: 48px;
+
+
+
+  animation: pulse 1.5s infinite ease-in-out;
+
+
+
+}
+
+
+
+
+
+
+
+.loading-icon.rotate {
+
+
+
+
+
+
+
+  animation: rotate 1s linear infinite;
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.loading-text {
+
+
+
+
+
+  color: white;
+
+  margin-top: 12px;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  letter-spacing: 1px;
+
+}
+
+
+
+@keyframes fadeIn {
+
+  from { opacity: 0; }
+
+  to { opacity: 1; }
+
+}
+
+
+
+@keyframes pulse {
+
+
+
+  0% { transform: scale(0.95); opacity: 0.8; }
+
+
+
+  50% { transform: scale(1.05); opacity: 1; }
+
+
+
+  100% { transform: scale(0.95); opacity: 0.8; }
+
+
+
+}
+
+
+
+
+
+
+
+@keyframes rotate {
+
+
+
+  from { transform: rotate(0deg); }
+
+
+
+  to { transform: rotate(360deg); }
+
+
+
+}
+
+
+
+
