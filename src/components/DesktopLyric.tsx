@@ -40,7 +40,7 @@ const DesktopLyric: React.FC = () => {
         transition: 'background 0.3s',
         userSelect: 'none',
         cursor: 'move'
-      }}
+      } as any}
     >
       <div style={{
         fontSize: '24px',

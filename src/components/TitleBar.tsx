@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { X, Minus } from 'lucide-react';
 
 const TitleBar: React.FC = () => {
