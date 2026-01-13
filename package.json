@@ -31,7 +31,9 @@
     "appId": "com.gaofan.eason-moment",
     "files": [
       "dist-electron/**/*",
-      "dist/**/*"
+      "dist/assets/**/*",
+      "dist/*.html",
+      "dist/*.png"
     ],
     "mac": {
       "category": "public.app-category.music",

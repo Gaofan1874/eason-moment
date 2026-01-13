@@ -10,6 +10,7 @@ process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.
 let win: BrowserWindow | null;
 let tray: Tray | null;
 let lyricWin: BrowserWindow | null = null;
+let isQuitting = false;
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 // --- Data & State ---
@@ -254,7 +255,13 @@ function updateTrayMenu() {
     },
     { type: 'separator' },
     { label: '显示主界面', click: () => win?.show() },
-    { label: '退出', click: () => app.quit() },
+    { 
+      label: '退出', 
+      click: () => {
+        isQuitting = true;
+        app.quit();
+      } 
+    },
   ]);
 
   tray.setContextMenu(contextMenu);
@@ -317,6 +324,15 @@ function createWindow() {
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
+  });
+
+  // Prevent window from being destroyed on close; hide it instead
+  win.on('close', (event) => {
+    if (!isQuitting) {
+      event.preventDefault();
+      win?.hide();
+    }
+    return false;
   });
 
   if (VITE_DEV_SERVER_URL) {

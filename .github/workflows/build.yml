@@ -33,6 +33,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Clean Output Directory
+        run: npx rimraf dist
+
       - name: Build & Release
         uses: samuelmeuli/action-electron-builder@v1
         with:
