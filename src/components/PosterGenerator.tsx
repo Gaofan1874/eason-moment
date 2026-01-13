@@ -1,11 +1,20 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react';
-import { Type, Image as ImageIcon, Settings, RefreshCw, Shuffle, Layers } from 'lucide-react';
+import { 
+  Type, 
+  Image as ImageIcon, 
+  Settings, 
+  RefreshCw, 
+  Shuffle, 
+  Layers
+} from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
 import appIcon from '../assets/icon.png';
 import defaultBg from '../assets/light_eason.png';
 import './PosterGenerator.css';
+import TitleBar from './TitleBar';
 
 interface ThemeConfig {
+
   fontSize: number;
   lineHeight: number;
   fontFace: string;
@@ -395,13 +404,19 @@ const PosterGenerator: React.FC = () => {
     setTextOffsetY(0);
   };
 
+  // Check platform
+  const isMac = (window as any).ipcRenderer?.platform === 'darwin';
+
   return (
     <div className="app-container">
       {/* Draggable Titlebar Region for macOS */}
-      <div className="titlebar-drag-region" />
+      {isMac && <div className="titlebar-drag-region" />}
+      
+      {/* Custom Titlebar for Windows */}
+      {!isMac && <TitleBar />}
 
       {/* Left Workspace: Canvas */}
-      <div className="workspace">
+      <div className="workspace" style={{ paddingTop: isMac ? 'var(--titlebar-height)' : '32px' }}>
         <div className="canvas-wrapper">
           <canvas
             ref={canvasRef}
@@ -433,7 +448,7 @@ const PosterGenerator: React.FC = () => {
       </div>
 
       {/* Right Inspector: Controls */}
-      <aside className="inspector">
+      <aside className="inspector" style={{ paddingTop: isMac ? 'var(--titlebar-height)' : '32px' }}>
         <div className="inspector-header">
           <h2 className="inspector-title">海报设置</h2>
         </div>

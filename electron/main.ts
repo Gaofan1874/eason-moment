@@ -9,6 +9,7 @@ process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.
 
 let win: BrowserWindow | null;
 let tray: Tray | null;
+let lyricWin: BrowserWindow | null = null;
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 // --- Data & State ---
@@ -48,7 +49,16 @@ const UPDATE_INTERVALS = [
   { label: '1 小时', value: 60 * 60 * 1000 }
 ];
 
+const LYRIC_COLORS = [
+  { label: '🤍 纯净白', value: '#ffffff' },
+  { label: '💛 辉煌金', value: '#FFD700' },
+  { label: '💚 治愈青', value: '#00e676' },
+  { label: '💙 E粉蓝', value: '#00BFFF' },
+  { label: '💗 浪漫粉', value: '#FF69B4' }
+];
+
 let currentInterval = 5 * 60 * 1000 // Default 5 mins
+let currentLyricColor = '#ffffff' // Default white
 let timer: NodeJS.Timeout | null = null
 let currentLyric: Lyric | null = null
 
@@ -84,6 +94,14 @@ ipcMain.on('get-current-lyric', (event) => {
   }
 })
 
+ipcMain.on('window-minimize', () => {
+  win?.minimize();
+});
+
+ipcMain.on('window-close', () => {
+  win?.close(); // Or win.hide() if we want tray-only behavior
+});
+
 // --- Helper Functions ---
 function resetTimer() {
   if (timer) clearInterval(timer);
@@ -118,6 +136,11 @@ function updateTrayLyric() {
 
   // Set ToolTip for all platforms so hover detail is always available
   tray.setToolTip(`${currentLyric.content}\n—— ${currentLyric.song} · ${currentLyric.album}`);
+
+  // Sync to Lyric Window if open
+  if (lyricWin) {
+    lyricWin.webContents.send('update-lyric', currentLyric);
+  }
 
   updateTrayMenu();
 }
@@ -183,6 +206,35 @@ function updateTrayMenu() {
       submenu: intervalSubmenu,
     },
     { type: 'separator' },
+    {
+      label: '显示桌面歌词',
+      type: 'checkbox',
+      checked: !!lyricWin,
+      click: () => {
+        if (lyricWin) {
+          lyricWin.close(); // Logic handles nulling in 'closed' event
+        } else {
+          createLyricWindow();
+        }
+        updateTrayMenu(); // Refresh checkbox state
+      }
+    },
+    {
+      label: '歌词颜色',
+      submenu: LYRIC_COLORS.map(c => ({
+        label: c.label,
+        type: 'radio',
+        checked: currentLyricColor === c.value,
+        click: () => {
+          currentLyricColor = c.value;
+          if (lyricWin) {
+            lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+          }
+          updateTrayMenu();
+        }
+      }))
+    },
+    { type: 'separator' },
     { label: '显示主界面', click: () => win?.show() },
     { label: '退出', click: () => app.quit() },
   ]);
@@ -190,11 +242,60 @@ function updateTrayMenu() {
   tray.setContextMenu(contextMenu);
 }
 
+function createLyricWindow() {
+  if (lyricWin) return;
+
+  lyricWin = new BrowserWindow({
+    width: 800,
+    height: 80,
+    transparent: true,
+    frame: false,
+    alwaysOnTop: true,
+    skipTaskbar: true,
+    resizable: false,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+
+  // Position it near bottom center
+  const { screen } = require('electron');
+  const primaryDisplay = screen.getPrimaryDisplay();
+  const { width, height } = primaryDisplay.workAreaSize;
+  lyricWin.setPosition(Math.floor((width - 800) / 2), height - 120);
+
+  // Wait for load to finish before sending data
+  lyricWin.webContents.on('did-finish-load', () => {
+    if (lyricWin) {
+      lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+      if (currentLyric) {
+        lyricWin.webContents.send('update-lyric', currentLyric);
+      }
+    }
+  });
+
+  if (VITE_DEV_SERVER_URL) {
+    lyricWin.loadURL(`${VITE_DEV_SERVER_URL}lyric.html`);
+  } else {
+    lyricWin.loadFile(path.join(__dirname, '../dist/lyric.html'));
+  }
+
+  lyricWin.on('closed', () => {
+    lyricWin = null;
+    updateTrayMenu();
+  });
+}
+
 function createWindow() {
+  const isMac = process.platform === 'darwin';
+  
   win = new BrowserWindow({
     width: 1100,
     height: 800,
-    titleBarStyle: 'hiddenInset',
+    // macOS: hiddenInset (native traffic lights)
+    // Windows/Linux: frame: false (custom titlebar needed)
+    titleBarStyle: isMac ? 'hiddenInset' : 'default',
+    frame: isMac ? true : false, 
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },

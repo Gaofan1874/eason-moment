@@ -36,6 +36,11 @@
     "mac": {
       "category": "public.app-category.music",
       "icon": "src/assets/eason_moment.icns"
+    },
+        "win": {
+          "target": "nsis",
+          "icon": "src/assets/eason_moment.ico"
+        }
+      }
     }
-  }
-}
+    
