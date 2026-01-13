@@ -4,7 +4,9 @@ import { contextBridge, ipcRenderer } from 'electron';
 contextBridge.exposeInMainWorld('ipcRenderer', {
   on(...args: Parameters<typeof ipcRenderer.on>) {
     const [channel, listener] = args;
-    return ipcRenderer.on(channel, (event, ...args) => listener(event, ...args));
+    // Pass the listener directly so it can be removed later with 'off'
+    // Note: Electron types say listener expects (event, ...args), which matches our usage
+    return ipcRenderer.on(channel, listener);
   },
   off(...args: Parameters<typeof ipcRenderer.off>) {
     const [channel, ...omit] = args;
@@ -13,6 +15,10 @@ contextBridge.exposeInMainWorld('ipcRenderer', {
   send(...args: Parameters<typeof ipcRenderer.send>) {
     const [channel, ...omit] = args;
     return ipcRenderer.send(channel, ...omit);
+  },
+  removeAllListeners(...args: Parameters<typeof ipcRenderer.removeAllListeners>) {
+    const [channel] = args;
+    return ipcRenderer.removeAllListeners(channel);
   },
   invoke(...args: Parameters<typeof ipcRenderer.invoke>) {
     const [channel, ...omit] = args;

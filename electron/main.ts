@@ -13,6 +13,11 @@ let lyricWin: BrowserWindow | null = null;
 let isQuitting = false;
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
+// Fix for Windows transparent window ghosting/painting issues
+if (process.platform === 'win32') {
+  app.disableHardwareAcceleration();
+}
+
 // --- Data & State ---
 interface Lyric {
   content: string;
@@ -115,6 +120,11 @@ ipcMain.on('window-close', () => {
 function resetTimer() {
   if (timer) clearInterval(timer);
   timer = setInterval(updateTrayLyric, currentInterval);
+}
+
+// Fix for Windows transparent window ghosting/painting issues
+if (process.platform === 'win32') {
+  app.disableHardwareAcceleration();
 }
 
 function getFilteredLyrics(mood: string) {
@@ -268,7 +278,10 @@ function updateTrayMenu() {
 }
 
 function createLyricWindow() {
-  if (lyricWin) return;
+  if (lyricWin) {
+    lyricWin.destroy(); // Force destroy if it exists but logic thinks it shouldn't
+    lyricWin = null;
+  }
 
   lyricWin = new BrowserWindow({
     width: 800,
@@ -278,6 +291,8 @@ function createLyricWindow() {
     alwaysOnTop: true,
     skipTaskbar: true,
     resizable: false,
+    hasShadow: false, 
+    visualEffectState: 'followWindow',
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
     },
@@ -309,6 +324,9 @@ function createLyricWindow() {
     lyricWin = null;
     updateTrayMenu();
   });
+  
+  // DEBUG: Inspect lyric window
+  // lyricWin.webContents.openDevTools({ mode: 'detach' });
 }
 
 function createWindow() {
