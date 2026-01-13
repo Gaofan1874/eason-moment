@@ -39,7 +39,7 @@
     },
     "win": {
       "target": "nsis",
-      "icon": "src/assets/eason_moment.ico"
+      "icon": "src/assets/eason_moment.png"
     }
   }
 }
