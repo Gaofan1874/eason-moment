@@ -26,5 +26,16 @@
     "vite": "^5.0.0",
     "vite-plugin-electron": "^0.28.2",
     "vite-plugin-electron-renderer": "^0.14.5"
+  },
+  "build": {
+    "appId": "com.gaofan.eason-moment",
+    "files": [
+      "dist-electron/**/*",
+      "dist/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.music",
+      "icon": "src/assets/eason_moment.icns"
+    }
   }
 }

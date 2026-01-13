@@ -1,11 +1,11 @@
-import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog } from 'electron';
-import path from 'node:path';
-import fs from 'node:fs';
+import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog } from 'electron'
+import path from 'node:path'
+import fs from 'node:fs'
+// @ts-ignore
+import lyricsData from '../src/assets/lyrics.json'
 
-process.env.DIST = path.join(__dirname, '../dist');
-process.env.VITE_PUBLIC = app.isPackaged
-  ? process.env.DIST
-  : path.join(process.env.DIST, '../public');
+process.env.DIST = path.join(__dirname, '../dist')
+process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
 
 let win: BrowserWindow | null;
 let tray: Tray | null;
@@ -34,34 +34,28 @@ const MOOD_GROUPS: Record<string, string[]> = {
   healing: ['healing', 'philosophy', 'life', 'brightness', 'soul', 'humanity', 'self'],
   romance: ['love', 'promise'],
   crazy: ['crazy', 'power', 'freedom', 'social'],
-  classic: ['classic', 'memory'],
+  classic: ['classic', 'memory']
 };
+
+let lyrics: Lyric[] = lyricsData as Lyric[]; // Use bundled data
+let currentMood = 'random'
 
 const UPDATE_INTERVALS = [
   { label: '1 分钟', value: 1 * 60 * 1000 },
   { label: '5 分钟', value: 5 * 60 * 1000 },
   { label: '15 分钟', value: 15 * 60 * 1000 },
   { label: '30 分钟', value: 30 * 60 * 1000 },
-  { label: '1 小时', value: 60 * 60 * 1000 },
+  { label: '1 小时', value: 60 * 60 * 1000 }
 ];
 
-let lyrics: Lyric[] = [];
-let currentMood = 'random';
-let currentInterval = 5 * 60 * 1000; // Default 5 mins
-let timer: NodeJS.Timeout | null = null;
-let currentLyric: Lyric | null = null;
+let currentInterval = 5 * 60 * 1000 // Default 5 mins
+let timer: NodeJS.Timeout | null = null
+let currentLyric: Lyric | null = null
 
-// Load Lyrics
-const lyricsPath = path.join(__dirname, '../src/assets/lyrics.json');
-try {
-  const data = fs.readFileSync(lyricsPath, 'utf-8');
-  lyrics = JSON.parse(data);
-} catch (e) {
-  console.error('Failed to load lyrics', e);
-}
+// Load Lyrics logic removed as we import it now
 
 // --- IPC Handlers ---
-ipcMain.on('save-poster', async (event, dataUrl: string) => {
+ipcMain.on('save-poster', async (_event, dataUrl: string) => {
   console.log('Main Process: Received save-poster event');
   const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
   const { filePath } = await dialog.showSaveDialog({
@@ -161,7 +155,11 @@ function updateTrayMenu() {
     {
       label: '切歌',
       icon: nativeImage
-        .createFromPath(path.join(__dirname, '../src/assets/icon.png'))
+        .createFromPath(
+          app.isPackaged 
+            ? path.join(app.getAppPath(), 'dist/tray-icon.png') 
+            : path.join(__dirname, '../public/tray-icon.png')
+        )
         .resize({ width: 12, height: 12 }), // Optional icon usage
       click: updateTrayLyric,
     },
@@ -203,19 +201,29 @@ function createWindow() {
   });
 
   if (VITE_DEV_SERVER_URL) {
-    win.loadURL(VITE_DEV_SERVER_URL);
+    win.loadURL(VITE_DEV_SERVER_URL)
   } else {
-    win.loadFile(path.join(process.env.DIST!, 'index.html'));
+    win.loadFile(path.join(__dirname, '../dist/index.html'))
   }
+  
+  // DEBUG: Open DevTools to diagnose white screen issue
+  // win.webContents.openDevTools() 
 }
 
 function createTray() {
-  const iconPath = path.join(__dirname, '../src/assets/icon.png');
+  // Use public/tray-icon.png which is stable in both dev and prod
+  let iconPath;
+  if (app.isPackaged) {
+    iconPath = path.join(app.getAppPath(), 'dist/tray-icon.png');
+  } else {
+    iconPath = path.join(__dirname, '../public/tray-icon.png');
+  }
+  
   const icon = nativeImage.createFromPath(iconPath).resize({ width: 16, height: 16 });
   tray = new Tray(icon);
   tray.setToolTip('Eason Moment');
 
-  updateTrayLyric(); // This will also build the initial menu
+  updateTrayLyric(); 
   resetTimer();
 }
 

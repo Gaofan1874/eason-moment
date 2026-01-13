@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from 'react';
 import { Type, Image as ImageIcon, Settings, RefreshCw, Shuffle, Layers } from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
 import appIcon from '../assets/icon.png';
-import defaultBg from '../assets/light&eason.png';
+import defaultBg from '../assets/light_eason.png';
 import './PosterGenerator.css';
 
 interface ThemeConfig {
@@ -62,9 +62,12 @@ const PosterGenerator: React.FC = () => {
 
     // Listen for lyric updates from Tray
     if ((window as any).ipcRenderer) {
-      (window as any).ipcRenderer.on('update-lyric', (event: any, newLyric: LyricData) => {
-        setLyric(newLyric);
-      });
+      (window as any).ipcRenderer.on(
+        'update-lyric',
+        (_event: any, newLyric: LyricData) => {
+          setLyric(newLyric);
+        },
+      );
       
       // Request initial lyric from main process
       (window as any).ipcRenderer.send('get-current-lyric');
