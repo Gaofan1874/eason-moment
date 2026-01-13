@@ -1,0 +1,39 @@
+name: Build/Release
+
+on:
+  push:
+    tags:
+      - 'v*' # Trigger on version tags (e.g. v0.1.0)
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest]
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build & Release
+        uses: samuelmeuli/action-electron-builder@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          release: true # Publish release artifacts
+          skip_build: false
+          args: "--config.asar=true" # Default args
+        env:
+          # GitHub token is automatically provided by Actions
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
