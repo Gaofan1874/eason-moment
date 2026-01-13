@@ -94,6 +94,14 @@ ipcMain.on('get-current-lyric', (event) => {
   }
 })
 
+ipcMain.on('update-desktop-lyric-style', (_event, style: { color: string }) => {
+  currentLyricColor = style.color;
+  if (lyricWin) {
+    lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+  }
+  updateTrayMenu(); // To reflect change in Tray (if we highlight 'Custom')
+});
+
 ipcMain.on('window-minimize', () => {
   win?.minimize();
 });
@@ -221,18 +229,28 @@ function updateTrayMenu() {
     },
     {
       label: '歌词颜色',
-      submenu: LYRIC_COLORS.map(c => ({
-        label: c.label,
-        type: 'radio',
-        checked: currentLyricColor === c.value,
-        click: () => {
-          currentLyricColor = c.value;
-          if (lyricWin) {
-            lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+      submenu: [
+        ...LYRIC_COLORS.map(c => ({
+          label: c.label,
+          type: 'radio' as const,
+          checked: currentLyricColor === c.value,
+          click: () => {
+            currentLyricColor = c.value;
+            if (lyricWin) {
+              lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+            }
+            updateTrayMenu();
           }
-          updateTrayMenu();
+        })),
+        {
+          label: '🎨 自定义',
+          type: 'radio' as const,
+          checked: !LYRIC_COLORS.some(c => c.value === currentLyricColor),
+          click: () => {
+            if (win) win.show();
+          }
         }
-      }))
+      ]
     },
     { type: 'separator' },
     { label: '显示主界面', click: () => win?.show() },

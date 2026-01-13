@@ -5,7 +5,8 @@ import {
   Settings, 
   RefreshCw, 
   Shuffle, 
-  Layers
+  Layers,
+  Monitor
 } from 'lucide-react';
 import lyricsData from '../assets/lyrics.json';
 import appIcon from '../assets/icon.png';
@@ -48,13 +49,15 @@ const PosterGenerator: React.FC = () => {
   const [lineHeight, setLineHeight] = useState(THEME_DEFAULTS.classic.lineHeight);
   const [textOffsetY, setTextOffsetY] = useState(0);
   const [showWatermark, setShowWatermark] = useState(true);
-  const [isExporting, setIsExporting] = useState(false);
-  const [loadingIcon, setLoadingIcon] = useState(appIcon);
-  const [animationType, setAnimationType] = useState<'pulse' | 'rotate'>('rotate');
-
-  const loadingIconInputRef = useRef<HTMLInputElement>(null);
-
-  // Image and transform state
+    const [isExporting, setIsExporting] = useState(false);
+    const [loadingIcon, setLoadingIcon] = useState(appIcon);
+    const [animationType, setAnimationType] = useState<'pulse' | 'rotate'>('rotate');
+    const [desktopColor, setDesktopColor] = useState('#ffffff');
+    
+    const loadingIconInputRef = useRef<HTMLInputElement>(null);
+    
+    // Image and transform state
+  
   const [img, setImg] = useState<HTMLImageElement | null>(null);
   const [transform, setTransform] = useState({ x: 0, y: 0, scale: 1 });
   const [isDragging, setIsDragging] = useState(false);
@@ -118,6 +121,14 @@ const PosterGenerator: React.FC = () => {
       if (ev.target?.result) setLoadingIcon(ev.target.result as string);
     };
     reader.readAsDataURL(file);
+  };
+
+  const handleDesktopColorChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newColor = e.target.value;
+    setDesktopColor(newColor);
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('update-desktop-lyric-style', { color: newColor });
+    }
   };
 
   const getDrawingArea = (themeType: string) => {
@@ -641,6 +652,44 @@ const PosterGenerator: React.FC = () => {
               accept="image/*"
               style={{ display: 'none' }}
             />
+          </div>
+
+          {/* Desktop Lyric Settings */}
+          <div className="control-group">
+            <div className="label-row">
+              <span className="control-label"><Monitor size={14} /> 桌面歌词</span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+              <span className="control-value">文字颜色</span>
+              <div style={{ position: 'relative', width: 24, height: 24 }}>
+                <input 
+                  type="color" 
+                  value={desktopColor}
+                  onChange={handleDesktopColorChange}
+                  style={{ 
+                    width: '100%', 
+                    height: '100%', 
+                    border: 'none', 
+                    padding: 0, 
+                    background: 'none',
+                    cursor: 'pointer',
+                    opacity: 0,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    zIndex: 2
+                  }} 
+                />
+                <div style={{
+                  width: '100%', 
+                  height: '100%',
+                  borderRadius: '50%',
+                  background: desktopColor,
+                  border: '1px solid rgba(0,0,0,0.1)',
+                  boxShadow: '0 1px 2px rgba(0,0,0,0.1)'
+                }} />
+              </div>
+            </div>
           </div>
         </div>
 
