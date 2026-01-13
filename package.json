@@ -42,6 +42,10 @@
     "win": {
       "target": "nsis",
       "icon": "src/assets/eason_moment.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
     }
   }
 }
