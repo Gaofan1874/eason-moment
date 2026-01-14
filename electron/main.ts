@@ -237,7 +237,7 @@ function updateTrayLyric() {
   // Update Tray Title (macOS menu bar text)
   // Clean look: only lyric, truncated properly
   const cleanContent = currentLyric.content.replace(/\s+/g, ' '); // Replace newlines with spaces for single line display
-  const displayTitle = `  ${cleanContent.substring(0, 4)}${cleanContent.length > 4 ? '..' : ''}`;
+  const displayTitle = `  ${cleanContent.substring(0, 15)}${cleanContent.length > 15 ? '...' : ''}`;
 
   if (process.platform === 'darwin') {
     tray.setTitle(displayTitle);
@@ -463,9 +463,6 @@ function createTray() {
   }
   
   const icon = nativeImage.createFromPath(iconPath).resize({ width: 16, height: 16 });
-  if (process.platform === 'darwin') {
-    icon.setTemplateImage(true);
-  }
   tray = new Tray(icon);
   tray.setToolTip('Eason Moment');
 
