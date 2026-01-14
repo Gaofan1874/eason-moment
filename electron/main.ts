@@ -145,7 +145,7 @@ ipcMain.on('window-drag-end', () => {
 });
 
 ipcMain.on('show-desktop-lyric-menu', (event) => {
-  const template = [
+  const template: Array<Electron.MenuItemConstructorOptions | Electron.MenuItem> = [
     {
       label: '切歌',
       click: updateTrayLyric,
