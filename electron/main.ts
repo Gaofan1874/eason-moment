@@ -237,7 +237,7 @@ function updateTrayLyric() {
   // Update Tray Title (macOS menu bar text)
   // Clean look: only lyric, truncated properly
   const cleanContent = currentLyric.content.replace(/\s+/g, ' '); // Replace newlines with spaces for single line display
-  const displayTitle = `  ${cleanContent.substring(0, 15)}${cleanContent.length > 15 ? '...' : ''}`;
+  const displayTitle = `  ${cleanContent.substring(0, 4)}${cleanContent.length > 4 ? '..' : ''}`;
 
   if (process.platform === 'darwin') {
     tray.setTitle(displayTitle);
@@ -463,6 +463,9 @@ function createTray() {
   }
   
   const icon = nativeImage.createFromPath(iconPath).resize({ width: 16, height: 16 });
+  if (process.platform === 'darwin') {
+    icon.setTemplateImage(true);
+  }
   tray = new Tray(icon);
   tray.setToolTip('Eason Moment');
 
@@ -470,18 +473,25 @@ function createTray() {
   resetTimer();
 }
 
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-    win = null;
-  }
-});
-
 app.on('activate', () => {
   if (BrowserWindow.getAllWindows().length === 0) {
     createWindow();
+  } else {
+    win?.show();
   }
 });
+
+app.on('before-quit', () => {
+  isQuitting = true;
+  if (lyricWin) lyricWin.destroy();
+  if (win) win.destroy();
+});
+
+app.on('window-all-closed', () => {
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
 
 app.whenReady().then(() => {
   createWindow();
