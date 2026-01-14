@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v0.1.5] - 2026-01-15
+
+### ✨ Features (新特性)
+*   **启动优化**: 软件启动时默认自动开启桌面歌词，无需手动开启。
+
+### 💄 UI/UX (体验优化)
+*   **macOS 托盘优化**: 为菜单栏图标启用了模板模式 (`Template Image`)，完美适配系统深色/浅色模式切换。
+*   **标题显示**: 优化了 macOS 菜单栏歌词标题的截断长度，视觉上更加整洁。
+
+### 🐞 Bug Fixes (修复)
+*   **语法修复**: 修复了 `electron/main.ts` 中 `window-all-closed` 事件处理器的语法错误导致的编译失败。
+*   **稳定性**: 完善了 `before-quit` 事件处理，确保程序退出时能够彻底销毁所有窗口进程。
+
 ## [v0.1.0] - 2026-01-13
 
 ### 🎉 Initial Release

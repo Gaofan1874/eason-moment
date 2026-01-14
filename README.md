@@ -9,9 +9,16 @@
 
 ---
 
-**Eason Moment** 是一款专为陈奕迅粉丝打造的沉浸式桌面应用。它脱离了编辑器的束缚，以更优雅、更独立的方式，将 Eason 的歌词融入你的桌面生活。
+**Eason Moment** 是一款专为陈奕迅粉丝打造的沉浸式桌面应用。它以更优雅、更独立的方式，将 Eason 的歌词融入你的桌面生活。
 
 无论是深夜工作的间隙，还是午后发呆的片刻，只需轻轻一瞥状态栏，总有一句歌词懂你。
+
+## **📥 下载 (Download)**
+
+👉 **[点击前往 GitHub Releases 页面下载最新版 (macOS / Windows)](https://github.com/Gaofan1874/eason-moment/releases/latest)**
+
+*   **macOS**: 下载 `.dmg` 文件
+*   **Windows**: 下载 `.exe` 文件
 
 ## **✨ 核心特性 (Features)**
 
