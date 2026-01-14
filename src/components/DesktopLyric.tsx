@@ -43,6 +43,25 @@ const DesktopLyric: React.FC = () => {
   return (
     <div
       className="desktop-lyric-container"
+      onMouseDown={(e) => {
+        if (e.button === 0) { // Only drag on left click
+          const ipc = (window as any).ipcRenderer;
+          ipc?.send('window-drag-start');
+        }
+      }}
+      onMouseUp={() => {
+        const ipc = (window as any).ipcRenderer;
+        ipc?.send('window-drag-end');
+      }}
+      onMouseLeave={() => {
+        const ipc = (window as any).ipcRenderer;
+        ipc?.send('window-drag-end');
+      }}
+      onContextMenu={() => {
+        const ipc = (window as any).ipcRenderer;
+        ipc?.send('window-drag-end'); // Ensure drag stops
+        ipc?.send('show-desktop-lyric-menu');
+      }}
       style={
         {
           width: '100%',
@@ -52,7 +71,6 @@ const DesktopLyric: React.FC = () => {
           alignItems: 'center',
           justifyContent: 'center',
           background: 'rgba(0,0,0,0.01)',
-          WebkitAppRegion: 'drag',
           transition: 'background 0.3s',
           userSelect: 'none',
           cursor: 'move',

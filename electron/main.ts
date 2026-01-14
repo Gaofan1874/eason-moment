@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog } from 'electron'
+import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog, screen } from 'electron'
 import path from 'node:path'
 import fs from 'node:fs'
 // @ts-ignore
@@ -11,6 +11,7 @@ let win: BrowserWindow | null;
 let tray: Tray | null;
 let lyricWin: BrowserWindow | null = null;
 let isQuitting = false;
+let dragTimer: NodeJS.Timeout | null = null;
 const VITE_DEV_SERVER_URL = process.env['VITE_DEV_SERVER_URL'];
 
 // Fix for Windows transparent window ghosting/painting issues
@@ -114,6 +115,95 @@ ipcMain.on('window-minimize', () => {
 
 ipcMain.on('window-close', () => {
   win?.close(); // Or win.hide() if we want tray-only behavior
+});
+
+ipcMain.on('window-drag-start', () => {
+  if (!lyricWin) return;
+  const startMousePos = screen.getCursorScreenPoint();
+  const startWinPos = lyricWin.getPosition();
+
+  if (dragTimer) clearInterval(dragTimer);
+
+  dragTimer = setInterval(() => {
+    if (!lyricWin) {
+      if (dragTimer) clearInterval(dragTimer);
+      return;
+    }
+    const currentMousePos = screen.getCursorScreenPoint();
+    const deltaX = currentMousePos.x - startMousePos.x;
+    const deltaY = currentMousePos.y - startMousePos.y;
+
+    lyricWin.setPosition(startWinPos[0] + deltaX, startWinPos[1] + deltaY);
+  }, 10);
+});
+
+ipcMain.on('window-drag-end', () => {
+  if (dragTimer) {
+    clearInterval(dragTimer);
+    dragTimer = null;
+  }
+});
+
+ipcMain.on('show-desktop-lyric-menu', (event) => {
+  const template = [
+    {
+      label: '切歌',
+      click: updateTrayLyric,
+    },
+    {
+      label: '制作海报',
+      click: () => {
+        if (win) {
+          win.show();
+          if (currentLyric) {
+            win.webContents.send('update-lyric', currentLyric);
+          }
+        }
+      },
+    },
+    {
+      label: '歌词颜色',
+      submenu: [
+        ...LYRIC_COLORS.map(c => ({
+          label: c.label,
+          type: 'radio' as const,
+          checked: currentLyricColor === c.value,
+          click: () => {
+            currentLyricColor = c.value;
+            if (lyricWin) {
+              lyricWin.webContents.send('update-lyric-color', currentLyricColor);
+            }
+            updateTrayMenu();
+          }
+        })),
+        {
+          label: '🎨 自定义',
+          type: 'radio' as const,
+          checked: !LYRIC_COLORS.some(c => c.value === currentLyricColor),
+          click: () => {
+            if (win) win.show();
+          }
+        }
+      ]
+    },
+    { type: 'separator' },
+    {
+      label: '关闭桌面歌词',
+      click: () => {
+        if (lyricWin) lyricWin.close();
+      }
+    },
+    { label: '显示主界面', click: () => win?.show() },
+    { 
+      label: '退出程序', 
+      click: () => {
+        isQuitting = true;
+        app.quit();
+      } 
+    },
+  ];
+  const menu = Menu.buildFromTemplate(template);
+  menu.popup({ window: BrowserWindow.fromWebContents(event.sender) || undefined });
 });
 
 // --- Helper Functions ---
