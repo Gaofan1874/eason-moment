@@ -1,6 +1,6 @@
 {
   "name": "eason-moment",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Eason Moment - Capture your mood with lyrics and posters.",
   "main": "dist-electron/main.js",
   "scripts": {
