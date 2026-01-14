@@ -324,6 +324,8 @@ const PosterGenerator: React.FC = () => {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
     ctx.font = `normal ${fontSize}px sans-serif`;
+    ctx.strokeStyle = 'rgba(0,0,0,0.8)';
+    ctx.lineWidth = 3;
 
     // Cinema mode also splits by spaces
     const lines = lyric.content.split(/[\n\r\s]+/);
@@ -336,9 +338,12 @@ const PosterGenerator: React.FC = () => {
 
     ctx.fillStyle = '#bbbbbb';
     ctx.font = '12px sans-serif';
+    ctx.strokeStyle = 'transparent';
     ctx.fillText(`${lyric.song} - ${lyric.album}`, 300, 750);
 
     if (showWatermark) {
+      ctx.fillStyle = '#eeeeee'; 
+      ctx.textAlign = 'center';
       ctx.font = 'normal 10px "Courier New", monospace';
       ctx.fillText('P R E S E N T E D   B Y   E A S O N   M O M E N T', 300, 780);
     }
