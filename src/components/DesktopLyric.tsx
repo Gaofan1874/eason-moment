@@ -99,9 +99,9 @@ const DesktopLyric: React.FC = () => {
           style={{
             fontSize: '14px',
             fontWeight: 500,
-            color: '#dddddd',
+            color: color,
             marginTop: '8px',
-            opacity: 1,
+            opacity: 0.8,
             transition: 'all 0.3s ease',
             textShadow: '0 1px 2px rgba(0,0,0,0.9)',
             background: 'rgba(0,0,0,0.3)',

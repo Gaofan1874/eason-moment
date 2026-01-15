@@ -69,6 +69,38 @@ let currentLyricColor = '#ffffff' // Default white
 let timer: NodeJS.Timeout | null = null
 let currentLyric: Lyric | null = null
 
+// --- Config Persistence ---
+function getConfigPath() {
+  return path.join(app.getPath('userData'), 'config.json');
+}
+
+function loadConfig() {
+  try {
+    const configPath = getConfigPath();
+    if (fs.existsSync(configPath)) {
+      const data = fs.readFileSync(configPath, 'utf-8');
+      const config = JSON.parse(data);
+      if (config.currentLyricColor) {
+        currentLyricColor = config.currentLyricColor;
+      }
+    }
+  } catch (err) {
+    console.error('Failed to load config:', err);
+  }
+}
+
+function saveConfig() {
+  try {
+    const configPath = getConfigPath();
+    const config = {
+      currentLyricColor,
+    };
+    fs.writeFileSync(configPath, JSON.stringify(config, null, 2));
+  } catch (err) {
+    console.error('Failed to save config:', err);
+  }
+}
+
 // Load Lyrics logic removed as we import it now
 
 // --- IPC Handlers ---
@@ -103,6 +135,7 @@ ipcMain.on('get-current-lyric', (event) => {
 
 ipcMain.on('update-desktop-lyric-style', (_event, style: { color: string }) => {
   currentLyricColor = style.color;
+  saveConfig();
   if (lyricWin) {
     lyricWin.webContents.send('update-lyric-color', currentLyricColor);
   }
@@ -170,6 +203,7 @@ ipcMain.on('show-desktop-lyric-menu', (event) => {
           checked: currentLyricColor === c.value,
           click: () => {
             currentLyricColor = c.value;
+            saveConfig();
             if (lyricWin) {
               lyricWin.webContents.send('update-lyric-color', currentLyricColor);
             }
@@ -337,6 +371,7 @@ function updateTrayMenu() {
           checked: currentLyricColor === c.value,
           click: () => {
             currentLyricColor = c.value;
+            saveConfig();
             if (lyricWin) {
               lyricWin.webContents.send('update-lyric-color', currentLyricColor);
             }
@@ -491,6 +526,7 @@ app.on('window-all-closed', () => {
 })
 
 app.whenReady().then(() => {
+  loadConfig();
   createWindow();
   createTray();
   createLyricWindow();
