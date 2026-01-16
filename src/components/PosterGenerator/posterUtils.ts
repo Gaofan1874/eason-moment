@@ -7,29 +7,60 @@ export const wrapText = (
   y: number,
   maxWidth: number,
   lHeight: number,
+  mergeSpaces: boolean = false,
 ) => {
-    const segments = text.split(/[\n\r\s]+/);  let currentY = y;
+  let currentY = y;
   let totalLines = 0;
 
-  for (const segment of segments) {
-    const chars = segment.split('');
-    let line = '';
+  if (mergeSpaces) {
+    // Split only by explicit newlines
+    const paragraphs = text.split(/\r?\n/);
+    
+    for (const paragraph of paragraphs) {
+      const chars = paragraph.split('');
+      let line = '';
 
-    for (let n = 0; n < chars.length; n++) {
-      const testLine = line + chars[n];
-      const metrics = ctx.measureText(testLine);
-      if (metrics.width > maxWidth && n > 0) {
-        ctx.fillText(line, x, currentY);
-        line = chars[n];
-        currentY += lHeight;
-        totalLines++;
-      } else {
-        line = testLine;
+      for (let n = 0; n < chars.length; n++) {
+        const testLine = line + chars[n];
+        const metrics = ctx.measureText(testLine);
+        
+        if (metrics.width > maxWidth && n > 0) {
+          ctx.fillText(line, x, currentY);
+          line = chars[n];
+          currentY += lHeight;
+          totalLines++;
+        } else {
+          line = testLine;
+        }
       }
+      ctx.fillText(line, x, currentY);
+      currentY += lHeight;
+      totalLines++;
     }
-    ctx.fillText(line, x, currentY);
-    currentY += lHeight;
-    totalLines++;
+  } else {
+    // Original behavior: split by newline AND space
+    const segments = text.split(/[\n\r\s]+/);
+    
+    for (const segment of segments) {
+      const chars = segment.split('');
+      let line = '';
+
+      for (let n = 0; n < chars.length; n++) {
+        const testLine = line + chars[n];
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxWidth && n > 0) {
+          ctx.fillText(line, x, currentY);
+          line = chars[n];
+          currentY += lHeight;
+          totalLines++;
+        } else {
+          line = testLine;
+        }
+      }
+      ctx.fillText(line, x, currentY);
+      currentY += lHeight;
+      totalLines++;
+    }
   }
   return totalLines;
 };
@@ -46,10 +77,11 @@ interface DrawParams {
   textOffsetY: number;
   showWatermark: boolean;
   getDrawingArea: (theme: string, w: number, h: number) => { x: number, y: number, w: number, h: number };
+  mergeSpaces?: boolean;
 }
 
 export const drawClassic = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#2d2d2d';
   ctx.fillRect(0, 0, w, h);
@@ -75,7 +107,7 @@ export const drawClassic = ({
 
   const startY = (h * 0.4) + textOffsetY;
   const maxWidth = w * 0.8;
-  wrapText(ctx, lyric.content, w / 2, startY, maxWidth, config.lineHeight);
+  wrapText(ctx, lyric.content, w / 2, startY, maxWidth, config.lineHeight, mergeSpaces);
 
   ctx.shadowColor = 'transparent';
   ctx.fillStyle = '#dddddd';
@@ -94,7 +126,7 @@ export const drawClassic = ({
 };
 
 export const drawPolaroid = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#fdfdfd';
   ctx.fillRect(0, 0, w, h);
@@ -123,7 +155,7 @@ export const drawPolaroid = ({
   ctx.textBaseline = 'top';
   ctx.font = `normal ${config.fontSize}px ${config.fontFace}, serif`;
 
-  const linesDrawn = wrapText(ctx, lyric.content, w / 2, textStartY, w * 0.8, config.lineHeight);
+  const linesDrawn = wrapText(ctx, lyric.content, w / 2, textStartY, w * 0.8, config.lineHeight, mergeSpaces);
 
   ctx.fillStyle = '#777777';
   ctx.textAlign = 'right';
@@ -144,7 +176,7 @@ export const drawPolaroid = ({
 };
 
 export const drawCinema = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, w, h);
@@ -170,7 +202,37 @@ export const drawCinema = ({
   ctx.strokeStyle = 'rgba(0,0,0,0.8)';
   ctx.lineWidth = 3 * SCALE;
 
-  const lines = lyric.content.split(/[\n\r\s]+/);
+  // Cinema mode needs special handling because it draws bottom-up usually or specific layout
+  // The original code split by regex and drew bottom-up
+  // Let's adapt it to support mergeSpaces
+  
+  let lines: string[] = [];
+  if (mergeSpaces) {
+     // Split by newline, then wrap each line manually to form a list of lines?
+     // Since drawCinema iterates backwards, we need pre-wrapped lines.
+     // Let's do a quick wrap simulation to get lines
+     const paragraphs = lyric.content.split(/\r?\n/);
+     paragraphs.forEach(para => {
+        const chars = para.split('');
+        let line = '';
+        const maxWidth = w * 0.9; // Cinema usually full widthish
+        
+        for (let n = 0; n < chars.length; n++) {
+           const testLine = line + chars[n];
+           const metrics = ctx.measureText(testLine);
+           if (metrics.width > maxWidth && n > 0) {
+              lines.push(line);
+              line = chars[n];
+           } else {
+              line = testLine;
+           }
+        }
+        if (line) lines.push(line);
+     });
+  } else {
+     lines = lyric.content.split(/[\n\r\s]+/);
+  }
+
   let currentY = area.y + area.h - (30 * SCALE) + textOffsetY;
   
   for (let i = lines.length - 1; i >= 0; i--) {

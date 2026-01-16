@@ -41,6 +41,7 @@ const PosterGenerator: React.FC = () => {
   const [fontFace, setFontFace] = useState(THEME_DEFAULTS.classic.fontFace);
   const [textOffsetY, setTextOffsetY] = useState(0);
   const [showWatermark, setShowWatermark] = useState(true);
+  const [mergeSpaces, setMergeSpaces] = useState(false);
   
   // Filter State
   const [imageFilter, setImageFilter] = useState('none');
@@ -205,14 +206,15 @@ const PosterGenerator: React.FC = () => {
         lyric,
         textOffsetY,
         showWatermark,
-        getDrawingArea
+        getDrawingArea,
+        mergeSpaces
     };
 
     if (theme === 'classic') drawClassic(drawParams);
     else if (theme === 'polaroid') drawPolaroid(drawParams);
     else if (theme === 'cinema') drawCinema(drawParams);
     
-  }, [theme, ratio, lyric, fontSize, lineHeight, fontFace, textOffsetY, showWatermark, img, transform, imageFilter, getDrawingArea]);
+  }, [theme, ratio, lyric, fontSize, lineHeight, fontFace, textOffsetY, showWatermark, img, transform, imageFilter, getDrawingArea, mergeSpaces]);
 
   useEffect(() => {
     draw();
@@ -363,6 +365,8 @@ const PosterGenerator: React.FC = () => {
             textOffsetY={textOffsetY}
             setTextOffsetY={setTextOffsetY}
             resetTypography={resetTypography}
+            mergeSpaces={mergeSpaces}
+            setMergeSpaces={setMergeSpaces}
           />
 
           <ImageControls
