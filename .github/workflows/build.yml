@@ -64,10 +64,62 @@ jobs:
           path: dist/*
           retention-days: 7
 
-      - name: Release
+      - name: Release to GitHub
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: dist/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload to Gitee Releases
+        if: startsWith(github.ref, 'refs/tags/')
+        shell: bash
+        run: |
+          # Get tag name without 'refs/tags/' prefix
+          TAG=${GITHUB_REF#refs/tags/}
+          
+          # Get Gitee release ID
+          GITEE_API="https://gitee.com/api/v5"
+          GITEE_OWNER="lin-gaofan"
+          GITEE_REPO="eason-moment"
+          
+          echo "Getting release ID for tag: $TAG"
+          RELEASE_RESPONSE=$(curl -s "$GITEE_API/repos/$GITEE_OWNER/$GITEE_REPO/releases/tags/$TAG?access_token=${{ secrets.GITEE_TOKEN }}")
+          
+          # Check if release exists
+          if echo "$RELEASE_RESPONSE" | grep -q '"id"'; then
+            RELEASE_ID=$(echo "$RELEASE_RESPONSE" | grep -o '"id":[0-9]*' | head -1 | cut -d':' -f2)
+            echo "Found Gitee release with ID: $RELEASE_ID"
+            
+            # Upload each file in dist directory
+            for file in dist/*; do
+              if [ -f "$file" ]; then
+                FILE_NAME=$(basename "$file")
+                echo "Uploading $FILE_NAME to Gitee..."
+                
+                # Check if file already exists
+                ASSETS_RESPONSE=$(curl -s "$GITEE_API/repos/$GITEE_OWNER/$GITEE_REPO/releases/$RELEASE_ID/assets?access_token=${{ secrets.GITEE_TOKEN }}")
+                
+                if echo "$ASSETS_RESPONSE" | grep -q "\"name\":\"$FILE_NAME\""; then
+                  echo "File $FILE_NAME already exists, skipping..."
+                else
+                  # Upload file
+                  UPLOAD_RESPONSE=$(curl -s -X POST \
+                    -H "Authorization: token ${{ secrets.GITEE_TOKEN }}" \
+                    -F "file=@$file" \
+                    "$GITEE_API/repos/$GITEE_OWNER/$GITEE_REPO/releases/$RELEASE_ID/assets")
+                  
+                  if echo "$UPLOAD_RESPONSE" | grep -q '"id"'; then
+                    echo "✓ Successfully uploaded $FILE_NAME to Gitee"
+                  else
+                    echo "✗ Failed to upload $FILE_NAME"
+                    echo "Response: $UPLOAD_RESPONSE"
+                  fi
+                fi
+              fi
+            done
+          else
+            echo "Warning: Gitee release for tag '$TAG' not found"
+            echo "Please create the release manually on Gitee first"
+          fi

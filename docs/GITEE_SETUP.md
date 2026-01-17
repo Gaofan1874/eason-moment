@@ -2,6 +2,62 @@
 
 本项目已配置 Gitee Pages + Gitee Releases 作为国内快速访问的下载平台。
 
+## 🔑 配置 Gitee Token（自动化上传）
+
+### 步骤 1：获取 Gitee Personal Access Token
+
+1. 访问：https://gitee.com/profile/personal_access_tokens
+2. 点击「生成新令牌」
+3. 勾选权限：
+   - `projects`（项目权限）
+   - `user_info`（用户信息）
+4. 点击「提交」生成令牌
+5. **复制生成的令牌**（只显示一次，请妥善保存）
+
+### 步骤 2：在 GitHub 仓库中配置 Secret
+
+1. 访问 GitHub 仓库：https://github.com/Gaofan1874/eason-moment
+2. 点击「Settings」→「Secrets and variables」→「Actions」
+3. 点击「New repository secret」
+4. 填写：
+   - **Name**: `GITEE_TOKEN`
+   - **Secret**: `0f7af3d7dc1f10257bfd17f76a941564`（替换为您的实际 Token）
+5. 点击「Add secret」
+
+### 步骤 3：创建 Gitee Release
+
+首次使用时，需要先在 Gitee 上创建 Release：
+
+1. 访问 Gitee 仓库：https://gitee.com/lin-gaofan/eason-moment
+2. 点击「发行版」→「创建发行版」
+3. 输入版本号（如 `v0.1.8`）
+4. 点击「创建发行版」（无需上传文件，GitHub Actions 会自动上传）
+
+### 步骤 4：推送标签触发自动化
+
+```bash
+# 创建并推送标签
+git tag v0.1.8
+git push origin v0.1.8
+```
+
+GitHub Actions 会自动：
+1. 构建 macOS 和 Windows 版本
+2. 上传到 GitHub Releases
+3. **自动上传到 Gitee Releases**（使用配置的 Token）
+
+### 自动化流程说明
+
+```
+推送标签 → GitHub Actions 触发
+    ↓
+构建应用（macOS + Windows）
+    ↓
+上传到 GitHub Releases
+    ↓
+使用 GITEE_TOKEN 上传到 Gitee Releases ✨
+```
+
 ## 📁 项目结构
 
 ```
@@ -17,6 +73,10 @@ eason-moment/
 
 ## 🚀 快速开始
 
+### 0. 配置自动化上传（重要！）
+
+请先完成上述「配置 Gitee Token」步骤，然后继续以下操作。
+
 ### 1. 启用 Gitee Pages
 
 1. 访问 Gitee 仓库：https://gitee.com/lin-gaofan/eason-moment
@@ -26,9 +86,9 @@ eason-moment/
 5. 点击「启动」
 6. 启动成功后，访问：`https://lin-gaofan.gitee.io/eason-moment/`
 
-### 2. 创建 Gitee Release
+### 2. 创建 Gitee Release（首次需要）
 
-#### 方式一：通过 Gitee 网页操作
+#### 方式一：通过 Gitee 网页操作（首次）
 
 1. 访问 Gitee 仓库
 2. 点击「发行版」→「创建发行版」
@@ -36,7 +96,7 @@ eason-moment/
 4. 上传构建产物（`.dmg` 或 `.exe` 文件）
 5. 点击「创建发行版」
 
-#### 方式二：使用上传脚本
+#### 方式二：使用上传脚本（手动上传）
 
 ```bash
 # 1. 构建
@@ -49,25 +109,65 @@ export GITEE_TOKEN="your_gitee_personal_access_token"
 ./scripts/upload-to-gitee.sh v0.1.8 dist/eason-moment-0.1.8.dmg
 ```
 
-### 3. 获取 Gitee Personal Access Token
+### 3. 测试自动化流程
 
-1. 访问：https://gitee.com/profile/personal_access_tokens
-2. 点击「生成新令牌」
-3. 勾选权限：
-   - `projects`（项目权限）
-   - `user_info`（用户信息）
-4. 复制生成的令牌（只显示一次，请妥善保存）
+#### 创建测试标签
+```bash
+# 创建测试标签
+git tag v0.1.8-test
+git push origin v0.1.8-test
+```
 
-## 🔄 自动化流程
+#### 检查上传结果
+1. 访问 GitHub Actions：https://github.com/Gaofan1874/eason-moment/actions
+2. 等待构建完成
+3. 访问 Gitee Releases：https://gitee.com/lin-gaofan/eason-moment/releases
+4. 确认文件已自动上传
 
-### GitHub Actions → Gitee Releases
+#### 清理测试标签
+```bash
+# 删除本地和远程测试标签
+git tag -d v0.1.8-test
+git push origin :refs/tags/v0.1.8-test
+```
 
-当前 GitHub Actions 配置会自动构建并上传到 GitHub Releases。如需自动上传到 Gitee，需要：
+## 🔧 故障排除
 
-1. 在 Gitee 仓库设置中添加 `GITEE_TOKEN` Secret
-2. 修改 `.github/workflows/build.yml`，添加 Gitee 上传步骤
+### 问题 1：上传失败，提示 "Release not found"
+**原因**：Gitee 上还没有创建对应版本的 Release
 
-### 手动上传流程
+**解决**：
+1. 访问 Gitee Releases 页面
+2. 手动创建对应版本的 Release
+3. 重新触发 GitHub Actions
+
+### 问题 2：上传失败，提示 "Access denied"
+**原因**：Gitee Token 权限不足或已过期
+
+**解决**：
+1. 检查 Token 是否包含 `projects` 权限
+2. 重新生成 Token 并更新 GitHub Secret
+
+### 问题 3：文件已存在，重复上传
+**说明**：这是正常行为，脚本会自动跳过已存在的文件
+
+## 📝 发布新版本流程
+
+```bash
+# 1. 更新版本号（package.json）
+# 2. 提交代码
+git add .
+git commit -m "Release v0.1.8"
+
+# 3. 创建标签
+git tag v0.1.8
+git push origin main
+git push origin v0.1.8
+
+# 4. GitHub Actions 自动构建并上传到 GitHub 和 Gitee ✨
+```
+
+## 🔄 手动上传（备用方案）
 
 ```bash
 # 1. 创建标签
