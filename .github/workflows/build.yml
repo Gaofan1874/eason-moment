@@ -54,15 +54,20 @@ jobs:
       - name: Clean Output Directory
         run: npx rimraf dist
 
-      - name: Build & Release
-        uses: samuelmeuli/action-electron-builder@v1
+      - name: Build App
+        run: pnpm run build
+
+      - name: Upload Artifacts
+        uses: actions/upload-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          release: true # Publish release artifacts
-          skip_build: false
-          args: "--config.asar=true" # Default args
+          name: ${{ matrix.os }}-build
+          path: dist/*
+          retention-days: 7
+
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: dist/*
         env:
-          # GitHub token is automatically provided by Actions
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Use pnpm for electron-builder
-          ELECTRON_BUILDER_CACHE: ${{ github.workspace }}/.cache
