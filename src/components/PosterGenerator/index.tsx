@@ -19,13 +19,21 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
   song: lyricsData[0].song,
   album: lyricsData[0].album,
 };
+
+const APP_THEMES = [
+  { id: 'chin-up', label: 'CHIN UP!', colors: ['#F0F4F8', '#0E5FAC'] },
+  { id: 'theme-duo', label: 'DUO', colors: ['#f0f0f0', '#d4a373'] },
+  { id: 'theme-love', label: 'L.O.V.E.', colors: ['#F0F4F8', '#3B5C7D'] },
+  { id: 'theme-fear', label: 'FEAR&DREAMS', colors: ['#CED4DA', '#C23B68'] },
+  { id: 'theme-key', label: 'THE KEY', colors: ['#EFE8D8', '#A63737'] },
+];
 
 // --- Section Component ---
 interface SectionProps {
@@ -50,8 +58,12 @@ const PosterGenerator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   
+  // Load saved app theme from localStorage
+  const savedAppTheme = localStorage.getItem('appTheme') || 'chin-up';
+  
   // State
   const [activeTab, setActiveTab] = useState<TabType>('lyrics');
+  const [appTheme, setAppTheme] = useState(savedAppTheme); // App Theme State
   const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema'>('classic');
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
@@ -324,7 +336,7 @@ const PosterGenerator: React.FC = () => {
   const isMac = (window as any).ipcRenderer?.platform === 'darwin';
 
   return (
-    <div className="app-container">
+    <div className={`app-container ${appTheme}`}>
       {isMac && <div className="titlebar-drag-region" />}
       {!isMac && <TitleBar />}
 
@@ -448,6 +460,37 @@ const PosterGenerator: React.FC = () => {
           
           {activeTab === 'settings' && (
             <>
+              <Section title="软件主题 (App Theme)">
+                <div className="control-group">
+                   <div className="label-row">
+                      <span className="control-label">
+                        <Palette size={14} /> 选择主题颜色
+                      </span>
+                   </div>
+                   <div className="theme-grid" style={{ gridTemplateColumns: 'repeat(2, 1fr)' }}>
+                     {APP_THEMES.map((t) => (
+                       <div
+                          key={t.id}
+                          className={`theme-card ${appTheme === t.id ? 'active' : ''}`}
+                          onClick={() => {
+                            setAppTheme(t.id);
+                            localStorage.setItem('appTheme', t.id);
+                          }}
+                          style={{ display: 'flex', alignItems: 'center', gap: 8, padding: '8px 10px', textAlign: 'left' }}
+                       >
+                         <div style={{ 
+                            width: 20, 
+                            height: 20, 
+                            borderRadius: '50%', 
+                            background: `linear-gradient(135deg, ${t.colors[0]}, ${t.colors[1]})`
+                         }} />
+                         <span style={{ fontSize: 11, fontWeight: 500 }}>{t.label}</span>
+                       </div>
+                     ))}
+                   </div>
+                </div>
+              </Section>
+
               <Section title="桌面歌词 (Windows)">
                 <DesktopLyricControls 
                   desktopColor={desktopColor}

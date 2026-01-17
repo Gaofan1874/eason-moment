@@ -1,25 +1,94 @@
-:root {
-  /* Warm & Focus Theme */
-  --sidebar-bg: #f7f6f2; /* Warm paper-like grey */
-  --sidebar-border: 1px solid rgba(0, 0, 0, 0.06);
-  --workspace-bg: #f0f0f0; 
-  
-  /* Eason Champagne Gold / Warm Orange */
-  --accent-color: #d4a373; 
-  --accent-hover: #c59363;
-  --accent-light: rgba(212, 163, 115, 0.15);
+/* =========================================
+   Theme Definitions
+   ========================================= */
 
-  --text-primary: #2c2c2e; /* Soft black */
-  --text-secondary: #8e8e93; /* Warm grey */
-  --text-tertiary: #c7c7cc;
+/* Theme: CHIN UP! (Default - Light Energy) */
+:root {
+  --bg-app: #EBF4FF;        /* Light Blue Tint to match Primary */
+  --bg-surface: #FFFFFF;    
+  --color-primary: #0E5FAC; /* Original Eason Blue */
+  --color-accent: #D9303E;  /* Energy Red */
+  --text-main: #1A1A1A;     
+  --text-body: #4A5568;     
+  --border-color: rgba(14, 95, 172, 0.1); 
+}
+
+/* Theme: L.O.V.E. (Urban Denim - Clean & Modern) */
+.theme-love {
+  --bg-app: #F5F7FA;        /* Cool Grey - Clean & Modern */
+  --bg-surface: #FFFFFF;    
+  --color-primary: #3B5C7D; /* Denim Blue */
+  --color-accent: #5D89B3;  /* Lighter Denim */
+  --text-main: #2C3E50;     /* Dark Blue Grey */
+  --text-body: #546E7A;     /* Blue Grey */
+  --border-color: #DDE1E6;  
+
+  /* Additional Theme Variables */
+  --text-on-primary: #FFFFFF;
+  --shadow-soft: 0 4px 12px rgba(59, 92, 125, 0.1);
+}
+
+/* Theme: FEAR AND DREAMS (Modern Gallery Grey) */
+.theme-fear {
+  --bg-app: #E3E5E8;        /* Sophisticated Cool Grey */
+  --bg-surface: #FFFFFF;    /* Clean Canvas */
+  --color-primary: #C02C5D; /* Deep Rose / Raspberry - Iconic Eason Color */
+  --color-accent: #2D3436;  /* Charcoal for high contrast accents */
+  --text-main: #2D3436;     /* Almost Black */
+  --text-body: #636E72;     /* Cool Grey Text */
+  --border-color: #DFE6E9;
+  --shadow-soft: 0 4px 15px rgba(192, 44, 93, 0.15); /* Subtle Rose Glow */
+}
+
+/* Theme: THE KEY */
+.theme-key {
+  --bg-app: #EFE8D8;
+  --bg-surface: #E6DFC8;
+  --color-primary: #A63737;
+  --color-accent: #005F60;
+  --text-main: #4A4A4A;
+  --text-body: #5D5D5D;
+  --border-color: rgba(166, 55, 55, 0.3);
+}
+
+/* Theme: DUO DUO (Original Gold) */
+.theme-duo {
+  --bg-app: #f0f0f0;
+  --bg-surface: #f7f6f2;
+  --color-primary: #d4a373;
+  --color-accent: #c59363;
+  --text-main: #2c2c2e;
+  --text-body: #8e8e93;
+  --border-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Component Variable Mapping */
+.app-container {
+  /* Layout Colors */
+  --workspace-bg: var(--bg-app);
+  --sidebar-bg: var(--bg-surface);
+  --sidebar-border: 1px solid var(--border-color);
   
-  --card-bg: #ffffff;
+  /* Text Colors */
+  --text-primary: var(--text-main);
+  --text-secondary: var(--text-body);
+  --text-tertiary: color-mix(in srgb, var(--text-body), transparent 40%);
+
+  /* Accent & Action Colors */
+  --accent-color: var(--color-primary);
+  --accent-hover: color-mix(in srgb, var(--color-primary), black 10%);
+  --accent-light: color-mix(in srgb, var(--color-primary), transparent 85%);
+  
+  /* UI Element Colors */
+  --card-bg: var(--bg-surface);
+  /* Make input slightly distinct from surface */
+  --input-bg: color-mix(in srgb, var(--bg-surface), black 3%);
+  --input-border: var(--border-color);
+  
+  /* Constants */
   --card-radius: 12px;
   --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   
-  --input-bg: #ffffff;
-  --input-border: #eaeaea;
-
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -71,7 +140,7 @@ html,
   flex: 1;
   background-color: var(--workspace-bg);
   /* Dotted pattern */
-  background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
+  /* background-image: radial-gradient(#d1d1d1 1px, transparent 1px); */
   background-size: 24px 24px;
   display: flex;
   align-items: center;
