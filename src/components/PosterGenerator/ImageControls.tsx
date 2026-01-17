@@ -39,7 +39,7 @@ const ImageControls: React.FC<ImageControlsProps> = ({
       </div>
 
       <div className="upload-trigger" onClick={() => fileInputRef.current?.click()}>
-        <ImageIcon size={24} color="#007AFF" />
+        <ImageIcon size={24} color="#d4a373" />
         <span className="upload-trigger-text">上传你的照片</span>
         <span className="upload-trigger-hint">支持 JPG、PNG、WebP 格式</span>
       </div>

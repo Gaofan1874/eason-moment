@@ -19,6 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
+import { Music, Layout, Image as ImageIcon, Settings } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -26,11 +27,31 @@ const DEFAULT_LYRIC: LyricData = {
   album: lyricsData[0].album,
 };
 
+// --- Section Component ---
+interface SectionProps {
+  title: string;
+  children: React.ReactNode;
+}
+
+const Section: React.FC<SectionProps> = ({ title, children }) => {
+  return (
+    <div className="inspector-section">
+      <div className="section-header">
+        <div className="section-title">{title}</div>
+      </div>
+      <div className="section-content">{children}</div>
+    </div>
+  );
+};
+
+type TabType = 'lyrics' | 'style' | 'image' | 'settings';
+
 const PosterGenerator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   
   // State
+  const [activeTab, setActiveTab] = useState<TabType>('lyrics');
   const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema'>('classic');
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
@@ -342,67 +363,121 @@ const PosterGenerator: React.FC = () => {
       </div>
 
       <aside className="inspector" style={{ paddingTop: isMac ? 'var(--titlebar-height)' : '32px' }}>
-        <div className="inspector-header">
-          <h2 className="inspector-title">海报设置</h2>
+        
+        {/* Tab Navigation */}
+        <div className="tabs-container">
+          <button 
+            className={`tab-item ${activeTab === 'lyrics' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('lyrics')}
+            title="歌词"
+          >
+            <Music size={18} />
+          </button>
+          <button 
+            className={`tab-item ${activeTab === 'style' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('style')}
+            title="样式"
+          >
+            <Layout size={18} />
+          </button>
+          <button 
+            className={`tab-item ${activeTab === 'image' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('image')}
+            title="配图"
+          >
+            <ImageIcon size={18} />
+          </button>
+          <button 
+            className={`tab-item ${activeTab === 'settings' ? 'active' : ''}`} 
+            onClick={() => setActiveTab('settings')}
+            title="设置"
+          >
+            <Settings size={18} />
+          </button>
         </div>
 
         <div className="scroll-content">
-          <RatioSelector ratio={ratio} onRatioChange={handleRatioChange} />
+          {activeTab === 'lyrics' && (
+            <Section title="歌词与灵感">
+              <LyricControls 
+                lyric={lyric} 
+                setLyric={setLyric} 
+                handleRandomLyric={handleRandomLyric} 
+              />
+            </Section>
+          )}
+
+          {activeTab === 'style' && (
+            <>
+              <Section title="画布比例">
+                <RatioSelector ratio={ratio} onRatioChange={handleRatioChange} />
+              </Section>
+              <Section title="主题风格">
+                <ThemeSelector theme={theme} onThemeChange={handleThemeChange} getThemeLabel={getThemeLabel} />
+              </Section>
+              <Section title="文字排版">
+                <TypographyControls
+                  fontSize={fontSize}
+                  setFontSize={setFontSize}
+                  lineHeight={lineHeight}
+                  setLineHeight={setLineHeight}
+                  textOffsetY={textOffsetY}
+                  setTextOffsetY={setTextOffsetY}
+                  resetTypography={resetTypography}
+                  mergeSpaces={mergeSpaces}
+                  setMergeSpaces={setMergeSpaces}
+                />
+              </Section>
+            </>
+          )}
+
+          {activeTab === 'image' && (
+            <Section title="配图与滤镜">
+              <ImageControls
+                img={img}
+                fitImageToLayout={() => img && fitImageToLayout(img, theme, ratio)}
+                fileInputRef={fileInputRef}
+                handleImageUpload={handleImageUpload}
+                imageFilter={imageFilter}
+                setImageFilter={setImageFilter}
+                showWatermark={showWatermark}
+                setShowWatermark={setShowWatermark}
+              />
+            </Section>
+          )}
           
-          <ThemeSelector theme={theme} onThemeChange={handleThemeChange} getThemeLabel={getThemeLabel} />
+          {activeTab === 'settings' && (
+            <>
+              <Section title="桌面歌词 (Windows)">
+                <DesktopLyricControls 
+                  desktopColor={desktopColor}
+                  handleDesktopColorChange={handleDesktopColorChange}
+                />
+              </Section>
+              
+              <Section title="导出设置">
+                <ExportControls
+                  loadingIcon={loadingIcon}
+                  loadingIconInputRef={loadingIconInputRef}
+                  handleLoadingIconUpload={handleLoadingIconUpload}
+                  animationType={animationType}
+                  setAnimationType={setAnimationType}
+                />
+              </Section>
+            </>
+          )}
 
-          <LyricControls 
-            lyric={lyric} 
-            setLyric={setLyric} 
-            handleRandomLyric={handleRandomLyric} 
-          />
+        </div>
 
-          <TypographyControls
-            fontSize={fontSize}
-            setFontSize={setFontSize}
-            lineHeight={lineHeight}
-            setLineHeight={setLineHeight}
-            textOffsetY={textOffsetY}
-            setTextOffsetY={setTextOffsetY}
-            resetTypography={resetTypography}
-            mergeSpaces={mergeSpaces}
-            setMergeSpaces={setMergeSpaces}
-          />
-
-          <ImageControls
-            img={img}
-            fitImageToLayout={() => img && fitImageToLayout(img, theme, ratio)}
-            fileInputRef={fileInputRef}
-            handleImageUpload={handleImageUpload}
-            imageFilter={imageFilter}
-            setImageFilter={setImageFilter}
-            showWatermark={showWatermark}
-            setShowWatermark={setShowWatermark}
-          />
-          
-          <DesktopLyricControls 
-            desktopColor={desktopColor}
-            handleDesktopColorChange={handleDesktopColorChange}
-          />
-          
-          <ExportControls
-             loadingIcon={loadingIcon}
-             loadingIconInputRef={loadingIconInputRef}
-             handleLoadingIconUpload={handleLoadingIconUpload}
-             animationType={animationType}
-             setAnimationType={setAnimationType}
-           />
-
-          <div className="inspector-footer">
-            <button
-              className="btn-primary"
-              onClick={handleExport}
-              disabled={isExporting}
-              style={{ opacity: isExporting ? 0.7 : 1, cursor: isExporting ? 'wait' : 'pointer' }}
-            >
-              {isExporting ? '生成中...' : '导出高清海报'}
-            </button>
-          </div>
+        <div className="inspector-footer">
+          <button
+            className="btn-primary"
+            onClick={handleExport}
+            disabled={isExporting}
+            style={{ opacity: isExporting ? 0.7 : 1, cursor: isExporting ? 'wait' : 'pointer' }}
+          >
+            {isExporting ? '生成中...' : '导出高清海报'}
+          </button>
         </div>
       </aside>
     </div>
