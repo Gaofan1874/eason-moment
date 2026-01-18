@@ -35,6 +35,7 @@
       "dist/*.html",
       "dist/*.png"
     ],
+    "publish": "never",
     "mac": {
       "category": "public.app-category.music",
       "icon": "src/assets/eason_moment.icns"
