@@ -97,11 +97,15 @@ jobs:
             echo "Found Gitee release with ID: $RELEASE_ID"
           else
             echo "Gitee release for tag '$TAG' not found, creating..."
+            # Get commit SHA for the tag
+            COMMIT_SHA=$(git rev-parse $TAG)
+            echo "Commit SHA: $COMMIT_SHA"
+            
             # Create release
             CREATE_RESPONSE=$(curl -s -X POST \
               -H "Authorization: token ${{ secrets.GITEE_TOKEN }}" \
               -H "Content-Type: application/json" \
-              -d "{\"tag_name\":\"$TAG\",\"name\":\"$TAG\",\"body\":\"Release $TAG\"}" \
+              -d "{\"tag_name\":\"$TAG\",\"name\":\"$TAG\",\"body\":\"Release $TAG\",\"target_commitish\":\"$COMMIT_SHA\"}" \
               "$GITEE_API/repos/$GITEE_OWNER/$GITEE_REPO/releases")
             
             if echo "$CREATE_RESPONSE" | grep -q '"id"'; then
