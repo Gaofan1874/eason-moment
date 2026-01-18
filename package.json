@@ -5,7 +5,7 @@
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && electron-builder",
+    "build": "tsc && vite build && electron-builder --publish=never",
     "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"electron/**/*.ts\""
   },
@@ -35,7 +35,6 @@
       "dist/*.html",
       "dist/*.png"
     ],
-    "publish": "never",
     "mac": {
       "category": "public.app-category.music",
       "icon": "src/assets/eason_moment.icns"
