@@ -37,15 +37,20 @@
     ],
     "mac": {
       "category": "public.app-category.music",
-      "icon": "src/assets/eason_moment.icns"
+      "icon": "src/assets/eason_moment.icns",
+      "target": ["dmg"]
     },
     "win": {
-      "target": "nsis",
+      "target": ["nsis"],
       "icon": "src/assets/eason_moment.png"
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
+    },
+    "publish": {
+      "provider": "github",
+      "releaseType": "release"
     }
   }
 }
