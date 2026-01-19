@@ -145,7 +145,7 @@ const PosterGenerator: React.FC = () => {
 
   useEffect(() => {
     const image = new Image();
-    image.crossOrigin = 'anonymous'; 
+    image.crossOrigin = 'anonymous';
     image.src = defaultBg;
     image.onload = () => {
       setImg(image);
@@ -156,9 +156,12 @@ const PosterGenerator: React.FC = () => {
       (window as any).ipcRenderer.on('update-lyric', (_event: any, newLyric: LyricData) => {
           setLyric(newLyric);
       });
+      (window as any).ipcRenderer.on('switch-tab', (_event: any, tab: TabType) => {
+          setActiveTab(tab);
+      });
       (window as any).ipcRenderer.send('get-current-lyric');
     }
-  }, []); 
+  }, []);
 
   useEffect(() => {
     if (img) {

@@ -104,6 +104,12 @@ function saveConfig() {
 // Load Lyrics logic removed as we import it now
 
 // --- IPC Handlers ---
+ipcMain.on('switch-to-tab', (_event, tab: string) => {
+  if (win) {
+    win.webContents.send('switch-tab', tab);
+  }
+});
+
 ipcMain.on('save-poster', async (_event, dataUrl: string) => {
   console.log('Main Process: Received save-poster event');
   const base64Data = dataUrl.replace(/^data:image\/png;base64,/, '');
@@ -215,7 +221,10 @@ ipcMain.on('show-desktop-lyric-menu', (event) => {
           type: 'radio' as const,
           checked: !LYRIC_COLORS.some(c => c.value === currentLyricColor),
           click: () => {
-            if (win) win.show();
+            if (win) {
+              win.show();
+              win.webContents.send('switch-tab', 'settings');
+            }
           }
         }
       ]
@@ -383,7 +392,10 @@ function updateTrayMenu() {
           type: 'radio' as const,
           checked: !LYRIC_COLORS.some(c => c.value === currentLyricColor),
           click: () => {
-            if (win) win.show();
+            if (win) {
+              win.show();
+              win.webContents.send('switch-tab', 'settings');
+            }
           }
         }
       ]
