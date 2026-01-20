@@ -34,12 +34,14 @@ export const THEME_DEFAULTS: Record<string, ThemeConfig> = {
   },
 };
 
-export type AspectRatioType = 'portrait' | 'square' | 'landscape';
+export type AspectRatioType = 'portrait' | 'landscape_4_3' | 'square' | 'landscape' | 'mobile_wallpaper';
 
 export const ASPECT_RATIOS: Record<AspectRatioType, { label: string; width: number; height: number }> = {
-  portrait: { label: '3:4 竖版', width: 600 * SCALE, height: 800 * SCALE }, 
+  portrait: { label: '3:4 竖版', width: 600 * SCALE, height: 800 * SCALE },
+  landscape_4_3: { label: '4:3 横版', width: 800 * SCALE, height: 600 * SCALE },
   square: { label: '1:1 方图', width: 1200, height: 1200 },   
-  landscape: { label: '16:9 横版', width: 1600, height: 900 } 
+  landscape: { label: '16:9 横版', width: 1600, height: 900 },
+  mobile_wallpaper: { label: '9:16 壁纸', width: 900, height: 1600 }
 };
 
 export const FONT_OPTIONS = [
