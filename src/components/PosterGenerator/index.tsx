@@ -73,6 +73,7 @@ const PosterGenerator: React.FC = () => {
   const [lineHeight, setLineHeight] = useState(THEME_DEFAULTS.classic.lineHeight);
   const [fontFace, setFontFace] = useState(THEME_DEFAULTS.classic.fontFace);
   const [textOffsetY, setTextOffsetY] = useState(0);
+  const [textOffsetX, setTextOffsetX] = useState(0); // Add horizontal offset
   const [showWatermark, setShowWatermark] = useState(true);
   const [mergeSpaces, setMergeSpaces] = useState(false);
   
@@ -241,6 +242,7 @@ const PosterGenerator: React.FC = () => {
         imageFilter,
         lyric,
         textOffsetY,
+        textOffsetX,
         showWatermark,
         getDrawingArea,
         mergeSpaces
@@ -251,7 +253,7 @@ const PosterGenerator: React.FC = () => {
     else if (theme === 'cinema') drawCinema(drawParams);
     else if (theme === 'vertical') drawVertical(drawParams);
     
-  }, [theme, ratio, lyric, fontSize, lineHeight, fontFace, textOffsetY, showWatermark, img, transform, imageFilter, getDrawingArea, mergeSpaces]);
+  }, [theme, ratio, lyric, fontSize, lineHeight, fontFace, textOffsetY, textOffsetX, showWatermark, img, transform, imageFilter, getDrawingArea, mergeSpaces]);
 
   useEffect(() => {
     draw();
@@ -293,6 +295,7 @@ const PosterGenerator: React.FC = () => {
     setLineHeight(defaults.lineHeight);
     setFontFace(defaults.fontFace); 
     setTextOffsetY(0);
+    setTextOffsetX(0);
     if (img) fitImageToLayout(img, newTheme, ratio);
   };
   
@@ -336,6 +339,7 @@ const PosterGenerator: React.FC = () => {
     setLineHeight(defaults.lineHeight);
     setFontFace(defaults.fontFace);
     setTextOffsetY(0);
+    setTextOffsetX(0);
   };
 
   const isMac = (window as any).ipcRenderer?.platform === 'darwin';
@@ -440,6 +444,8 @@ const PosterGenerator: React.FC = () => {
                   setLineHeight={setLineHeight}
                   textOffsetY={textOffsetY}
                   setTextOffsetY={setTextOffsetY}
+                  textOffsetX={textOffsetX}
+                  setTextOffsetX={setTextOffsetX}
                   resetTypography={resetTypography}
                   mergeSpaces={mergeSpaces}
                   setMergeSpaces={setMergeSpaces}

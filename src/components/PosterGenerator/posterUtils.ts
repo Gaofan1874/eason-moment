@@ -75,13 +75,14 @@ interface DrawParams {
   imageFilter: string;
   lyric: LyricData;
   textOffsetY: number;
+  textOffsetX: number; // Horizontal offset
   showWatermark: boolean;
   getDrawingArea: (theme: string, w: number, h: number) => { x: number, y: number, w: number, h: number };
   mergeSpaces?: boolean;
 }
 
 export const drawClassic = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, mergeSpaces
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, textOffsetX, showWatermark, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#2d2d2d';
   ctx.fillRect(0, 0, w, h);
@@ -107,7 +108,7 @@ export const drawClassic = ({
 
   const startY = (h * 0.4) + textOffsetY;
   const maxWidth = w * 0.8;
-  wrapText(ctx, lyric.content, w / 2, startY, maxWidth, config.lineHeight, mergeSpaces);
+  wrapText(ctx, lyric.content, w / 2 + textOffsetX, startY, maxWidth, config.lineHeight, mergeSpaces);
 
   ctx.shadowColor = 'transparent';
   ctx.fillStyle = '#dddddd';
@@ -126,7 +127,7 @@ export const drawClassic = ({
 };
 
 export const drawPolaroid = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea, mergeSpaces
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, textOffsetX, showWatermark, getDrawingArea, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#fdfdfd';
   ctx.fillRect(0, 0, w, h);
@@ -155,7 +156,7 @@ export const drawPolaroid = ({
   ctx.textBaseline = 'top';
   ctx.font = `normal ${config.fontSize}px ${config.fontFace}, serif`;
 
-  const linesDrawn = wrapText(ctx, lyric.content, w / 2, textStartY, w * 0.8, config.lineHeight, mergeSpaces);
+  const linesDrawn = wrapText(ctx, lyric.content, w / 2 + textOffsetX, textStartY, w * 0.8, config.lineHeight, mergeSpaces);
 
   ctx.fillStyle = '#777777';
   ctx.textAlign = 'right';
@@ -176,7 +177,7 @@ export const drawPolaroid = ({
 };
 
 export const drawCinema = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, getDrawingArea, mergeSpaces
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, textOffsetX, showWatermark, getDrawingArea, mergeSpaces
 }: DrawParams) => {
   ctx.fillStyle = '#000000';
   ctx.fillRect(0, 0, w, h);
@@ -236,8 +237,8 @@ export const drawCinema = ({
   let currentY = area.y + area.h - (30 * SCALE) + textOffsetY;
   
   for (let i = lines.length - 1; i >= 0; i--) {
-    ctx.strokeText(lines[i], w / 2, currentY);
-    ctx.fillText(lines[i], w / 2, currentY);
+    ctx.strokeText(lines[i], w / 2 + textOffsetX, currentY);
+    ctx.fillText(lines[i], w / 2 + textOffsetX, currentY);
     currentY -= config.lineHeight;
   }
 
@@ -256,7 +257,7 @@ export const drawCinema = ({
 };
 
 export const drawVertical = ({
-  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, mergeSpaces
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, textOffsetX, showWatermark, mergeSpaces
 }: DrawParams) => {
   // 1. Background (Black)
   ctx.fillStyle = '#000000';
@@ -326,7 +327,7 @@ export const drawVertical = ({
     : lyric.content.split(/[\n\r\s]+/);
   
   // Start from right side
-  let currentX = w - (100 * SCALE); 
+  let currentX = w - (100 * SCALE) + textOffsetX; 
   const baseStartY = h * 0.22 + textOffsetY;
   
   lines.forEach((line) => {

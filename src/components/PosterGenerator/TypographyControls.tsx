@@ -1,5 +1,4 @@
-import React from 'react';
-import { Settings, RefreshCw } from 'lucide-react';
+import { Settings, RotateCcw } from 'lucide-react';
 
 interface TypographyControlsProps {
   fontSize: number;
@@ -8,6 +7,8 @@ interface TypographyControlsProps {
   setLineHeight: (height: number) => void;
   textOffsetY: number;
   setTextOffsetY: (offset: number) => void;
+  textOffsetX: number;
+  setTextOffsetX: (offset: number) => void;
   resetTypography: () => void;
   mergeSpaces: boolean;
   setMergeSpaces: (merge: boolean) => void;
@@ -20,6 +21,8 @@ const TypographyControls: React.FC<TypographyControlsProps> = ({
   setLineHeight,
   textOffsetY,
   setTextOffsetY,
+  textOffsetX,
+  setTextOffsetX,
   resetTypography,
   mergeSpaces,
   setMergeSpaces,
@@ -31,7 +34,7 @@ const TypographyControls: React.FC<TypographyControlsProps> = ({
           <Settings size={14} /> 排版样式
         </span>
         <button className="btn-icon" onClick={resetTypography} title="重置排版参数">
-          <RefreshCw size={14} />
+          <RotateCcw size={14} />
         </button>
       </div>
 
@@ -83,6 +86,20 @@ const TypographyControls: React.FC<TypographyControlsProps> = ({
           max={600}
           value={textOffsetY}
           onChange={(e) => setTextOffsetY(parseInt(e.target.value))}
+        />
+      </div>
+
+      <div>
+        <div className="label-row" style={{ marginBottom: 4 }}>
+          <span className="control-value">水平偏移</span>
+          <span className="control-value">{textOffsetX}</span>
+        </div>
+        <input
+          type="range"
+          min={-1500}
+          max={1500}
+          value={textOffsetX}
+          onChange={(e) => setTextOffsetX(parseInt(e.target.value))}
         />
       </div>
     </div>
