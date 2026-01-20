@@ -374,7 +374,7 @@ const PosterGenerator: React.FC = () => {
             <div className="loading-overlay">
               <img
                 src={loadingIcon}
-                className={`loading-icon ${animationType === 'rotate' ? 'rotate' : ''}`}
+                className={`loading-icon ${animationType}`}
                 alt="Loading"
               />
               <div className="loading-text">正在生成高清海报...</div>
