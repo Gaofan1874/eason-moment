@@ -3,7 +3,7 @@ import { Layers } from 'lucide-react';
 
 interface ThemeSelectorProps {
   theme: string;
-  onThemeChange: (theme: 'classic' | 'polaroid' | 'cinema') => void;
+  onThemeChange: (theme: 'classic' | 'polaroid' | 'cinema' | 'vertical') => void;
   getThemeLabel: (t: string) => string;
 }
 
@@ -16,7 +16,7 @@ const ThemeSelector: React.FC<ThemeSelectorProps> = ({ theme, onThemeChange, get
         </span>
       </div>
       <div className="theme-grid">
-        {(['classic', 'polaroid', 'cinema'] as const).map((t) => (
+        {(['classic', 'polaroid', 'cinema', 'vertical'] as const).map((t) => (
           <div
             key={t}
             onClick={() => onThemeChange(t)}

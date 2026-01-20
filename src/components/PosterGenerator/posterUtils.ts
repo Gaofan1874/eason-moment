@@ -254,3 +254,119 @@ export const drawCinema = ({
     ctx.fillText('P R E S E N T E D   B Y   E A S O N   M O M E N T', w / 2, h - (10 * SCALE));
   }
 };
+
+export const drawVertical = ({
+  ctx, w, h, config, img, transform, imageFilter, lyric, textOffsetY, showWatermark, mergeSpaces
+}: DrawParams) => {
+  // 1. Background (Black)
+  ctx.fillStyle = '#000000';
+  ctx.fillRect(0, 0, w, h);
+
+  // 2. Image Layer
+  if (img) {
+    ctx.save();
+    ctx.filter = imageFilter;
+    ctx.translate(transform.x, transform.y);
+    ctx.scale(transform.scale, transform.scale);
+    ctx.drawImage(img, 0, 0);
+    ctx.restore();
+  }
+
+  // 3. Gradients (Overlay)
+  // Right gradient for vertical lyrics visibility
+  const gradientWidth = w * 0.5; // Cover half width to ensure readability
+  const rightGrad = ctx.createLinearGradient(w, 0, w - gradientWidth, 0);
+  rightGrad.addColorStop(0, 'rgba(0,0,0,0.85)');
+  rightGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = rightGrad;
+  ctx.fillRect(w - gradientWidth, 0, gradientWidth, h);
+
+  // Top gradient
+  const topGrad = ctx.createLinearGradient(0, 0, 0, h * 0.25);
+  topGrad.addColorStop(0, 'rgba(0,0,0,0.7)');
+  topGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = topGrad;
+  ctx.fillRect(0, 0, w, h * 0.25);
+
+  // Bottom gradient
+  const bGrad = ctx.createLinearGradient(0, h, 0, h - (h * 0.25));
+  bGrad.addColorStop(0, 'rgba(0,0,0,0.8)');
+  bGrad.addColorStop(1, 'rgba(0,0,0,0)');
+  ctx.fillStyle = bGrad;
+  ctx.fillRect(0, h - (h * 0.25), w, h * 0.25);
+
+  // 4. Header: Song Title
+  ctx.fillStyle = '#ffffff';
+  ctx.textAlign = 'left';
+  ctx.textBaseline = 'top';
+  // Use Armor Mincho for consistency
+  ctx.font = `bold ${22 * SCALE}px "Armor Mincho", serif`; 
+  
+  ctx.shadowColor = 'rgba(0,0,0,0.8)';
+  ctx.shadowBlur = 4;
+  ctx.shadowOffsetX = 2;
+  ctx.shadowOffsetY = 2;
+  
+  const headerX = 40 * SCALE;
+  const headerY = 40 * SCALE;
+  ctx.fillText(`陈奕迅《${lyric.song}》`, headerX, headerY);
+
+  // 5. Vertical Lyrics
+  ctx.font = `${config.fontSize}px ${config.fontFace}`;
+  ctx.fillStyle = config.color;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'top'; // Changed from middle to top for better top alignment
+  
+  ctx.shadowBlur = 4;
+  ctx.shadowColor = 'rgba(0,0,0,0.9)';
+
+  // Determine split logic based on mergeSpaces
+  const lines = mergeSpaces 
+    ? lyric.content.split(/\r?\n/) 
+    : lyric.content.split(/[\n\r\s]+/);
+  
+  // Start from right side
+  let currentX = w - (100 * SCALE); 
+  const baseStartY = h * 0.22 + textOffsetY;
+  
+  lines.forEach((line) => {
+    if (!line.trim() && !mergeSpaces) return; 
+
+    // Removed staggerOffset to ensure "顶部对齐" (Top alignment)
+    let currentY = baseStartY;
+    
+    const chars = line.split('');
+    chars.forEach(char => {
+        ctx.fillText(char, currentX, currentY);
+        // Vertical spacing: 1.1 times font size for better readability
+        currentY += config.fontSize * 1.1; 
+    });
+    
+    // Move left for next line: using lineHeight from config
+    currentX -= config.lineHeight;
+  });
+
+  // 6. Footer: Credits (Lyricist, Composer, Album)
+  ctx.shadowColor = 'transparent'; 
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'bottom';
+  ctx.font = `normal ${15 * SCALE}px "Armor Mincho", serif`;
+  ctx.fillStyle = '#dddddd';
+  
+  const footerY = h - (45 * SCALE);
+  const parts = [];
+  if (lyric.lyricist) parts.push(`词：${lyric.lyricist}`);
+  if (lyric.composer) parts.push(`曲：${lyric.composer}`);
+  if (lyric.album) parts.push(`专辑：《${lyric.album}》`);
+  
+  const footerText = parts.join('    '); // Use extra spaces as spacers
+  ctx.fillText(footerText, w / 2, footerY);
+
+  // 7. Watermark
+  if (showWatermark) {
+    ctx.textAlign = 'right';
+    ctx.font = `italic ${12 * SCALE}px "Times New Roman", serif`;
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
+    ctx.fillText('@Eason Moment', w - (30 * SCALE), h - (20 * SCALE));
+  }
+};

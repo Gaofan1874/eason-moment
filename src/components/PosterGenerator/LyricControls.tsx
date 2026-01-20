@@ -126,6 +126,50 @@ const LyricControls: React.FC<LyricControlsProps> = ({
         onChange={(e) => setLyric({ ...lyric, content: e.target.value })}
         placeholder="支持手动编辑歌词换行，仅对当前海报生效"
       />
+
+      <div className="lyric-metadata-grid" style={{ 
+        display: 'grid', 
+        gridTemplateColumns: '1fr 1fr', 
+        gap: '8px',
+        marginTop: '8px'
+      }}>
+        <div className="meta-input-group">
+          <input 
+            type="text" 
+            placeholder="歌曲名"
+            value={lyric.song}
+            onChange={(e) => setLyric({ ...lyric, song: e.target.value })}
+            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+          />
+        </div>
+        <div className="meta-input-group">
+          <input 
+            type="text" 
+            placeholder="专辑名"
+            value={lyric.album}
+            onChange={(e) => setLyric({ ...lyric, album: e.target.value })}
+            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+          />
+        </div>
+        <div className="meta-input-group">
+          <input 
+            type="text" 
+            placeholder="作词"
+            value={lyric.lyricist || ''}
+            onChange={(e) => setLyric({ ...lyric, lyricist: e.target.value })}
+            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+          />
+        </div>
+        <div className="meta-input-group">
+          <input 
+            type="text" 
+            placeholder="作曲"
+            value={lyric.composer || ''}
+            onChange={(e) => setLyric({ ...lyric, composer: e.target.value })}
+            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+          />
+        </div>
+      </div>
     </div>
   );
 };

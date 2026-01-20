@@ -26,6 +26,12 @@ export const THEME_DEFAULTS: Record<string, ThemeConfig> = {
     fontFace: 'sans-serif', 
     color: '#FFC90E' 
   },
+  vertical: {
+    fontSize: 40 * SCALE,
+    lineHeight: 70 * SCALE, // Distance between vertical columns
+    fontFace: '"Armor Mincho", serif',
+    color: '#FFFFFF'
+  },
 };
 
 export type AspectRatioType = 'portrait' | 'square' | 'landscape';
@@ -41,6 +47,7 @@ export const FONT_OPTIONS = [
   { label: '思源宋体', value: '"Noto Serif SC", serif' },
   { label: '马善政毛笔', value: '"Ma Shan Zheng", cursive' },
   { label: '站酷小薇', value: '"ZCOOL XiaoWei", serif' },
+  { label: '装甲明朝', value: '"Armor Mincho", serif' },
 ];
 
 export const FILTER_OPTIONS = [
@@ -56,4 +63,6 @@ export interface LyricData {
   content: string;
   song: string;
   album: string;
+  lyricist?: string;
+  composer?: string;
 }

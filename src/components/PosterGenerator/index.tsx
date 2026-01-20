@@ -11,7 +11,7 @@ import {
     LyricData,
     AspectRatioType
 } from './constants';
-import { drawCinema, drawClassic, drawPolaroid } from './posterUtils';
+import { drawCinema, drawClassic, drawPolaroid, drawVertical } from './posterUtils';
 import RatioSelector from './RatioSelector';
 import ThemeSelector from './ThemeSelector';
 import LyricControls from './LyricControls';
@@ -64,7 +64,7 @@ const PosterGenerator: React.FC = () => {
   // State
   const [activeTab, setActiveTab] = useState<TabType>('lyrics');
   const [appTheme, setAppTheme] = useState(savedAppTheme); // App Theme State
-  const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema'>('classic');
+  const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema' | 'vertical'>('classic');
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
   
@@ -249,6 +249,7 @@ const PosterGenerator: React.FC = () => {
     if (theme === 'classic') drawClassic(drawParams);
     else if (theme === 'polaroid') drawPolaroid(drawParams);
     else if (theme === 'cinema') drawCinema(drawParams);
+    else if (theme === 'vertical') drawVertical(drawParams);
     
   }, [theme, ratio, lyric, fontSize, lineHeight, fontFace, textOffsetY, showWatermark, img, transform, imageFilter, getDrawingArea, mergeSpaces]);
 
@@ -285,7 +286,7 @@ const PosterGenerator: React.FC = () => {
     setTransform((prev) => ({ ...prev, scale: prev.scale * delta }));
   };
 
-  const handleThemeChange = (newTheme: 'classic' | 'polaroid' | 'cinema') => {
+  const handleThemeChange = (newTheme: 'classic' | 'polaroid' | 'cinema' | 'vertical') => {
     setTheme(newTheme);
     const defaults = THEME_DEFAULTS[newTheme];
     setFontSize(defaults.fontSize);
@@ -324,6 +325,7 @@ const PosterGenerator: React.FC = () => {
       case 'classic': return '经典';
       case 'polaroid': return '拍立得';
       case 'cinema': return '电影感';
+      case 'vertical': return '文艺';
       default: return t;
     }
   };
