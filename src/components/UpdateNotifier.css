@@ -1,0 +1,75 @@
+.update-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 300px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border-radius: 8px;
+  padding: 16px;
+  z-index: 9999;
+  border: 1px solid rgba(0,0,0,0.1);
+  font-size: 13px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.update-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.update-text {
+  font-weight: 500;
+  color: #333;
+}
+
+.update-progress-bar {
+  height: 4px;
+  background: #eee;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.update-progress-fill {
+  height: 100%;
+  background: #0E5FAC;
+  transition: width 0.2s;
+}
+
+.update-restart-btn {
+  background: #0E5FAC;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+
+.update-restart-btn:hover {
+  background: #0b4d8e;
+}
+
+.update-close-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.update-close-btn:hover {
+  color: #666;
+}

@@ -7,6 +7,63 @@ import lyricsData from '../src/assets/lyrics.json'
 process.env.DIST = path.join(__dirname, '../dist')
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
 
+// ... (existing code)
+
+// --- Auto Update Logic ---
+function setupAutoUpdater() {
+  const { autoUpdater } = require('electron-updater');
+  autoUpdater.logger = console;
+  // @ts-ignore
+  autoUpdater.logger.transports.file.level = 'info';
+
+  autoUpdater.checkForUpdatesAndNotify();
+
+  autoUpdater.on('checking-for-update', () => {
+    win?.webContents.send('update-message', { type: 'checking', text: 'Checking for updates...' });
+  });
+
+  autoUpdater.on('update-available', (info: any) => {
+    win?.webContents.send('update-message', { type: 'available', text: 'Update available.', info });
+  });
+
+  autoUpdater.on('update-not-available', (info: any) => {
+    win?.webContents.send('update-message', { type: 'not-available', text: 'Update not available.', info });
+  });
+
+  autoUpdater.on('error', (err: any) => {
+    win?.webContents.send('update-message', { type: 'error', text: 'Error in auto-updater. ' + err });
+  });
+
+  autoUpdater.on('download-progress', (progressObj: any) => {
+    win?.webContents.send('update-message', { type: 'progress', progress: progressObj });
+  });
+
+  autoUpdater.on('update-downloaded', (info: any) => {
+    win?.webContents.send('update-message', { type: 'downloaded', text: 'Update downloaded', info });
+  });
+}
+
+// IPC listener for restarting the app
+ipcMain.on('restart_app', () => {
+  const { autoUpdater } = require('electron-updater');
+  autoUpdater.quitAndInstall();
+});
+
+// ... (existing code)
+
+app.whenReady().then(() => {
+  loadConfig();
+  createWindow();
+  createTray();
+  createLyricWindow();
+  
+  // Initialize Auto Updater
+  if (app.isPackaged) {
+    setupAutoUpdater();
+  }
+});
+process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
+
 let win: BrowserWindow | null;
 let tray: Tray | null;
 let lyricWin: BrowserWindow | null = null;
@@ -542,4 +599,9 @@ app.whenReady().then(() => {
   createWindow();
   createTray();
   createLyricWindow();
+  
+  // Initialize Auto Updater
+  if (app.isPackaged) {
+    setupAutoUpdater();
+  }
 });

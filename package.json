@@ -7,25 +7,32 @@
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "preview": "vite preview",
+    "test": "vitest",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\" \"electron/**/*.ts\""
   },
   "dependencies": {
+    "electron-updater": "^6.7.3",
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.292.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20.4.5",
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
     "@vitejs/plugin-react": "^4.0.3",
     "electron": "^28.3.3",
     "electron-builder": "^24.9.1",
+    "happy-dom": "^20.3.4",
+    "jsdom": "^27.4.0",
     "typescript": "^5.0.2",
     "vite": "^5.0.0",
     "vite-plugin-electron": "^0.28.2",
-    "vite-plugin-electron-renderer": "^0.14.5"
+    "vite-plugin-electron-renderer": "^0.14.5",
+    "vitest": "^1.6.1"
   },
   "build": {
     "appId": "com.gaofan.eason-moment",
@@ -38,10 +45,14 @@
     "mac": {
       "category": "public.app-category.music",
       "icon": "src/assets/eason_moment.icns",
-      "target": ["dmg"]
+      "target": [
+        "dmg"
+      ]
     },
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "src/assets/eason_moment.png"
     },
     "nsis": {
