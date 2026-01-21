@@ -1,5 +1,5 @@
 import { Maximize, RefreshCw } from 'lucide-react';
-import { ASPECT_RATIOS, AspectRatioType } from './constants';
+import { AspectRatioType } from './constants';
 
 interface RatioSelectorProps {
   ratio: AspectRatioType;
