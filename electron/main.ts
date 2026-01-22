@@ -51,18 +51,7 @@ ipcMain.on('restart_app', () => {
 
 // ... (existing code)
 
-app.whenReady().then(() => {
-  loadConfig();
-  createWindow();
-  createTray();
-  createLyricWindow();
-  
-  // Initialize Auto Updater
-  if (app.isPackaged) {
-    setupAutoUpdater();
-  }
-});
-process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
+
 
 let win: BrowserWindow | null;
 let tray: Tray | null;

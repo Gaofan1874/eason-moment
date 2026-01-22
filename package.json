@@ -2,6 +2,10 @@
   "name": "eason-moment",
   "version": "0.1.9",
   "description": "Eason Moment - Capture your mood with lyrics and posters.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gaofan1874/eason-moment.git"
+  },
   "main": "dist-electron/main.js",
   "scripts": {
     "dev": "vite",
@@ -47,21 +51,29 @@
       "icon": "src/assets/eason_moment.icns",
       "target": [
         "dmg"
+      ],
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "http://8.136.104.130:3000/download/mac"
+        }
       ]
     },
     "win": {
       "target": [
         "nsis"
       ],
-      "icon": "src/assets/eason_moment.png"
+      "icon": "src/assets/eason_moment.png",
+      "publish": [
+        {
+          "provider": "generic",
+          "url": "http://8.136.104.130:3000/download/win"
+        }
+      ]
     },
     "nsis": {
       "oneClick": false,
       "allowToChangeInstallationDirectory": true
-    },
-    "publish": {
-      "provider": "github",
-      "releaseType": "release"
     }
   }
 }
