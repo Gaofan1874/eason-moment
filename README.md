@@ -4,7 +4,7 @@
 
 ---
 **GitHub**: [Gaofan1874/eason-moment](https://github.com/Gaofan1874/eason-moment)
-**版本**: 0.1.7
+**版本**: 0.1.9
 **作者**: Gaofan & Jules
 
 ---
