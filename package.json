@@ -55,7 +55,10 @@
       "publish": [
         {
           "provider": "generic",
-          "url": "http://8.136.104.130:3000/download/mac"
+          "url": "https://easonlab.faygift.com/api/download/mac"
+        },
+        {
+          "provider": "github"
         }
       ]
     },
@@ -67,7 +70,10 @@
       "publish": [
         {
           "provider": "generic",
-          "url": "http://8.136.104.130:3000/download/win"
+          "url": "https://easonlab.faygift.com/api/download/win"
+        },
+        {
+          "provider": "github"
         }
       ]
     },
