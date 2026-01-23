@@ -33,6 +33,7 @@
     "electron-builder": "^24.9.1",
     "happy-dom": "^20.3.4",
     "jsdom": "^27.4.0",
+    "opencc-js": "^1.0.5",
     "typescript": "^5.0.2",
     "vite": "^5.0.0",
     "vite-plugin-electron": "^0.28.2",
