@@ -68,6 +68,14 @@ const PosterGenerator: React.FC = () => {
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
   
+  // Helper to update lyric state and sync with main process (Desktop Lyric)
+  const updateLyricAndSync = (newLyric: LyricData) => {
+    setLyric(newLyric);
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('set-current-lyric', newLyric);
+    }
+  };
+  
   // Appearance State
   const [fontSize, setFontSize] = useState(THEME_DEFAULTS.classic.fontSize);
   const [lineHeight, setLineHeight] = useState(THEME_DEFAULTS.classic.lineHeight);
@@ -169,16 +177,6 @@ const PosterGenerator: React.FC = () => {
         fitImageToLayout(img, theme, ratio);
     }
   }, [ratio, theme]); 
-
-  const handleRandomLyric = () => {
-    const randomIndex = Math.floor(Math.random() * lyricsData.length);
-    const randomLyric = lyricsData[randomIndex];
-    setLyric({
-      content: randomLyric.content,
-      song: randomLyric.song,
-      album: randomLyric.album,
-    });
-  };
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -422,9 +420,18 @@ const PosterGenerator: React.FC = () => {
             <Section title="歌词与灵感">
               <LyricControls 
                 lyric={lyric} 
-                setLyric={setLyric} 
-                handleRandomLyric={handleRandomLyric} 
+                setLyric={updateLyricAndSync} 
               />
+              <div className="control-group" style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border-color)' }}>
+                <label className="checkbox-wrapper">
+                  <input
+                    type="checkbox"
+                    checked={mergeSpaces}
+                    onChange={(e) => setMergeSpaces(e.target.checked)}
+                  />
+                  <span className="control-value" style={{ fontSize: '12px' }}>紧凑模式 (自动压缩空格换行)</span>
+                </label>
+              </div>
             </Section>
           )}
 
@@ -447,8 +454,6 @@ const PosterGenerator: React.FC = () => {
                   textOffsetX={textOffsetX}
                   setTextOffsetX={setTextOffsetX}
                   resetTypography={resetTypography}
-                  mergeSpaces={mergeSpaces}
-                  setMergeSpaces={setMergeSpaces}
                 />
               </Section>
             </>

@@ -185,6 +185,24 @@ ipcMain.on('get-current-lyric', (event) => {
   }
 })
 
+ipcMain.on('set-current-lyric', (_event, newLyric: Lyric) => {
+  currentLyric = newLyric;
+  // Sync to Lyric Window if open
+  if (lyricWin) {
+    lyricWin.webContents.send('update-lyric', currentLyric);
+  }
+  // Update Tray ToolTip
+  if (tray) {
+    const cleanContent = currentLyric.content.replace(/\s+/g, ' ');
+    const displayTitle = `  ${cleanContent.substring(0, 15)}${cleanContent.length > 15 ? '...' : ''}`;
+    if (process.platform === 'darwin') {
+      tray.setTitle(displayTitle);
+    }
+    tray.setToolTip(`${currentLyric.content}\n—— ${currentLyric.song} · ${currentLyric.album}`);
+  }
+  updateTrayMenu();
+});
+
 ipcMain.on('update-desktop-lyric-style', (_event, style: { color: string }) => {
   currentLyricColor = style.color;
   saveConfig();

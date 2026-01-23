@@ -67,4 +67,7 @@ export interface LyricData {
   album: string;
   lyricist?: string;
   composer?: string;
+  contentTraditional?: string;
+  songTraditional?: string;
+  albumTraditional?: string;
 }

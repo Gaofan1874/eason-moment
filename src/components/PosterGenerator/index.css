@@ -336,8 +336,8 @@ html,
 .theme-card {
   padding: 8px 4px;
   border-radius: var(--radius-md);
-  background: white;
-  border: 1px solid var(--sidebar-border);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
   box-shadow: var(--shadow-sm);
   cursor: pointer;
   text-align: center;
@@ -347,7 +347,7 @@ html,
 }
 
 .theme-card:hover {
-  border-color: #d1d1d6;
+  border-color: var(--color-primary);
   transform: translateY(-1px);
 }
 
@@ -360,13 +360,13 @@ html,
 
 textarea.lyric-input {
   width: 100%;
-  border: 1px solid transparent;
+  border: 1px solid var(--input-border);
   border-radius: var(--radius-md);
   padding: 12px;
   font-size: 13px;
   line-height: 1.5;
   resize: none;
-  background: white;
+  background: var(--input-bg);
   color: var(--text-primary);
   font-family: inherit;
   transition: all 0.2s;
@@ -376,7 +376,29 @@ textarea.lyric-input {
 
 textarea.lyric-input:focus {
   outline: none;
-  box-shadow: 0 0 0 2px var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.meta-input {
+  width: 100%;
+  font-size: 11px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-primary);
+  transition: all 0.2s;
+}
+
+.meta-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px var(--accent-light);
+}
+
+.meta-input::placeholder {
+  color: var(--text-tertiary);
 }
 
 /* Sliders */
@@ -539,11 +561,11 @@ input[type='range']:focus::-webkit-slider-runnable-track {
 .search-input-container {
   display: flex;
   align-items: center;
-  background: white;
+  background: var(--input-bg);
   border-radius: var(--radius-md);
   padding: 8px 10px;
   box-shadow: var(--shadow-sm);
-  border: 1px solid transparent;
+  border: 1px solid var(--input-border);
   transition: all 0.2s;
 }
 
@@ -594,12 +616,12 @@ input[type='range']:focus::-webkit-slider-runnable-track {
   left: 0;
   right: 0;
   margin-top: 6px;
-  background: white;
+  background: var(--bg-surface);
   border-radius: var(--radius-md);
   box-shadow: 0 4px 20px rgba(0,0,0,0.12);
   max-height: 240px;
   overflow-y: auto;
-  border: 1px solid rgba(0,0,0,0.06);
+  border: 1px solid var(--border-color);
   z-index: 1000;
 }
 

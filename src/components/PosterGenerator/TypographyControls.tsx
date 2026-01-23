@@ -10,8 +10,6 @@ interface TypographyControlsProps {
   textOffsetX: number;
   setTextOffsetX: (offset: number) => void;
   resetTypography: () => void;
-  mergeSpaces: boolean;
-  setMergeSpaces: (merge: boolean) => void;
 }
 
 const TypographyControls: React.FC<TypographyControlsProps> = ({
@@ -24,8 +22,6 @@ const TypographyControls: React.FC<TypographyControlsProps> = ({
   textOffsetX,
   setTextOffsetX,
   resetTypography,
-  mergeSpaces,
-  setMergeSpaces,
 }) => {
   return (
     <div className="control-group">
@@ -37,15 +33,6 @@ const TypographyControls: React.FC<TypographyControlsProps> = ({
           <RotateCcw size={14} />
         </button>
       </div>
-
-      <label className="checkbox-wrapper" style={{ marginBottom: 12 }}>
-        <input
-          type="checkbox"
-          checked={mergeSpaces}
-          onChange={(e) => setMergeSpaces(e.target.checked)}
-        />
-        <span className="control-value">紧凑模式 (空格不换行)</span>
-      </label>
 
       <div>
         <div className="label-row" style={{ marginBottom: 4 }}>

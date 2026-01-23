@@ -1,9 +1,12 @@
 [
   {
     "id": 1,
-    "content": "若你喜歡怪人 其實我很美",
+    "content": "若你喜欢怪人 其实我很美",
+    "contentTraditional": "若你喜歡怪人 其實我很美",
     "song": "打回原形",
+    "songTraditional": "打回原形",
     "album": "Third Encounter",
+    "albumTraditional": "Third Encounter",
     "tags": [
       "healing",
       "sad"
@@ -12,9 +15,12 @@
   },
   {
     "id": 2,
-    "content": "閉起雙眼你最掛念誰 眼睛張開身邊竟是誰",
-    "song": "人來人往",
+    "content": "闭起双眼你最挂念谁 眼睛张开身边竟是谁",
+    "contentTraditional": "閉起雙眼你最掛念誰 眼睛張開身邊竟是誰",
+    "song": "人来人往",
+    "songTraditional": "人來人往",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "sad"
@@ -23,9 +29,12 @@
   },
   {
     "id": 4,
-    "content": "頑童大了別再追問 可以任我走怎麼到頭來又隨着大隊走",
+    "content": "顽童大了别再追问 可以任我走怎么到头来又随着大队走",
+    "contentTraditional": "頑童大了別再追問 可以任我走怎麼到頭來又隨着大隊走",
     "song": "任我行",
+    "songTraditional": "任我行",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "healing",
       "philosophy"
@@ -34,9 +43,12 @@
   },
   {
     "id": 6,
-    "content": "勞力是無止境 活着多好不需要靠物證",
-    "song": "陀飛輪",
+    "content": "劳力是无止境 活着多好不需要靠物证",
+    "contentTraditional": "勞力是無止境 活着多好不需要靠物證",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "healing",
       "philosophy"
@@ -45,9 +57,12 @@
   },
   {
     "id": 7,
-    "content": "幸運兒並不多 若然未當過就知我為何",
-    "song": "浮誇",
+    "content": "幸运儿并不多 若然未当过就知我为何",
+    "contentTraditional": "幸運兒並不多 若然未當過就知我為何",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -56,9 +71,12 @@
   },
   {
     "id": 8,
-    "content": "誰人又相信一世一生這膚淺對白",
+    "content": "谁人又相信一世一生这肤浅对白",
+    "contentTraditional": "誰人又相信一世一生這膚淺對白",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "classic",
       "sad"
@@ -67,9 +85,12 @@
   },
   {
     "id": 10,
-    "content": "開始時捱一些苦 栽種絕處的花",
+    "content": "开始时捱一些苦 栽种绝处的花",
+    "contentTraditional": "開始時捱一些苦 栽種絕處的花",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "healing",
       "philosophy"
@@ -78,9 +99,12 @@
   },
   {
     "id": 11,
-    "content": "其實我寧願你不那麼好 得不到也好",
-    "song": "一切還好",
+    "content": "其实我宁愿你不那么好 得不到也好",
+    "contentTraditional": "其實我寧願你不那麼好 得不到也好",
+    "song": "一切还好",
+    "songTraditional": "一切還好",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "sad"
     ],
@@ -88,9 +112,12 @@
   },
   {
     "id": 22,
-    "content": "在有生的瞬間能遇到你 竟花光我所有運氣",
+    "content": "在有生的瞬间能遇到你 竟花光我所有运气",
+    "contentTraditional": "在有生的瞬間能遇到你 竟花光我所有運氣",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "love",
@@ -100,9 +127,12 @@
   },
   {
     "id": 23,
-    "content": "明年今日 未見你一面 誰捨得改變",
+    "content": "明年今日 未见你一面 谁舍得改变",
+    "contentTraditional": "明年今日 未見你一面 誰捨得改變",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "sad"
@@ -111,9 +141,12 @@
   },
   {
     "id": 24,
-    "content": "人總需要勇敢生存 我還是重新許願",
+    "content": "人总需要勇敢生存 我还是重新许愿",
+    "contentTraditional": "人總需要勇敢生存 我還是重新許願",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "healing",
       "power"
@@ -122,9 +155,12 @@
   },
   {
     "id": 25,
-    "content": "我要穩穩的幸福 能用雙手去碰觸",
-    "song": "穩穩的幸福",
+    "content": "我要稳稳的幸福 能用双手去碰触",
+    "contentTraditional": "我要穩穩的幸福 能用雙手去碰觸",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "brightness",
       "healing",
@@ -134,9 +170,12 @@
   },
   {
     "id": 26,
-    "content": "每次伸手入懷中 能有你温度",
-    "song": "穩穩的幸福",
+    "content": "每次伸手入怀中 能有你温度",
+    "contentTraditional": "每次伸手入懷中 能有你温度",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "healing",
       "love"
@@ -145,9 +184,12 @@
   },
   {
     "id": 27,
-    "content": "能抵擋末日的殘酷 在不安的深夜能有個歸宿",
-    "song": "穩穩的幸福",
+    "content": "能抵挡末日的残酷 在不安的深夜能有个归宿",
+    "contentTraditional": "能抵擋末日的殘酷 在不安的深夜能有個歸宿",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "healing",
       "love",
@@ -157,9 +199,12 @@
   },
   {
     "id": 28,
-    "content": "何不把悲哀感覺假設是來自你虛構",
+    "content": "何不把悲哀感觉假设是来自你虚构",
+    "contentTraditional": "何不把悲哀感覺假設是來自你虛構",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "healing",
       "philosophy",
@@ -169,9 +214,12 @@
   },
   {
     "id": 29,
-    "content": "試管裏找不到它染污眼眸",
+    "content": "试管里找不到它染污眼眸",
+    "contentTraditional": "試管裏找不到它染污眼眸",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "philosophy"
     ],
@@ -179,9 +227,12 @@
   },
   {
     "id": 30,
-    "content": "要擁有必先懂得失去怎接受",
+    "content": "要拥有必先懂得失去怎接受",
+    "contentTraditional": "要擁有必先懂得失去怎接受",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "healing",
@@ -191,9 +242,12 @@
   },
   {
     "id": 31,
-    "content": "曾沿着雪路浪遊 為何為好事淚流",
+    "content": "曾沿着雪路浪游 为何为好事泪流",
+    "contentTraditional": "曾沿着雪路浪遊 為何為好事淚流",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "sad"
@@ -202,9 +256,12 @@
   },
   {
     "id": 32,
-    "content": "誰能憑愛意要富士山私有",
+    "content": "谁能凭爱意要富士山私有",
+    "contentTraditional": "誰能憑愛意要富士山私有",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "love",
@@ -214,9 +271,12 @@
   },
   {
     "id": 33,
-    "content": "回憶是抓不到的月光握緊就變黑暗",
-    "song": "愛情轉移",
+    "content": "回忆是抓不到的月光握紧就变黑暗",
+    "contentTraditional": "回憶是抓不到的月光握緊就變黑暗",
+    "song": "爱情转移",
+    "songTraditional": "愛情轉移",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "philosophy",
@@ -226,9 +286,12 @@
   },
   {
     "id": 34,
-    "content": "等虛假的背影消失於晴朗",
-    "song": "愛情轉移",
+    "content": "等虚假的背影消失于晴朗",
+    "contentTraditional": "等虛假的背影消失於晴朗",
+    "song": "爱情转移",
+    "songTraditional": "愛情轉移",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "sad"
     ],
@@ -236,9 +299,12 @@
   },
   {
     "id": 35,
-    "content": "陽光在身上流轉 等所有業障被原諒",
-    "song": "愛情轉移",
+    "content": "阳光在身上流转 等所有业障被原谅",
+    "contentTraditional": "陽光在身上流轉 等所有業障被原諒",
+    "song": "爱情转移",
+    "songTraditional": "愛情轉移",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "healing",
       "philosophy"
@@ -247,9 +313,12 @@
   },
   {
     "id": 36,
-    "content": "愛情不停站 想開往地老天荒 需要多勇敢",
-    "song": "愛情轉移",
+    "content": "爱情不停站 想开往地老天荒 需要多勇敢",
+    "contentTraditional": "愛情不停站 想開往地老天荒 需要多勇敢",
+    "song": "爱情转移",
+    "songTraditional": "愛情轉移",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "love",
       "philosophy",
@@ -259,9 +328,12 @@
   },
   {
     "id": 37,
-    "content": "感激車站裏 尚有月台能讓我們滿足到落淚",
-    "song": "人來人往",
+    "content": "感激车站里 尚有月台能让我们满足到落泪",
+    "contentTraditional": "感激車站裏 尚有月台能讓我們滿足到落淚",
+    "song": "人来人往",
+    "songTraditional": "人來人往",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "healing",
@@ -271,9 +343,12 @@
   },
   {
     "id": 38,
-    "content": "我已經相信 有些人我永遠不必等",
+    "content": "我已经相信 有些人我永远不必等",
+    "contentTraditional": "我已經相信 有些人我永遠不必等",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "反正是我",
+    "albumTraditional": "反正是我",
     "tags": [
       "classic",
       "love",
@@ -283,9 +358,12 @@
   },
   {
     "id": 39,
-    "content": "所以我明白 在燈火闌珊處為什麼會哭",
+    "content": "所以我明白 在灯火阑珊处为什么会哭",
+    "contentTraditional": "所以我明白 在燈火闌珊處為什麼會哭",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "反正是我",
+    "albumTraditional": "反正是我",
     "tags": [
       "classic",
       "sad"
@@ -294,9 +372,12 @@
   },
   {
     "id": 40,
-    "content": "我從來不説話因為我害怕沒有人回答",
-    "song": "讓我留在你身邊",
+    "content": "我从来不说话因为我害怕没有人回答",
+    "contentTraditional": "我從來不説話因為我害怕沒有人回答",
+    "song": "让我留在你身边",
+    "songTraditional": "讓我留在你身邊",
     "album": "让我留在你身边",
+    "albumTraditional": "让我留在你身边",
     "tags": [
       "healing",
       "sad"
@@ -305,9 +386,12 @@
   },
   {
     "id": 41,
-    "content": "我從來不掙扎因為我知道這世界太大",
-    "song": "讓我留在你身邊",
+    "content": "我从来不挣扎因为我知道这世界太大",
+    "contentTraditional": "我從來不掙扎因為我知道這世界太大",
+    "song": "让我留在你身边",
+    "songTraditional": "讓我留在你身邊",
     "album": "让我留在你身边",
+    "albumTraditional": "让我留在你身边",
     "tags": [
       "healing",
       "philosophy"
@@ -316,9 +400,12 @@
   },
   {
     "id": 42,
-    "content": "太多時間浪費 太多事要面對 太多已無所謂",
-    "song": "讓我留在你身邊",
+    "content": "太多时间浪费 太多事要面对 太多已无所谓",
+    "contentTraditional": "太多時間浪費 太多事要面對 太多已無所謂",
+    "song": "让我留在你身边",
+    "songTraditional": "讓我留在你身邊",
     "album": "让我留在你身边",
+    "albumTraditional": "让我留在你身边",
     "tags": [
       "healing",
       "philosophy"
@@ -327,9 +414,12 @@
   },
   {
     "id": 43,
-    "content": "不能後退的時候 不再彷徨的時候",
+    "content": "不能后退的时候 不再彷徨的时候",
+    "contentTraditional": "不能後退的時候 不再彷徨的時候",
     "song": "路一直都在",
+    "songTraditional": "路一直都在",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "healing",
       "power"
@@ -338,9 +428,12 @@
   },
   {
     "id": 44,
-    "content": "永遠向前 路一直都在",
+    "content": "永远向前 路一直都在",
+    "contentTraditional": "永遠向前 路一直都在",
     "song": "路一直都在",
+    "songTraditional": "路一直都在",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "brightness",
       "healing",
@@ -350,9 +443,12 @@
   },
   {
     "id": 45,
-    "content": "That's just life 尋找夢裏的未來",
+    "content": "That's just life 寻找梦里的未来",
+    "contentTraditional": "That's just life 尋找夢裏的未來",
     "song": "路一直都在",
+    "songTraditional": "路一直都在",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "philosophy",
       "power"
@@ -361,9 +457,12 @@
   },
   {
     "id": 46,
-    "content": "That's just life 笑對現實的無奈",
+    "content": "That's just life 笑对现实的无奈",
+    "contentTraditional": "That's just life 笑對現實的無奈",
     "song": "路一直都在",
+    "songTraditional": "路一直都在",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "healing",
       "philosophy",
@@ -373,9 +472,12 @@
   },
   {
     "id": 48,
-    "content": "是所有熱情會乾掉 一發現已經成熟了",
+    "content": "是所有热情会干掉 一发现已经成熟了",
+    "contentTraditional": "是所有熱情會乾掉 一發現已經成熟了",
     "song": "Crying In The Party",
+    "songTraditional": "Crying In The Party",
     "album": "Listen To Eason Chan",
+    "albumTraditional": "Listen To Eason Chan",
     "tags": [
       "philosophy",
       "sad"
@@ -384,9 +486,12 @@
   },
   {
     "id": 49,
-    "content": "若沉默似金 還談什麼戀愛",
+    "content": "若沉默似金 还谈什么恋爱",
+    "contentTraditional": "若沉默似金 還談什麼戀愛",
     "song": "Shall We Talk",
+    "songTraditional": "Shall We Talk",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "love",
       "philosophy"
@@ -395,9 +500,12 @@
   },
   {
     "id": 50,
-    "content": "寧願在發聲機器面前笑着忙",
+    "content": "宁愿在发声机器面前笑着忙",
+    "contentTraditional": "寧願在發聲機器面前笑着忙",
     "song": "Shall We Talk",
+    "songTraditional": "Shall We Talk",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "philosophy",
       "sad"
@@ -406,9 +514,12 @@
   },
   {
     "id": 51,
-    "content": "我説了所有的謊 你全都相信",
+    "content": "我说了所有的谎 你全都相信",
+    "contentTraditional": "我説了所有的謊 你全都相信",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "love",
       "sad"
@@ -417,9 +528,12 @@
   },
   {
     "id": 52,
-    "content": "簡單的我愛你 你卻老不信",
+    "content": "简单的我爱你 你却老不信",
+    "contentTraditional": "簡單的我愛你 你卻老不信",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "love",
       "sad"
@@ -428,9 +542,12 @@
   },
   {
     "id": 53,
-    "content": "説來實在嘲諷 我不太懂 偏渴望你懂",
-    "song": "紅玫瑰",
+    "content": "说来实在嘲讽 我不太懂 偏渴望你懂",
+    "contentTraditional": "説來實在嘲諷 我不太懂 偏渴望你懂",
+    "song": "红玫瑰",
+    "songTraditional": "紅玫瑰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "love",
       "philosophy",
@@ -440,9 +557,12 @@
   },
   {
     "id": 54,
-    "content": "是否幸福輕得太沉重 過度使用不癢不痛",
-    "song": "紅玫瑰",
+    "content": "是否幸福轻得太沉重 过度使用不痒不痛",
+    "contentTraditional": "是否幸福輕得太沉重 過度使用不癢不痛",
+    "song": "红玫瑰",
+    "songTraditional": "紅玫瑰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "philosophy",
       "sad"
@@ -451,9 +571,12 @@
   },
   {
     "id": 55,
-    "content": "曾愛惜的總要放手 難接手的又來等候",
-    "song": "我什麼都沒有",
+    "content": "曾爱惜的总要放手 难接手的又来等候",
+    "contentTraditional": "曾愛惜的總要放手 難接手的又來等候",
+    "song": "我什么都没有",
+    "songTraditional": "我什麼都沒有",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "philosophy",
       "sad"
@@ -462,9 +585,12 @@
   },
   {
     "id": 56,
-    "content": "如我愛你你愛的他都要走 同樣犯不着哀求",
-    "song": "我什麼都沒有",
+    "content": "如我爱你你爱的他都要走 同样犯不着哀求",
+    "contentTraditional": "如我愛你你愛的他都要走 同樣犯不着哀求",
+    "song": "我什么都没有",
+    "songTraditional": "我什麼都沒有",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "healing",
       "philosophy"
@@ -473,9 +599,12 @@
   },
   {
     "id": 57,
-    "content": "若無其事原來是最狠的報復",
+    "content": "若无其事原来是最狠的报复",
+    "contentTraditional": "若無其事原來是最狠的報復",
     "song": "想哭",
+    "songTraditional": "想哭",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "sad"
@@ -484,9 +613,12 @@
   },
   {
     "id": 58,
-    "content": "我才明白時間較分手還殘酷",
+    "content": "我才明白时间较分手还残酷",
+    "contentTraditional": "我才明白時間較分手還殘酷",
     "song": "想哭",
+    "songTraditional": "想哭",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "philosophy",
       "sad"
@@ -495,9 +627,12 @@
   },
   {
     "id": 59,
-    "content": "老朋友了再沒資格不滿足",
+    "content": "老朋友了再没资格不满足",
+    "contentTraditional": "老朋友了再沒資格不滿足",
     "song": "想哭",
+    "songTraditional": "想哭",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "sad"
     ],
@@ -505,9 +640,12 @@
   },
   {
     "id": 60,
-    "content": "為何舊知己 在最後變不到老友",
-    "song": "最佳損友",
+    "content": "为何旧知己 在最后变不到老友",
+    "contentTraditional": "為何舊知己 在最後變不到老友",
+    "song": "最佳损友",
+    "songTraditional": "最佳損友",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "classic",
       "healing",
@@ -517,9 +655,12 @@
   },
   {
     "id": 61,
-    "content": "來年陌生的 是昨日最親的某某",
-    "song": "最佳損友",
+    "content": "来年陌生的 是昨日最亲的某某",
+    "contentTraditional": "來年陌生的 是昨日最親的某某",
+    "song": "最佳损友",
+    "songTraditional": "最佳損友",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "classic",
       "sad"
@@ -528,9 +669,12 @@
   },
   {
     "id": 62,
-    "content": "我們約會我們再會 沒想到再沒有擁抱的機會",
-    "song": "你會不會",
+    "content": "我们约会我们再会 没想到再没有拥抱的机会",
+    "contentTraditional": "我們約會我們再會 沒想到再沒有擁抱的機會",
+    "song": "你会不会",
+    "songTraditional": "你會不會",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "love",
       "sad"
@@ -539,9 +683,12 @@
   },
   {
     "id": 63,
-    "content": "我們傷悲我們流淚 也只能流落到陌生人的嘴",
-    "song": "你會不會",
+    "content": "我们伤悲我们流泪 也只能流落到陌生人的嘴",
+    "contentTraditional": "我們傷悲我們流淚 也只能流落到陌生人的嘴",
+    "song": "你会不会",
+    "songTraditional": "你會不會",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "philosophy",
       "sad"
@@ -550,9 +697,12 @@
   },
   {
     "id": 64,
-    "content": "我們活在選擇的年代 選擇電視該看哪一台",
+    "content": "我们活在选择的年代 选择电视该看哪一台",
+    "contentTraditional": "我們活在選擇的年代 選擇電視該看哪一台",
     "song": "阿怪",
+    "songTraditional": "阿怪",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "classic",
       "philosophy"
@@ -561,9 +711,12 @@
   },
   {
     "id": 65,
-    "content": "選擇一個人值不值得愛 選擇離不開選擇生小孩",
+    "content": "选择一个人值不值得爱 选择离不开选择生小孩",
+    "contentTraditional": "選擇一個人值不值得愛 選擇離不開選擇生小孩",
     "song": "阿怪",
+    "songTraditional": "阿怪",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "classic",
       "philosophy"
@@ -572,9 +725,12 @@
   },
   {
     "id": 66,
-    "content": "我們很努力活得精彩 好讓看起來活得精彩",
+    "content": "我们很努力活得精彩 好让看起来活得精彩",
+    "contentTraditional": "我們很努力活得精彩 好讓看起來活得精彩",
     "song": "阿怪",
+    "songTraditional": "阿怪",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "classic",
       "philosophy",
@@ -584,9 +740,12 @@
   },
   {
     "id": 67,
-    "content": "難離難捨想抱緊些 茫茫人生好象荒野",
-    "song": "單車",
+    "content": "难离难舍想抱紧些 茫茫人生好像荒野",
+    "contentTraditional": "難離難捨想抱緊些 茫茫人生好象荒野",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "healing",
@@ -596,9 +755,12 @@
   },
   {
     "id": 68,
-    "content": "如孩兒能伏於爸爸的肩膊 哪怕遙遙長路多斜",
-    "song": "單車",
+    "content": "如孩儿能伏于爸爸的肩膊 哪怕遥遥长路多斜",
+    "contentTraditional": "如孩兒能伏於爸爸的肩膊 哪怕遙遙長路多斜",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "healing",
@@ -608,9 +770,12 @@
   },
   {
     "id": 69,
-    "content": "一時進一時退 保持安全範圍",
+    "content": "一时进一时退 保持安全范围",
+    "contentTraditional": "一時進一時退 保持安全範圍",
     "song": "兄妹",
+    "songTraditional": "兄妹",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "love",
       "sad"
@@ -619,9 +784,12 @@
   },
   {
     "id": 70,
-    "content": "享受被愛滋味 卻不讓你想入非非",
+    "content": "享受被爱滋味 却不让你想入非非",
+    "contentTraditional": "享受被愛滋味 卻不讓你想入非非",
     "song": "兄妹",
+    "songTraditional": "兄妹",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "love",
       "sad"
@@ -630,9 +798,12 @@
   },
   {
     "id": 71,
-    "content": "不能相愛的一對 親愛像兩兄妹",
+    "content": "不能相爱的一对 亲爱像两兄妹",
+    "contentTraditional": "不能相愛的一對 親愛像兩兄妹",
     "song": "兄妹",
+    "songTraditional": "兄妹",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "love",
@@ -642,9 +813,12 @@
   },
   {
     "id": 72,
-    "content": "每次退後又錯過你的世界一點",
-    "song": "心的距離",
+    "content": "每次退后又错过你的世界一点",
+    "contentTraditional": "每次退後又錯過你的世界一點",
+    "song": "心的距离",
+    "songTraditional": "心的距離",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "love",
       "sad"
@@ -653,9 +827,12 @@
   },
   {
     "id": 77,
-    "content": "願意在角落唱沙啞的歌 再大聲也都是給你",
-    "song": "不要説話",
+    "content": "愿意在角落唱沙哑的歌 再大声也都是给你",
+    "contentTraditional": "願意在角落唱沙啞的歌 再大聲也都是給你",
+    "song": "不要说话",
+    "songTraditional": "不要説話",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "classic",
       "love"
@@ -664,9 +841,12 @@
   },
   {
     "id": 86,
-    "content": "即使再見面 成熟地表演 不如不見",
-    "song": "不如不見",
+    "content": "即使再见面 成熟地表演 不如不见",
+    "contentTraditional": "即使再見面 成熟地表演 不如不見",
+    "song": "不如不见",
+    "songTraditional": "不如不見",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "healing",
@@ -676,9 +856,12 @@
   },
   {
     "id": 87,
-    "content": "愛上了 看見你 如何不懂謙卑",
-    "song": "歲月如歌",
+    "content": "爱上了 看见你 如何不懂谦卑",
+    "contentTraditional": "愛上了 看見你 如何不懂謙卑",
+    "song": "岁月如歌",
+    "songTraditional": "歲月如歌",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "classic",
       "love"
@@ -687,9 +870,12 @@
   },
   {
     "id": 88,
-    "content": "去講心中理想 不會俗氣",
-    "song": "歲月如歌",
+    "content": "去讲心中理想 不会俗气",
+    "contentTraditional": "去講心中理想 不會俗氣",
+    "song": "岁月如歌",
+    "songTraditional": "歲月如歌",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "love",
       "power"
@@ -698,9 +884,12 @@
   },
   {
     "id": 89,
-    "content": "也許一生太短陪着你",
-    "song": "歲月如歌",
+    "content": "也许一生太短陪着你",
+    "contentTraditional": "也許一生太短陪着你",
+    "song": "岁月如歌",
+    "songTraditional": "歲月如歌",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "love",
       "sad"
@@ -710,8 +899,11 @@
   {
     "id": 90,
     "content": "情感有若行李 仍然沉重 待我整理",
-    "song": "歲月如歌",
+    "contentTraditional": "情感有若行李 仍然沉重 待我整理",
+    "song": "岁月如歌",
+    "songTraditional": "歲月如歌",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "love",
       "philosophy",
@@ -721,9 +913,12 @@
   },
   {
     "id": 93,
-    "content": "然後斷線風箏會直飛天國",
-    "song": "一絲不掛",
+    "content": "然后断线风筝会直飞天国",
+    "contentTraditional": "然後斷線風箏會直飛天國",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "healing",
       "sad"
@@ -732,9 +927,12 @@
   },
   {
     "id": 95,
-    "content": "還有摩擦留下的圖案",
-    "song": "你的揹包",
+    "content": "还有摩擦留下的图案",
+    "contentTraditional": "還有摩擦留下的圖案",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "love",
@@ -744,9 +942,12 @@
   },
   {
     "id": 98,
-    "content": "這是個殘酷的喜劇",
-    "song": "婚禮的祝福",
+    "content": "这是个残酷的喜剧",
+    "contentTraditional": "這是個殘酷的喜劇",
+    "song": "婚礼的祝福",
+    "songTraditional": "婚禮的祝福",
     "album": "婚礼的祝福",
+    "albumTraditional": "婚礼的祝福",
     "tags": [
       "classic",
       "sad"
@@ -755,9 +956,12 @@
   },
   {
     "id": 101,
-    "content": "你的喜貼是我的請貼",
-    "song": "婚禮的祝福",
+    "content": "你的喜贴是我的请贴",
+    "contentTraditional": "你的喜貼是我的請貼",
+    "song": "婚礼的祝福",
+    "songTraditional": "婚禮的祝福",
     "album": "婚礼的祝福",
+    "albumTraditional": "婚礼的祝福",
     "tags": [
       "classic",
       "sad"
@@ -766,9 +970,12 @@
   },
   {
     "id": 102,
-    "content": "你邀我舉杯 我只能回敬我的崩潰",
-    "song": "婚禮的祝福",
+    "content": "你邀我举杯 我只能回敬我的崩溃",
+    "contentTraditional": "你邀我舉杯 我只能回敬我的崩潰",
+    "song": "婚礼的祝福",
+    "songTraditional": "婚禮的祝福",
     "album": "婚礼的祝福",
+    "albumTraditional": "婚礼的祝福",
     "tags": [
       "classic",
       "healing",
@@ -778,9 +985,12 @@
   },
   {
     "id": 103,
-    "content": "幸得艱辛的引路甜蜜不致太寡",
+    "content": "幸得艰辛的引路甜蜜不致太寡",
+    "contentTraditional": "幸得艱辛的引路甜蜜不致太寡",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "healing",
       "philosophy"
@@ -789,9 +999,12 @@
   },
   {
     "id": 104,
-    "content": "我最大的遺憾 是你的遺憾與我有關",
-    "song": "我們",
+    "content": "我最大的遗憾 是你的遗憾与我有关",
+    "contentTraditional": "我最大的遺憾 是你的遺憾與我有關",
+    "song": "我们",
+    "songTraditional": "我們",
     "album": "我们",
+    "albumTraditional": "我们",
     "tags": [
       "classic",
       "love",
@@ -801,9 +1014,12 @@
   },
   {
     "id": 105,
-    "content": "無論我身在何處 都不會迷途",
-    "song": "穩穩的幸福",
+    "content": "无论我身在何处 都不会迷途",
+    "contentTraditional": "無論我身在何處 都不會迷途",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "healing",
       "power"
@@ -812,9 +1028,12 @@
   },
   {
     "id": 106,
-    "content": "我是沉默的存在 不當你的世界 只作你肩膀",
-    "song": "陪你度過漫長歲月",
+    "content": "我是沉默的存在 不当你的世界 只作你肩膀",
+    "contentTraditional": "我是沉默的存在 不當你的世界 只作你肩膀",
+    "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "healing",
       "love"
@@ -823,9 +1042,12 @@
   },
   {
     "id": 115,
-    "content": "敢交出你會創出傳奇",
+    "content": "敢交出你会创出传奇",
+    "contentTraditional": "敢交出你會創出傳奇",
     "song": "今日",
+    "songTraditional": "今日",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "brightness",
       "healing",
@@ -835,9 +1057,12 @@
   },
   {
     "id": 116,
-    "content": "變幻人生是避無可避",
+    "content": "变幻人生是避无可避",
+    "contentTraditional": "變幻人生是避無可避",
     "song": "今日",
+    "songTraditional": "今日",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "philosophy",
       "power"
@@ -846,9 +1071,12 @@
   },
   {
     "id": 117,
-    "content": "卻沒人可驅使愛別離",
+    "content": "却没人可驱使爱别离",
+    "contentTraditional": "卻沒人可驅使愛別離",
     "song": "今日",
+    "songTraditional": "今日",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "love",
       "power"
@@ -857,9 +1085,12 @@
   },
   {
     "id": 129,
-    "content": "何不開心吹吹那號角",
+    "content": "何不开心吹吹那号角",
+    "contentTraditional": "何不開心吹吹那號角",
     "song": "大人",
+    "songTraditional": "大人",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "brightness",
       "healing",
@@ -869,9 +1100,12 @@
   },
   {
     "id": 132,
-    "content": "長路漫漫是如何走過 寧願讓樂極忘形的我",
-    "song": "我的快樂時代",
+    "content": "长路漫漫是如何走过 宁愿让乐极忘形的我",
+    "contentTraditional": "長路漫漫是如何走過 寧願讓樂極忘形的我",
+    "song": "我的快乐时代",
+    "songTraditional": "我的快樂時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "philosophy"
@@ -880,9 +1114,12 @@
   },
   {
     "id": 133,
-    "content": "我的朋友都説它舊得很好看 遺憾是它已與你無關",
-    "song": "你的揹包",
+    "content": "我的朋友都说它旧得很好看 遗憾是它已与你无关",
+    "contentTraditional": "我的朋友都説它舊得很好看 遺憾是它已與你無關",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory",
@@ -892,9 +1129,12 @@
   },
   {
     "id": 134,
-    "content": "從背後抱你的時候 期待的卻是她的面容",
-    "song": "紅玫瑰",
+    "content": "从背后抱你的时候 期待的却是她的面容",
+    "contentTraditional": "從背後抱你的時候 期待的卻是她的面容",
+    "song": "红玫瑰",
+    "songTraditional": "紅玫瑰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "philosophy",
       "sad"
@@ -903,9 +1143,12 @@
   },
   {
     "id": 135,
-    "content": "如果我聽歌可眼紅",
-    "song": "於心有愧",
+    "content": "如果我听歌可眼红",
+    "contentTraditional": "如果我聽歌可眼紅",
+    "song": "于心有愧",
+    "songTraditional": "於心有愧",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "classic",
       "memory",
@@ -915,9 +1158,12 @@
   },
   {
     "id": 136,
-    "content": "相信太難 不如沉默來得簡單",
-    "song": "不如承諾來得簡單",
+    "content": "相信太难 不如沉默来得简单",
+    "contentTraditional": "相信太難 不如沉默來得簡單",
+    "song": "不如承诺来得简单",
+    "songTraditional": "不如承諾來得簡單",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "philosophy",
       "sad"
@@ -926,9 +1172,12 @@
   },
   {
     "id": 137,
-    "content": "聽陰天説什麼 在昏暗中的我 想對着天講 説無論如何 陰天快樂",
-    "song": "陰天快樂",
+    "content": "听阴天说什么 在昏暗中的我 想对着天讲 说无论如何 阴天快乐",
+    "contentTraditional": "聽陰天説什麼 在昏暗中的我 想對着天講 説無論如何 陰天快樂",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "healing",
       "love"
@@ -937,9 +1186,12 @@
   },
   {
     "id": 139,
-    "content": "他能夠讓我感動 誰管他紅不紅 能夠生存就有恃無恐",
-    "song": "謝謝儂",
+    "content": "他能够让我感动 谁管他红不红 能够生存就有恃无恐",
+    "contentTraditional": "他能夠讓我感動 誰管他紅不紅 能夠生存就有恃無恐",
+    "song": "谢谢侬",
+    "songTraditional": "謝謝儂",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "philosophy",
       "power"
@@ -948,9 +1200,12 @@
   },
   {
     "id": 140,
-    "content": "應該怎麼愛 可惜書裏從沒記載 終於摸出來 但歲月卻不回來",
-    "song": "葡萄熟透時",
+    "content": "应该怎么爱 可惜书里从没记载 终于摸出来 但岁月却不回来",
+    "contentTraditional": "應該怎麼愛 可惜書裏從沒記載 終於摸出來 但歲月卻不回來",
+    "song": "葡萄熟透时",
+    "songTraditional": "葡萄熟透時",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "love",
       "philosophy"
@@ -959,9 +1214,12 @@
   },
   {
     "id": 141,
-    "content": "想起我的時候 你會不會 好像我一樣 不能睡",
+    "content": "想起我的时候 你会不会 好像我一样 不能睡",
+    "contentTraditional": "想起我的時候 你會不會 好像我一樣 不能睡",
     "song": "全世界失眠",
+    "songTraditional": "全世界失眠",
     "album": "反正是我",
+    "albumTraditional": "反正是我",
     "tags": [
       "love",
       "sad"
@@ -970,9 +1228,12 @@
   },
   {
     "id": 142,
-    "content": "當赤道留住雪花眼淚融掉細沙 你肯珍惜我嗎",
-    "song": "當這地球沒有花",
+    "content": "当赤道留住雪花眼泪融掉细沙 你肯珍惜我吗",
+    "contentTraditional": "當赤道留住雪花眼淚融掉細沙 你肯珍惜我嗎",
+    "song": "当这地球没有花",
+    "songTraditional": "當這地球沒有花",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "classic",
       "love"
@@ -981,9 +1242,12 @@
   },
   {
     "id": 143,
-    "content": "活像個孤獨患者自我拉扯 外向的孤獨患者有何不可",
-    "song": "孤獨患者",
+    "content": "活像个孤独患者自我拉扯 外向的孤独患者有何不可",
+    "contentTraditional": "活像個孤獨患者自我拉扯 外向的孤獨患者有何不可",
+    "song": "孤独患者",
+    "songTraditional": "孤獨患者",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "philosophy",
       "sad"
@@ -992,9 +1256,12 @@
   },
   {
     "id": 144,
-    "content": "不要着燈 能否先跟我摸黑吻一吻 如果我露出了真身可會被抱緊",
+    "content": "不要着灯 能否先跟我摸黑吻一吻 如果我露出了真身可会被抱紧",
+    "contentTraditional": "不要着燈 能否先跟我摸黑吻一吻 如果我露出了真身可會被抱緊",
     "song": "打回原形",
+    "songTraditional": "打回原形",
     "album": "Third Encounter",
+    "albumTraditional": "Third Encounter",
     "tags": [
       "love",
       "philosophy"
@@ -1003,9 +1270,12 @@
   },
   {
     "id": 145,
-    "content": "我們總坐在愛的對面總是任由它改變 彼此承受的極限",
-    "song": "對面",
+    "content": "我们总坐在爱的对面总是任由它改变 彼此承受的极限",
+    "contentTraditional": "我們總坐在愛的對面總是任由它改變 彼此承受的極限",
+    "song": "对面",
+    "songTraditional": "對面",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "love",
       "sad"
@@ -1014,9 +1284,12 @@
   },
   {
     "id": 147,
-    "content": "願赤裸相對時 能夠不傷你",
+    "content": "愿赤裸相对时 能够不伤你",
+    "contentTraditional": "願赤裸相對時 能夠不傷你",
     "song": "打回原形",
+    "songTraditional": "打回原形",
     "album": "Third Encounter",
+    "albumTraditional": "Third Encounter",
     "tags": [
       "healing",
       "love"
@@ -1025,9 +1298,12 @@
   },
   {
     "id": 148,
-    "content": "燒完美好青春換一個老伴",
-    "song": "愛情轉移",
+    "content": "烧完美好青春换一个老伴",
+    "contentTraditional": "燒完美好青春換一個老伴",
+    "song": "爱情转移",
+    "songTraditional": "愛情轉移",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "philosophy",
       "sad"
@@ -1036,9 +1312,12 @@
   },
   {
     "id": 149,
-    "content": "那年十八 母校舞會 站着如嘍囉",
-    "song": "浮誇",
+    "content": "那年十八 母校舞会 站着如喽啰",
+    "contentTraditional": "那年十八 母校舞會 站着如嘍囉",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "memory",
@@ -1048,9 +1327,12 @@
   },
   {
     "id": 150,
-    "content": "曾迷途才怕追不上滿街趕路人",
+    "content": "曾迷途才怕追不上满街赶路人",
+    "contentTraditional": "曾迷途才怕追不上滿街趕路人",
     "song": "任我行",
+    "songTraditional": "任我行",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "life",
       "philosophy"
@@ -1059,9 +1341,12 @@
   },
   {
     "id": 152,
-    "content": "原來愛情的世界很大 大的可以裝下一百種委屈",
+    "content": "原来爱情的世界很大 大的可以装下一百种委屈",
+    "contentTraditional": "原來愛情的世界很大 大的可以裝下一百種委屈",
     "song": "世界",
+    "songTraditional": "世界",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "love",
       "sad"
@@ -1070,9 +1355,12 @@
   },
   {
     "id": 156,
-    "content": "用多少天 用多少年的跌跌撞撞才找到終點",
+    "content": "用多少天 用多少年的跌跌撞撞才找到终点",
+    "contentTraditional": "用多少天 用多少年的跌跌撞撞才找到終點",
     "song": "多少",
+    "songTraditional": "多少",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "life",
       "philosophy"
@@ -1081,9 +1369,12 @@
   },
   {
     "id": 157,
-    "content": "用多少傷痛的心愛才不離開身邊",
+    "content": "用多少伤痛的心爱才不离开身边",
+    "contentTraditional": "用多少傷痛的心愛才不離開身邊",
     "song": "多少",
+    "songTraditional": "多少",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "love",
       "sad"
@@ -1092,9 +1383,12 @@
   },
   {
     "id": 159,
-    "content": "走不到的路就算了 我們永遠停在這了",
+    "content": "走不到的路就算了 我们永远停在这了",
+    "contentTraditional": "走不到的路就算了 我們永遠停在這了",
     "song": "可以了",
+    "songTraditional": "可以了",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "regret",
       "sad"
@@ -1103,9 +1397,12 @@
   },
   {
     "id": 160,
-    "content": "你何以始終不説話 儘管講出不快吧",
-    "song": "無條件",
+    "content": "你何以始终不说话 尽管讲出不快吧",
+    "contentTraditional": "你何以始終不説話 儘管講出不快吧",
+    "song": "无条件",
+    "songTraditional": "無條件",
     "album": "准备中",
+    "albumTraditional": "准备中",
     "tags": [
       "healing",
       "love"
@@ -1114,9 +1411,12 @@
   },
   {
     "id": 161,
-    "content": "因世上的至愛是不計較條件",
-    "song": "無條件",
+    "content": "因世上的至爱是不计较条件",
+    "contentTraditional": "因世上的至愛是不計較條件",
+    "song": "无条件",
+    "songTraditional": "無條件",
     "album": "准备中",
+    "albumTraditional": "准备中",
     "tags": [
       "classic",
       "love"
@@ -1125,9 +1425,12 @@
   },
   {
     "id": 165,
-    "content": "遊玩時開心一點不必掛念我 來好好給我活着就似最初",
+    "content": "游玩时开心一点不必挂念我 来好好给我活着就似最初",
+    "contentTraditional": "遊玩時開心一點不必掛念我 來好好給我活着就似最初",
     "song": "活着多好",
+    "songTraditional": "活着多好",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "healing",
       "philosophy"
@@ -1136,9 +1439,12 @@
   },
   {
     "id": 166,
-    "content": "仍然在呼吸都應該要慶賀",
+    "content": "仍然在呼吸都应该要庆贺",
+    "contentTraditional": "仍然在呼吸都應該要慶賀",
     "song": "活着多好",
+    "songTraditional": "活着多好",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "healing",
       "life"
@@ -1147,9 +1453,12 @@
   },
   {
     "id": 169,
-    "content": "渺小的控訴就是你想要的生活情調",
-    "song": "你給我聽好",
+    "content": "渺小的控诉就是你想要的生活情调",
+    "contentTraditional": "渺小的控訴就是你想要的生活情調",
+    "song": "你给我听好",
+    "songTraditional": "你給我聽好",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "life",
       "philosophy"
@@ -1158,9 +1467,12 @@
   },
   {
     "id": 170,
-    "content": "給你一張過去的CD 聽聽那時我們的愛情",
-    "song": "因為愛情",
+    "content": "给你一张过去的CD 听听那时我们的爱情",
+    "contentTraditional": "給你一張過去的CD 聽聽那時我們的愛情",
+    "song": "因为爱情",
+    "songTraditional": "因為愛情",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "classic",
       "love",
@@ -1170,9 +1482,12 @@
   },
   {
     "id": 171,
-    "content": "因為愛情不會輕易悲傷 所以一切都是幸福的模樣",
-    "song": "因為愛情",
+    "content": "因为爱情不会轻易悲伤 所以一切都是幸福的模样",
+    "contentTraditional": "因為愛情不會輕易悲傷 所以一切都是幸福的模樣",
+    "song": "因为爱情",
+    "songTraditional": "因為愛情",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "brightness",
       "healing",
@@ -1182,9 +1497,12 @@
   },
   {
     "id": 172,
-    "content": "從來未愛你綿綿 可惜我愛懷念",
-    "song": "綿綿",
+    "content": "从来未爱你绵绵 可惜我爱怀念",
+    "contentTraditional": "從來未愛你綿綿 可惜我愛懷念",
+    "song": "绵绵",
+    "songTraditional": "綿綿",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "classic",
       "memory",
@@ -1194,9 +1512,12 @@
   },
   {
     "id": 175,
-    "content": "情人若寂寥地出生在1874 剛剛早一百年一個世紀",
+    "content": "情人若寂寥地出生在1874 刚刚早一百年一个世纪",
+    "contentTraditional": "情人若寂寥地出生在1874 剛剛早一百年一個世紀",
     "song": "1874",
+    "songTraditional": "1874",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "crazy",
       "sad"
@@ -1205,9 +1526,12 @@
   },
   {
     "id": 176,
-    "content": "大預言話地球是大限將至 到今天還是未有事",
-    "song": "2001太空漫遊",
+    "content": "大预言话地球是大限将至 到今天还是未有事",
+    "contentTraditional": "大預言話地球是大限將至 到今天還是未有事",
+    "song": "2001太空漫游",
+    "songTraditional": "2001太空漫遊",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "life",
       "philosophy"
@@ -1216,9 +1540,12 @@
   },
   {
     "id": 178,
-    "content": "兩步以內遊羅馬 四步以外逛賭城",
-    "song": "隨意門",
+    "content": "两步以内游罗马 四步以外逛赌城",
+    "contentTraditional": "兩步以內遊羅馬 四步以外逛賭城",
+    "song": "随意门",
+    "songTraditional": "隨意門",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "brightness",
       "crazy",
@@ -1228,9 +1555,12 @@
   },
   {
     "id": 182,
-    "content": "為何喝過那咖啡杯無故失蹤了 家裏卻彷彿增添了數本新書",
-    "song": "防不勝防",
+    "content": "为何喝过那咖啡杯无故失踪了 家里却仿佛增添了数本新书",
+    "contentTraditional": "為何喝過那咖啡杯無故失蹤了 家裏卻彷彿增添了數本新書",
+    "song": "防不胜防",
+    "songTraditional": "防不勝防",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "crazy",
       "sad"
@@ -1239,9 +1569,12 @@
   },
   {
     "id": 183,
-    "content": "從你的套房帶走被單是我 你睡過的至少我都睡過",
-    "song": "防不勝防",
+    "content": "从你的套房带走被单是我 你睡过的至少我都睡过",
+    "contentTraditional": "從你的套房帶走被單是我 你睡過的至少我都睡過",
+    "song": "防不胜防",
+    "songTraditional": "防不勝防",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "crazy",
       "love"
@@ -1250,9 +1583,12 @@
   },
   {
     "id": 184,
-    "content": "留住温度速度温柔和憤怒 凝住今日怎樣好",
-    "song": "沙龍",
+    "content": "留住温度速度温柔和愤怒 凝住今日怎样好",
+    "contentTraditional": "留住温度速度温柔和憤怒 凝住今日怎樣好",
+    "song": "沙龙",
+    "songTraditional": "沙龍",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "classic",
       "philosophy"
@@ -1261,9 +1597,12 @@
   },
   {
     "id": 185,
-    "content": "捉緊生命濃度 坦白流露感情和態度",
-    "song": "沙龍",
+    "content": "捉紧生命浓度 坦白流露感情和态度",
+    "contentTraditional": "捉緊生命濃度 坦白流露感情和態度",
+    "song": "沙龙",
+    "songTraditional": "沙龍",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "life",
       "philosophy"
@@ -1272,9 +1611,12 @@
   },
   {
     "id": 188,
-    "content": "我找不到那個妳曾説的遠方",
-    "song": "誰來剪月光",
+    "content": "我找不到那个妳曾说的远方",
+    "contentTraditional": "我找不到那個妳曾説的遠方",
+    "song": "谁来剪月光",
+    "songTraditional": "誰來剪月光",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "classic",
       "memory",
@@ -1284,9 +1626,12 @@
   },
   {
     "id": 189,
-    "content": "世界亂的一塌糊塗可是能怎樣 偶爾抬起頭來還好有顆月亮可賞",
-    "song": "誰來剪月光",
+    "content": "世界乱的一塌糊涂可是能怎样 偶尔抬起头来还好有颗月亮可赏",
+    "contentTraditional": "世界亂的一塌糊塗可是能怎樣 偶爾抬起頭來還好有顆月亮可賞",
+    "song": "谁来剪月光",
+    "songTraditional": "誰來剪月光",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "healing",
       "philosophy"
@@ -1295,9 +1640,12 @@
   },
   {
     "id": 190,
-    "content": "若愛是但求開心我問 要不要求其傷心",
-    "song": "是但求其愛",
+    "content": "若爱是但求开心我问 要不要求其伤心",
+    "contentTraditional": "若愛是但求開心我問 要不要求其傷心",
+    "song": "是但求其爱",
+    "songTraditional": "是但求其愛",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "love",
       "philosophy"
@@ -1306,9 +1654,12 @@
   },
   {
     "id": 191,
-    "content": "論盡半生不懂愛 回頭沒有心計劃未來",
-    "song": "是但求其愛",
+    "content": "论尽半生不懂爱 回头没有心计划未来",
+    "contentTraditional": "論盡半生不懂愛 回頭沒有心計劃未來",
+    "song": "是但求其爱",
+    "songTraditional": "是但求其愛",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "philosophy",
       "regret",
@@ -1318,9 +1669,12 @@
   },
   {
     "id": 192,
-    "content": "明天開始要系咁咦 大家都不過是蚊滋",
-    "song": "塵大師",
+    "content": "明天开始要系咁咦 大家都不过是蚊滋",
+    "contentTraditional": "明天開始要系咁咦 大家都不過是蚊滋",
+    "song": "尘大师",
+    "songTraditional": "塵大師",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "healing",
       "philosophy"
@@ -1329,9 +1683,12 @@
   },
   {
     "id": 193,
-    "content": "我OK冇事 放鬆拗肚池 把千斤重化做全部薄過紙",
-    "song": "塵大師",
+    "content": "我OK冇事 放松拗肚池 把千斤重化做全部薄过纸",
+    "contentTraditional": "我OK冇事 放鬆拗肚池 把千斤重化做全部薄過紙",
+    "song": "尘大师",
+    "songTraditional": "塵大師",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "brightness",
       "healing"
@@ -1340,9 +1697,12 @@
   },
   {
     "id": 194,
-    "content": "落單的戀人最怕過節 只能獨自慶祝儘量喝醉",
-    "song": "聖誕結",
+    "content": "落单的恋人最怕过节 只能独自庆祝尽量喝醉",
+    "contentTraditional": "落單的戀人最怕過節 只能獨自慶祝儘量喝醉",
+    "song": "圣诞结",
+    "songTraditional": "聖誕結",
     "album": "七",
+    "albumTraditional": "七",
     "tags": [
       "lonely",
       "sad"
@@ -1352,8 +1712,11 @@
   {
     "id": 195,
     "content": "Merry Merry Christmas  Lonely Lonely Christmas",
-    "song": "聖誕結",
+    "contentTraditional": "Merry Merry Christmas  Lonely Lonely Christmas",
+    "song": "圣诞结",
+    "songTraditional": "聖誕結",
     "album": "七",
+    "albumTraditional": "七",
     "tags": [
       "classic",
       "sad"
@@ -1362,9 +1725,12 @@
   },
   {
     "id": 196,
-    "content": "誰又騎着那鹿車飛過 忘掉投下那禮物給我",
+    "content": "谁又骑着那鹿车飞过 忘掉投下那礼物给我",
+    "contentTraditional": "誰又騎着那鹿車飛過 忘掉投下那禮物給我",
     "song": "Lonely Christmas",
+    "songTraditional": "Lonely Christmas",
     "album": "4 A Change & Hits",
+    "albumTraditional": "4 A Change & Hits",
     "tags": [
       "lonely",
       "sad"
@@ -1373,9 +1739,12 @@
   },
   {
     "id": 197,
-    "content": "人浪中想真心告白 但你只想聽聽笑話",
+    "content": "人浪中想真心告白 但你只想听听笑话",
+    "contentTraditional": "人浪中想真心告白 但你只想聽聽笑話",
     "song": "Lonely Christmas",
+    "songTraditional": "Lonely Christmas",
     "album": "4 A Change & Hits",
+    "albumTraditional": "4 A Change & Hits",
     "tags": [
       "regret",
       "sad"
@@ -1384,9 +1753,12 @@
   },
   {
     "id": 200,
-    "content": "它傾倒你要經沮喪與興奮 來自多少個極善感的心",
-    "song": "歌頌",
+    "content": "它倾倒你要经沮丧与兴奋 来自多少个极善感的心",
+    "contentTraditional": "它傾倒你要經沮喪與興奮 來自多少個極善感的心",
+    "song": "歌颂",
+    "songTraditional": "歌頌",
     "album": "Solidays",
+    "albumTraditional": "Solidays",
     "tags": [
       "classic",
       "philosophy"
@@ -1395,9 +1767,12 @@
   },
   {
     "id": 201,
-    "content": "感謝永遠有歌把心境道破",
-    "song": "歌頌",
+    "content": "感谢永远有歌把心境道破",
+    "contentTraditional": "感謝永遠有歌把心境道破",
+    "song": "歌颂",
+    "songTraditional": "歌頌",
     "album": "Solidays",
+    "albumTraditional": "Solidays",
     "tags": [
       "classic",
       "healing"
@@ -1406,9 +1781,12 @@
   },
   {
     "id": 202,
-    "content": "銀幕閉上到幕揭開 歷盡世界各樣變改",
-    "song": "後台",
+    "content": "银幕闭上到幕揭开 历尽世界各样变改",
+    "contentTraditional": "銀幕閉上到幕揭開 歷盡世界各樣變改",
+    "song": "后台",
+    "songTraditional": "後台",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "life",
       "philosophy"
@@ -1417,9 +1795,12 @@
   },
   {
     "id": 203,
-    "content": "買了球鞋再買玩具 甚至想花光一切買新居",
-    "song": "黃金時代",
+    "content": "买了球鞋再买玩具 甚至想花光一切买新居",
+    "contentTraditional": "買了球鞋再買玩具 甚至想花光一切買新居",
+    "song": "黄金时代",
+    "songTraditional": "黃金時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "life",
       "philosophy"
@@ -1428,9 +1809,12 @@
   },
   {
     "id": 204,
-    "content": "黃金廣場內分手 在時代門外再聚",
-    "song": "黃金時代",
+    "content": "黄金广场内分手 在时代门外再聚",
+    "contentTraditional": "黃金廣場內分手 在時代門外再聚",
+    "song": "黄金时代",
+    "songTraditional": "黃金時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "sad"
@@ -1439,9 +1823,12 @@
   },
   {
     "id": 205,
-    "content": "除非你是我才可與我常在 一個人從鏡內發展恩愛",
-    "song": "與我常在",
+    "content": "除非你是我才可与我常在 一个人从镜内发展恩爱",
+    "contentTraditional": "除非你是我才可與我常在 一個人從鏡內發展恩愛",
+    "song": "与我常在",
+    "songTraditional": "與我常在",
     "album": "与我常在",
+    "albumTraditional": "与我常在",
     "tags": [
       "lonely",
       "philosophy",
@@ -1451,9 +1838,12 @@
   },
   {
     "id": 206,
-    "content": "一個人同偕到老不靠運氣",
-    "song": "與我常在",
+    "content": "一个人同偕到老不靠运气",
+    "contentTraditional": "一個人同偕到老不靠運氣",
+    "song": "与我常在",
+    "songTraditional": "與我常在",
     "album": "与我常在",
+    "albumTraditional": "与我常在",
     "tags": [
       "philosophy",
       "power"
@@ -1462,9 +1852,12 @@
   },
   {
     "id": 207,
-    "content": "追追趕趕高高低低 深呼吸然後與你執手相隨",
-    "song": "幸福摩天輪",
+    "content": "追追赶赶高高低低 深呼吸然后与你执手相随",
+    "contentTraditional": "追追趕趕高高低低 深呼吸然後與你執手相隨",
+    "song": "幸福摩天轮",
+    "songTraditional": "幸福摩天輪",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "brightness",
       "healing",
@@ -1474,9 +1867,12 @@
   },
   {
     "id": 208,
-    "content": "天荒地老流連在摩天輪 在高處凝望世界流動",
-    "song": "幸福摩天輪",
+    "content": "天荒地老流连在摩天轮 在高处凝望世界流动",
+    "contentTraditional": "天荒地老流連在摩天輪 在高處凝望世界流動",
+    "song": "幸福摩天轮",
+    "songTraditional": "幸福摩天輪",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "classic",
       "love"
@@ -1485,9 +1881,12 @@
   },
   {
     "id": 209,
-    "content": "靜太安靜唱首歌來聽聽 想感應有生命正波動在傳情",
-    "song": "貝多芬與我",
+    "content": "静太安静唱首歌来听听 想感应有生命正波动在传情",
+    "contentTraditional": "靜太安靜唱首歌來聽聽 想感應有生命正波動在傳情",
+    "song": "贝多芬与我",
+    "songTraditional": "貝多芬與我",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "classic",
       "philosophy"
@@ -1496,9 +1895,12 @@
   },
   {
     "id": 210,
-    "content": "相戀的關係猶像熱帶雨林 逐分鐘消失4.8裏",
-    "song": "熱帶雨林",
+    "content": "相恋的关系犹像热带雨林 逐分钟消失4.8里",
+    "contentTraditional": "相戀的關係猶像熱帶雨林 逐分鐘消失4.8裏",
+    "song": "热带雨林",
+    "songTraditional": "熱帶雨林",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "love",
       "philosophy"
@@ -1507,9 +1909,12 @@
   },
   {
     "id": 213,
-    "content": "這玫瑰終究會凋謝 泥土在嘲笑着那些綠葉",
-    "song": "煙味",
+    "content": "这玫瑰终究会凋谢 泥土在嘲笑着那些绿叶",
+    "contentTraditional": "這玫瑰終究會凋謝 泥土在嘲笑着那些綠葉",
+    "song": "烟味",
+    "songTraditional": "煙味",
     "album": "七",
+    "albumTraditional": "七",
     "tags": [
       "dark",
       "philosophy",
@@ -1519,9 +1924,12 @@
   },
   {
     "id": 214,
-    "content": "讓那飄呀飄呀的裙 挑惹起戰爭",
+    "content": "让那飘呀飘呀的裙 挑惹起战争",
+    "contentTraditional": "讓那飄呀飄呀的裙 挑惹起戰爭",
     "song": "裙下之臣",
+    "songTraditional": "裙下之臣",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "crazy",
       "philosophy"
@@ -1530,9 +1938,12 @@
   },
   {
     "id": 215,
-    "content": "為每個婀娜的化身 每襲裙窮一生作侍臣",
+    "content": "为每个婀娜的化身 每袭裙穷一生作侍臣",
+    "contentTraditional": "為每個婀娜的化身 每襲裙窮一生作侍臣",
     "song": "裙下之臣",
+    "songTraditional": "裙下之臣",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "crazy",
       "love"
@@ -1541,9 +1952,12 @@
   },
   {
     "id": 216,
-    "content": "怎麼冷酷卻仍然美麗 得不到的從來矜貴",
+    "content": "怎么冷酷却仍然美丽 得不到的从来矜贵",
+    "contentTraditional": "怎麼冷酷卻仍然美麗 得不到的從來矜貴",
     "song": "白玫瑰",
+    "songTraditional": "白玫瑰",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "philosophy"
@@ -1552,9 +1966,12 @@
   },
   {
     "id": 218,
-    "content": "點起心裏火去燒 要燒燬腦內有過你日記",
-    "song": "心燒",
+    "content": "点起心里火去烧 要烧毁脑内有过你日记",
+    "contentTraditional": "點起心裏火去燒 要燒燬腦內有過你日記",
+    "song": "心烧",
+    "songTraditional": "心燒",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "classic",
       "memory",
@@ -1564,9 +1981,12 @@
   },
   {
     "id": 223,
-    "content": "不要把我推開 當堅持像無賴",
-    "song": "給你",
+    "content": "不要把我推开 当坚持像无赖",
+    "contentTraditional": "不要把我推開 當堅持像無賴",
+    "song": "给你",
+    "songTraditional": "給你",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "love",
       "power"
@@ -1575,9 +1995,12 @@
   },
   {
     "id": 227,
-    "content": "再見了我的衝動和浪漫",
-    "song": "娛樂天空",
+    "content": "再见了我的冲动和浪漫",
+    "contentTraditional": "再見了我的衝動和浪漫",
+    "song": "娱乐天空",
+    "songTraditional": "娛樂天空",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "life",
       "regret",
@@ -1587,9 +2010,12 @@
   },
   {
     "id": 228,
-    "content": "陽光多燦爛 可我的自由行駛地緩慢",
-    "song": "娛樂天空",
+    "content": "阳光多灿烂 可我的自由行驶地缓慢",
+    "contentTraditional": "陽光多燦爛 可我的自由行駛地緩慢",
+    "song": "娱乐天空",
+    "songTraditional": "娛樂天空",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "life",
       "philosophy"
@@ -1598,9 +2024,12 @@
   },
   {
     "id": 229,
-    "content": "我記起那年春天 得我一個不知的欺騙",
+    "content": "我记起那年春天 得我一个不知的欺骗",
+    "contentTraditional": "我記起那年春天 得我一個不知的欺騙",
     "song": "四季",
+    "songTraditional": "四季",
     "album": "四季",
+    "albumTraditional": "四季",
     "tags": [
       "classic",
       "memory",
@@ -1610,9 +2039,12 @@
   },
   {
     "id": 230,
-    "content": "仍是會流淚失眠 尚記得當天貫心的一箭",
+    "content": "仍是会流泪失眠 尚记得当天贯心的一箭",
+    "contentTraditional": "仍是會流淚失眠 尚記得當天貫心的一箭",
     "song": "四季",
+    "songTraditional": "四季",
     "album": "四季",
+    "albumTraditional": "四季",
     "tags": [
       "pain",
       "sad"
@@ -1621,9 +2053,12 @@
   },
   {
     "id": 231,
-    "content": "人不能飛於是努力走 但沒人説不準看天空",
-    "song": "披風",
+    "content": "人不能飞于是努力走 但没人说不准看天空",
+    "contentTraditional": "人不能飛於是努力走 但沒人説不準看天空",
+    "song": "披风",
+    "songTraditional": "披風",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "healing",
       "power"
@@ -1632,9 +2067,12 @@
   },
   {
     "id": 232,
-    "content": "在心裏縫一張披風 假裝躺在雲上好輕鬆",
-    "song": "披風",
+    "content": "在心里缝一张披风 假装躺在云上好轻松",
+    "contentTraditional": "在心裏縫一張披風 假裝躺在雲上好輕鬆",
+    "song": "披风",
+    "songTraditional": "披風",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "brightness",
       "healing"
@@ -1643,9 +2081,12 @@
   },
   {
     "id": 233,
-    "content": "只是這男子漢 心思比誰都軟",
-    "song": "海膽",
+    "content": "只是这男子汉 心思比谁都软",
+    "contentTraditional": "只是這男子漢 心思比誰都軟",
+    "song": "海胆",
+    "songTraditional": "海膽",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "life",
       "philosophy"
@@ -1654,9 +2095,12 @@
   },
   {
     "id": 234,
-    "content": "不承認又感嘆 活得像顆海膽",
-    "song": "海膽",
+    "content": "不承认又感叹 活得像颗海胆",
+    "contentTraditional": "不承認又感嘆 活得像顆海膽",
+    "song": "海胆",
+    "songTraditional": "海膽",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "life",
       "lonely",
@@ -1666,9 +2110,12 @@
   },
   {
     "id": 235,
-    "content": "漸漸我什麼都不想知道 我覺得迷失竟比醒覺好",
-    "song": "漸漸",
+    "content": "渐渐我什么都不想知道 我觉得迷失竟比醒觉好",
+    "contentTraditional": "漸漸我什麼都不想知道 我覺得迷失竟比醒覺好",
+    "song": "渐渐",
+    "songTraditional": "漸漸",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "regret",
       "sad"
@@ -1677,9 +2124,12 @@
   },
   {
     "id": 236,
-    "content": "漸漸我離開都不想宣佈 怕記憶最後變話題太俗套",
-    "song": "漸漸",
+    "content": "渐渐我离开都不想宣布 怕记忆最后变话题太俗套",
+    "contentTraditional": "漸漸我離開都不想宣佈 怕記憶最後變話題太俗套",
+    "song": "渐渐",
+    "songTraditional": "漸漸",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "classic",
       "memory",
@@ -1689,9 +2139,12 @@
   },
   {
     "id": 237,
-    "content": "得不到蒼天允許 我與你多少次散聚",
-    "song": "龍舌蘭",
+    "content": "得不到苍天允许 我与你多少次散聚",
+    "contentTraditional": "得不到蒼天允許 我與你多少次散聚",
+    "song": "龙舌兰",
+    "songTraditional": "龍舌蘭",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "dark",
       "sad"
@@ -1700,9 +2153,12 @@
   },
   {
     "id": 238,
-    "content": "這一雙手卑鄙到抱住你",
-    "song": "龍舌蘭",
+    "content": "这一双手卑鄙到抱住你",
+    "contentTraditional": "這一雙手卑鄙到抱住你",
+    "song": "龙舌兰",
+    "songTraditional": "龍舌蘭",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "crazy",
       "dark",
@@ -1712,9 +2168,12 @@
   },
   {
     "id": 241,
-    "content": "搖曳裏到曠野到晚空 要碰到永遠青春的夢",
+    "content": "摇曳里到旷野到晚空 要碰到永远青春的梦",
+    "contentTraditional": "搖曳裏到曠野到晚空 要碰到永遠青春的夢",
     "song": "致明日的舞",
+    "songTraditional": "致明日的舞",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "brightness",
       "healing"
@@ -1723,9 +2182,12 @@
   },
   {
     "id": 244,
-    "content": "忘記它仿似遺忘密碼 無密碼方可以忘記它",
-    "song": "盲婚啞嫁",
+    "content": "忘记它仿似遗忘密码 无密码方可以忘记它",
+    "contentTraditional": "忘記它仿似遺忘密碼 無密碼方可以忘記它",
+    "song": "盲婚哑嫁",
+    "songTraditional": "盲婚啞嫁",
     "album": "盲婚哑嫁",
+    "albumTraditional": "盲婚哑嫁",
     "tags": [
       "healing",
       "philosophy"
@@ -1734,9 +2196,12 @@
   },
   {
     "id": 245,
-    "content": "我承認我有時候看起來好嚴肅 低着頭吃着我的食物",
-    "song": "社交恐懼癌",
+    "content": "我承认我有时候看起来好严肃 低着头吃着我的食物",
+    "contentTraditional": "我承認我有時候看起來好嚴肅 低着頭吃着我的食物",
+    "song": "社交恐惧癌",
+    "songTraditional": "社交恐懼癌",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "social"
@@ -1745,9 +2210,12 @@
   },
   {
     "id": 246,
-    "content": "不要遞我眼神試圖邀請我加入 我好害怕我表達不清楚",
-    "song": "社交恐懼癌",
+    "content": "不要递我眼神试图邀请我加入 我好害怕我表达不清楚",
+    "contentTraditional": "不要遞我眼神試圖邀請我加入 我好害怕我表達不清楚",
+    "song": "社交恐惧癌",
+    "songTraditional": "社交恐懼癌",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "crazy",
       "life",
@@ -1757,9 +2225,12 @@
   },
   {
     "id": 247,
-    "content": "頑童在破壞搞破壞 踩上鬼馬的板塊",
-    "song": "破壞王",
+    "content": "顽童在破坏搞破坏 踩上鬼马的板块",
+    "contentTraditional": "頑童在破壞搞破壞 踩上鬼馬的板塊",
+    "song": "破坏王",
+    "songTraditional": "破壞王",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "crazy",
       "power"
@@ -1768,9 +2239,12 @@
   },
   {
     "id": 248,
-    "content": "一致通過 可以不理那些保守的乖乖",
-    "song": "破壞王",
+    "content": "一致通过 可以不理那些保守的乖乖",
+    "contentTraditional": "一致通過 可以不理那些保守的乖乖",
+    "song": "破坏王",
+    "songTraditional": "破壞王",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "crazy",
       "freedom"
@@ -1779,9 +2253,12 @@
   },
   {
     "id": 249,
-    "content": "心總是總是晴朗 因為身邊有羣好姑娘",
-    "song": "愚人快樂",
+    "content": "心总是总是晴朗 因为身边有群好姑娘",
+    "contentTraditional": "心總是總是晴朗 因為身邊有羣好姑娘",
+    "song": "愚人快乐",
+    "songTraditional": "愚人快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "brightness",
       "friendship",
@@ -1792,9 +2269,12 @@
   },
   {
     "id": 250,
-    "content": "我們玩着玩着玩着玩着就長大了",
-    "song": "愚人快樂",
+    "content": "我们玩着玩着玩着玩着就长大了",
+    "contentTraditional": "我們玩着玩着玩着玩着就長大了",
+    "song": "愚人快乐",
+    "songTraditional": "愚人快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "classic",
       "life",
@@ -1804,9 +2284,12 @@
   },
   {
     "id": 252,
-    "content": "請相信我哋請珍惜我哋 謠言沒半點道理",
+    "content": "请相信我哋请珍惜我哋 谣言没半点道理",
+    "contentTraditional": "請相信我哋請珍惜我哋 謠言沒半點道理",
     "song": "信任",
+    "songTraditional": "信任",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "life",
       "love",
@@ -1816,9 +2299,12 @@
   },
   {
     "id": 254,
-    "content": "我願這一生愛著你不變",
+    "content": "我愿这一生爱着你不变",
+    "contentTraditional": "我願這一生愛著你不變",
     "song": "I Do",
+    "songTraditional": "I Do",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "classic",
       "love"
@@ -1827,9 +2313,12 @@
   },
   {
     "id": 255,
-    "content": "活在這盛世就似呼吸般習慣被騙",
-    "song": "謊言",
+    "content": "活在这盛世就似呼吸般习惯被骗",
+    "contentTraditional": "活在這盛世就似呼吸般習慣被騙",
+    "song": "谎言",
+    "songTraditional": "謊言",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "dark",
       "life",
@@ -1840,9 +2329,12 @@
   },
   {
     "id": 256,
-    "content": "天天反口都不算欺詐",
-    "song": "謊言",
+    "content": "天天反口都不算欺诈",
+    "contentTraditional": "天天反口都不算欺詐",
+    "song": "谎言",
+    "songTraditional": "謊言",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "life",
       "philosophy",
@@ -1852,9 +2344,12 @@
   },
   {
     "id": 260,
-    "content": "世上還讚頌沉默嗎？不夠爆炸 怎麼有話題讓我誇",
-    "song": "浮誇",
+    "content": "世上还赞颂沉默吗？不够爆炸 怎么有话题让我夸",
+    "contentTraditional": "世上還讚頌沉默嗎？不夠爆炸 怎麼有話題讓我誇",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "life",
@@ -1864,9 +2359,12 @@
   },
   {
     "id": 261,
-    "content": "我唱得不夠動人你別皺眉 我願意和你約定至死",
+    "content": "我唱得不够动人你别皱眉 我愿意和你约定至死",
+    "contentTraditional": "我唱得不夠動人你別皺眉 我願意和你約定至死",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "love",
       "sad"
@@ -1875,9 +2373,12 @@
   },
   {
     "id": 262,
-    "content": "我只想嬉戲唱遊到下世紀 請你別嫌我將這煽情奉獻給你",
+    "content": "我只想嬉戏唱游到下世纪 请你别嫌我将这煽情奉献给你",
+    "contentTraditional": "我只想嬉戲唱遊到下世紀 請你別嫌我將這煽情奉獻給你",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "classic",
       "sad"
@@ -1886,9 +2387,12 @@
   },
   {
     "id": 264,
-    "content": "懷抱既然不能逗留 何不在離開的時候 一邊享受一邊淚流",
+    "content": "怀抱既然不能逗留 何不在离开的时候 一边享受一边泪流",
+    "contentTraditional": "懷抱既然不能逗留 何不在離開的時候 一邊享受一邊淚流",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "philosophy",
       "sad"
@@ -1897,9 +2401,12 @@
   },
   {
     "id": 265,
-    "content": "十年之前 我不認識你 你不屬於我",
+    "content": "十年之前 我不认识你 你不属于我",
+    "contentTraditional": "十年之前 我不認識你 你不屬於我",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "memory",
@@ -1909,9 +2416,12 @@
   },
   {
     "id": 266,
-    "content": "攔路雨偏似雪花 飲泣的你凍嗎",
+    "content": "拦路雨偏似雪花 饮泣的你冻吗",
+    "contentTraditional": "攔路雨偏似雪花 飲泣的你凍嗎",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "sad"
@@ -1920,9 +2430,12 @@
   },
   {
     "id": 267,
-    "content": "誰都只得那雙手 靠擁抱亦難任你擁有",
+    "content": "谁都只得那双手 靠拥抱亦难任你拥有",
+    "contentTraditional": "誰都只得那雙手 靠擁抱亦難任你擁有",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "philosophy",
       "sad"
@@ -1931,9 +2444,12 @@
   },
   {
     "id": 268,
-    "content": "朋友我當你一秒朋友 朋友我當你一世朋友",
-    "song": "最佳損友",
+    "content": "朋友我当(当/當)你一秒朋友 朋友我当(当/當)你一世朋友",
+    "contentTraditional": "朋友我當你一秒朋友 朋友我當你一世朋友",
+    "song": "最佳损友",
+    "songTraditional": "最佳損友",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "friendship",
       "love",
@@ -1943,9 +2459,12 @@
   },
   {
     "id": 269,
-    "content": "不要不要假設我知道 一切一切也都是為我而做",
-    "song": "單車",
+    "content": "不要不要假设我知道 一切一切也都是为我而做",
+    "contentTraditional": "不要不要假設我知道 一切一切也都是為我而做",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "sad"
@@ -1954,9 +2473,12 @@
   },
   {
     "id": 272,
-    "content": "我不唱聲嘶力竭的情歌 不表示沒有心碎的時刻",
-    "song": "孤獨患者",
+    "content": "我不唱声嘶力竭的情歌 不表示没有心碎的时刻",
+    "contentTraditional": "我不唱聲嘶力竭的情歌 不表示沒有心碎的時刻",
+    "song": "孤独患者",
+    "songTraditional": "孤獨患者",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "classic",
       "sad"
@@ -1965,9 +2487,12 @@
   },
   {
     "id": 274,
-    "content": "天空它像什麼 愛情就像什麼 幾朵雲在陰天 忘了該往哪兒走",
-    "song": "陰天快樂",
+    "content": "天空它像什么 爱情就像什么 几朵云在阴天 忘了该往哪儿走",
+    "contentTraditional": "天空它像什麼 愛情就像什麼 幾朵雲在陰天 忘了該往哪兒走",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "love",
       "philosophy"
@@ -1976,9 +2501,12 @@
   },
   {
     "id": 275,
-    "content": "想念你都那麼久那麼久了 我一抬頭就看見你那個酒窩",
-    "song": "陰天快樂",
+    "content": "想念你都那么久那么久了 我一抬头就看见你那个酒窝",
+    "contentTraditional": "想念你都那麼久那麼久了 我一抬頭就看見你那個酒窩",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "classic",
       "love",
@@ -1988,9 +2516,12 @@
   },
   {
     "id": 276,
-    "content": "夢裏夢到醒不來的夢 紅線裏被軟禁的紅",
-    "song": "紅玫瑰",
+    "content": "梦里梦到醒不来的梦 红线里被软禁的红",
+    "contentTraditional": "夢裏夢到醒不來的夢 紅線裏被軟禁的紅",
+    "song": "红玫瑰",
+    "songTraditional": "紅玫瑰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "love"
@@ -1999,9 +2530,12 @@
   },
   {
     "id": 278,
-    "content": "在一起看每出戏 在一起嘆每口氣",
-    "song": "與我常在",
+    "content": "在一起看每出戏 在一起叹每口气",
+    "contentTraditional": "在一起看每出戏 在一起嘆每口氣",
+    "song": "与我常在",
+    "songTraditional": "與我常在",
     "album": "与我常在",
+    "albumTraditional": "与我常在",
     "tags": [
       "life",
       "love"
@@ -2010,9 +2544,12 @@
   },
   {
     "id": 279,
-    "content": "失落之處仍然會笑着哭 人間的跌蕩默默迎送",
-    "song": "幸福摩天輪",
+    "content": "失落之处仍然会笑着哭 人间的跌荡默默迎送",
+    "contentTraditional": "失落之處仍然會笑着哭 人間的跌蕩默默迎送",
+    "song": "幸福摩天轮",
+    "songTraditional": "幸福摩天輪",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "classic",
       "healing"
@@ -2021,9 +2558,12 @@
   },
   {
     "id": 281,
-    "content": "最茂盛的戀愛靜靜蓋滿地 是否這樣的韻律也算自然定理",
-    "song": "熱帶雨林",
+    "content": "最茂盛的恋爱静静盖满地 是否这样的韵律也算自然定理",
+    "contentTraditional": "最茂盛的戀愛靜靜蓋滿地 是否這樣的韻律也算自然定理",
+    "song": "热带雨林",
+    "songTraditional": "熱帶雨林",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "love",
       "philosophy"
@@ -2032,9 +2572,12 @@
   },
   {
     "id": 283,
-    "content": "卻是這火透著那份暖 真好比再共你一起",
-    "song": "心燒",
+    "content": "却是这火透着那份暖 真好比再共你一起",
+    "contentTraditional": "卻是這火透著那份暖 真好比再共你一起",
+    "song": "心烧",
+    "songTraditional": "心燒",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "healing",
       "love"
@@ -2043,9 +2586,12 @@
   },
   {
     "id": 286,
-    "content": "唯有寂寞慷慨 骨牌倒了下來 想安慰找不到對白",
-    "song": "給你",
+    "content": "唯有寂寞慷慨 骨牌倒了下来 想安慰找不到对白",
+    "contentTraditional": "唯有寂寞慷慨 骨牌倒了下來 想安慰找不到對白",
+    "song": "给你",
+    "songTraditional": "給你",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "lonely",
       "sad"
@@ -2054,9 +2600,12 @@
   },
   {
     "id": 287,
-    "content": "靈魂但求重聚 靈魂淡然沒恐懼",
-    "song": "牀頭牀尾",
+    "content": "灵魂但求重聚 灵魂淡然没恐惧",
+    "contentTraditional": "靈魂但求重聚 靈魂淡然沒恐懼",
+    "song": "床头床尾",
+    "songTraditional": "牀頭牀尾",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "life",
       "philosophy"
@@ -2065,9 +2614,12 @@
   },
   {
     "id": 288,
-    "content": "我們做着做着做着做着的夢醒了 我們愛着愛着愛着愛着的人走了",
-    "song": "愚人快樂",
+    "content": "我们做着做着做着做着的梦醒了 我们爱着爱着爱着爱着的人走了",
+    "contentTraditional": "我們做着做着做着做着的夢醒了 我們愛着愛着愛着愛着的人走了",
+    "song": "愚人快乐",
+    "songTraditional": "愚人快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "life",
       "regret",
@@ -2077,9 +2629,12 @@
   },
   {
     "id": 289,
-    "content": "身價暴跌後又漲停 當孤傲的狼",
-    "song": "海膽",
+    "content": "身价暴跌后又涨停 当孤傲的狼",
+    "contentTraditional": "身價暴跌後又漲停 當孤傲的狼",
+    "song": "海胆",
+    "songTraditional": "海膽",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "life",
       "power"
@@ -2088,9 +2643,12 @@
   },
   {
     "id": 290,
-    "content": "寂寞寂寞出於你的空白 剩下我被記憶掌摑",
-    "song": "漸漸",
+    "content": "寂寞寂寞出于你的空白 剩下我被记忆掌掴",
+    "contentTraditional": "寂寞寂寞出於你的空白 剩下我被記憶掌摑",
+    "song": "渐渐",
+    "songTraditional": "漸漸",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "pain",
       "sad"
@@ -2099,9 +2657,12 @@
   },
   {
     "id": 291,
-    "content": "我猶疑地望向你 天花將剝落誓言牀驟變荒地",
-    "song": "龍舌蘭",
+    "content": "我犹疑地望向你 天花将剥落誓言床骤变荒地",
+    "contentTraditional": "我猶疑地望向你 天花將剝落誓言牀驟變荒地",
+    "song": "龙舌兰",
+    "songTraditional": "龍舌蘭",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "dark",
       "sad"
@@ -2110,9 +2671,12 @@
   },
   {
     "id": 292,
-    "content": "漸漸頭上染了白你一樣很美 純粹發自我真心別皺眉",
-    "song": "我們萬歲",
+    "content": "渐渐头上染了白你一样很美 纯粹发自我真心别皱眉",
+    "contentTraditional": "漸漸頭上染了白你一樣很美 純粹發自我真心別皺眉",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "classic",
       "love",
@@ -2122,9 +2686,12 @@
   },
   {
     "id": 293,
-    "content": "躺於瘠土一片若你沒法入眠 踮起腳尖舞擺裏兜兜轉轉身去找光線就快望見",
+    "content": "躺于瘠土一片若你没法入眠 踮起脚尖舞摆里兜兜转转身去找光线就快望见",
+    "contentTraditional": "躺於瘠土一片若你沒法入眠 踮起腳尖舞擺裏兜兜轉轉身去找光線就快望見",
     "song": "致明日的舞",
+    "songTraditional": "致明日的舞",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "healing",
       "power"
@@ -2133,9 +2700,12 @@
   },
   {
     "id": 294,
-    "content": "缺一門你尚有星門 能不管離合註定你定悲歡",
-    "song": "盲婚啞嫁",
+    "content": "缺一门你尚有星门 能不管离合注定你定悲欢",
+    "contentTraditional": "缺一門你尚有星門 能不管離合註定你定悲歡",
+    "song": "盲婚哑嫁",
+    "songTraditional": "盲婚啞嫁",
     "album": "盲婚哑嫁",
+    "albumTraditional": "盲婚哑嫁",
     "tags": [
       "healing",
       "philosophy"
@@ -2144,9 +2714,12 @@
   },
   {
     "id": 295,
-    "content": "時事有多精彩都明白都在我腦海 誰和誰又分開誰先沒有了愛",
-    "song": "社交恐懼癌",
+    "content": "时事有多精彩都明白都在我脑海 谁和谁又分开谁先没有了爱",
+    "contentTraditional": "時事有多精彩都明白都在我腦海 誰和誰又分開誰先沒有了愛",
+    "song": "社交恐惧癌",
+    "songTraditional": "社交恐懼癌",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "social"
@@ -2155,9 +2728,12 @@
   },
   {
     "id": 296,
-    "content": "再刮亂氣場情緒高漲 趁着性格有稜角鑽探挖掘灌溉眾生相",
-    "song": "破壞王",
+    "content": "再刮乱气场情绪高涨 趁着性格有棱角钻探挖掘灌溉众生相",
+    "contentTraditional": "再刮亂氣場情緒高漲 趁着性格有稜角鑽探挖掘灌溉眾生相",
+    "song": "破坏王",
+    "songTraditional": "破壞王",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "crazy",
       "power"
@@ -2166,9 +2742,12 @@
   },
   {
     "id": 298,
-    "content": "懷疑令實相會更快呈現",
+    "content": "怀疑令实相会更快呈现",
+    "contentTraditional": "懷疑令實相會更快呈現",
     "song": "信任",
+    "songTraditional": "信任",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "life",
       "philosophy",
@@ -2178,9 +2757,12 @@
   },
   {
     "id": 299,
-    "content": "習慣有你在身邊 未來故事情節 一起領銜來主演 最佳男女演員",
+    "content": "习惯有你在身边 未来故事情节 一起领衔来主演 最佳男女演员",
+    "contentTraditional": "習慣有你在身邊 未來故事情節 一起領銜來主演 最佳男女演員",
     "song": "I Do",
+    "songTraditional": "I Do",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "life",
       "love"
@@ -2189,9 +2771,12 @@
   },
   {
     "id": 300,
-    "content": "幪著眼瞎説話 熱烈販賣百萬個謊話",
-    "song": "謊言",
+    "content": "蒙着眼瞎说话 热烈贩卖百万个谎话",
+    "contentTraditional": "幪著眼瞎説話 熱烈販賣百萬個謊話",
+    "song": "谎言",
+    "songTraditional": "謊言",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "dark",
       "life",
@@ -2202,9 +2787,12 @@
   },
   {
     "id": 301,
-    "content": "不能盡歡愛總是苦短 我只想要你最後的答案",
-    "song": "預感",
+    "content": "不能尽欢爱总是苦短 我只想要你最后的答案",
+    "contentTraditional": "不能盡歡愛總是苦短 我只想要你最後的答案",
+    "song": "预感",
+    "songTraditional": "預感",
     "album": "酝酿",
+    "albumTraditional": "酝酿",
     "tags": [
       "love",
       "sad"
@@ -2213,9 +2801,12 @@
   },
   {
     "id": 303,
-    "content": "借了東西為什麼不還",
-    "song": "你的揹包",
+    "content": "借了东西为什么不还",
+    "contentTraditional": "借了東西為什麼不還",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "regret",
       "sad"
@@ -2224,9 +2815,12 @@
   },
   {
     "id": 304,
-    "content": "成千上萬個門口 總有一個人要先走",
+    "content": "成千上万个门口 总有一个人要先走",
+    "contentTraditional": "成千上萬個門口 總有一個人要先走",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "philosophy",
       "sad"
@@ -2235,9 +2829,12 @@
   },
   {
     "id": 306,
-    "content": "成長的故事裏跟我一起盼望遠方 眼見你已發光這個你已叫天清朗",
+    "content": "成长的故事里跟我一起盼望远方 眼见你已发光这个你已叫天清朗",
+    "contentTraditional": "成長的故事裏跟我一起盼望遠方 眼見你已發光這個你已叫天清朗",
     "song": "致明日的舞",
+    "songTraditional": "致明日的舞",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "healing",
       "power"
@@ -2246,9 +2843,12 @@
   },
   {
     "id": 307,
-    "content": "人生如戲 劇本前世今生已定 我們只能順着劇本走下去",
-    "song": "盲婚啞嫁",
+    "content": "人生如戏 剧本前世今生已定 我们只能顺着剧本走下去",
+    "contentTraditional": "人生如戲 劇本前世今生已定 我們只能順着劇本走下去",
+    "song": "盲婚哑嫁",
+    "songTraditional": "盲婚啞嫁",
     "album": "盲婚哑嫁",
+    "albumTraditional": "盲婚哑嫁",
     "tags": [
       "life",
       "philosophy"
@@ -2257,9 +2857,12 @@
   },
   {
     "id": 308,
-    "content": "好想誇誇其談朋友五湖四海 交談着被人崇拜",
-    "song": "社交恐懼癌",
+    "content": "好想夸夸其谈朋友五湖四海 交谈着被人崇拜",
+    "contentTraditional": "好想誇誇其談朋友五湖四海 交談着被人崇拜",
+    "song": "社交恐惧癌",
+    "songTraditional": "社交恐懼癌",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "crazy",
       "life",
@@ -2269,9 +2872,12 @@
   },
   {
     "id": 310,
-    "content": "幻想著幸福的圖案 美滿少一段 依然是孤獨和絃",
+    "content": "幻想著幸福的图案 美满少一段 依然是孤独和弦",
+    "contentTraditional": "幻想著幸福的圖案 美滿少一段 依然是孤獨和絃",
     "song": "I Do",
+    "songTraditional": "I Do",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "love",
       "sad"
@@ -2280,9 +2886,12 @@
   },
   {
     "id": 311,
-    "content": "全部眼目耳鼻已經感應不到錯與假",
-    "song": "謊言",
+    "content": "全部眼目耳鼻已经感应不到错与假",
+    "contentTraditional": "全部眼目耳鼻已經感應不到錯與假",
+    "song": "谎言",
+    "songTraditional": "謊言",
     "album": "The Easy Ride",
+    "albumTraditional": "The Easy Ride",
     "tags": [
       "dark",
       "life",
@@ -2293,9 +2902,12 @@
   },
   {
     "id": 312,
-    "content": "拒絕成長到成長 變成想要的模樣",
-    "song": "陪你度過漫長歲月",
+    "content": "拒绝成长到成长 变成想要的模样",
+    "contentTraditional": "拒絕成長到成長 變成想要的模樣",
+    "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "healing",
       "life"
@@ -2304,9 +2916,12 @@
   },
   {
     "id": 313,
-    "content": "在舉手投降以前 讓我再陪你一段",
-    "song": "陪你度過漫長歲月",
+    "content": "在举手投降以前 让我再陪你一段",
+    "contentTraditional": "在舉手投降以前 讓我再陪你一段",
+    "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "healing",
       "love"
@@ -2315,9 +2930,12 @@
   },
   {
     "id": 314,
-    "content": "陪你把想念的酸擁抱成温暖",
-    "song": "陪你度過漫長歲月",
+    "content": "陪你把想念的酸拥抱成温暖",
+    "contentTraditional": "陪你把想念的酸擁抱成温暖",
+    "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "healing",
       "love"
@@ -2326,9 +2944,12 @@
   },
   {
     "id": 315,
-    "content": "我要穩穩的幸福 能抵擋失落的痛楚",
-    "song": "穩穩的幸福",
+    "content": "我要稳稳的幸福 能抵挡失落的痛楚",
+    "contentTraditional": "我要穩穩的幸福 能抵擋失落的痛楚",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "healing",
       "power"
@@ -2337,9 +2958,12 @@
   },
   {
     "id": 316,
-    "content": "一個人的路途也不會孤獨",
-    "song": "穩穩的幸福",
+    "content": "一个人的路途也不会孤独",
+    "contentTraditional": "一個人的路途也不會孤獨",
+    "song": "稳稳的幸福",
+    "songTraditional": "穩穩的幸福",
     "album": "稳稳的幸福",
+    "albumTraditional": "稳稳的幸福",
     "tags": [
       "healing",
       "life"
@@ -2348,9 +2972,12 @@
   },
   {
     "id": 317,
-    "content": "一九九五年 我們在機場的車站 你借我而我不想歸還",
-    "song": "你的揹包",
+    "content": "一九九五年 我们在机场的车站 你借我而我不想归还",
+    "contentTraditional": "一九九五年 我們在機場的車站 你借我而我不想歸還",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory",
@@ -2360,9 +2987,12 @@
   },
   {
     "id": 318,
-    "content": "你的揹包背到現在還沒爛 卻成為我身體另一半",
-    "song": "你的揹包",
+    "content": "你的背包背到现在还没烂 却成为我身体另一半",
+    "contentTraditional": "你的揹包背到現在還沒爛 卻成為我身體另一半",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory"
@@ -2371,9 +3001,12 @@
   },
   {
     "id": 319,
-    "content": "遺憾是它已與你無關",
-    "song": "你的揹包",
+    "content": "遗憾是它已与你无关",
+    "contentTraditional": "遺憾是它已與你無關",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "regret",
       "sad"
@@ -2382,9 +3015,12 @@
   },
   {
     "id": 320,
-    "content": "你的揹包讓我走得好緩慢 終有一天陪着我腐爛",
-    "song": "你的揹包",
+    "content": "你的背包让我走得好缓慢 终有一天陪着我腐烂",
+    "contentTraditional": "你的揹包讓我走得好緩慢 終有一天陪着我腐爛",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "life",
       "sad"
@@ -2393,9 +3029,12 @@
   },
   {
     "id": 321,
-    "content": "你的揹包對我沉重的審判",
-    "song": "你的揹包",
+    "content": "你的背包对我沉重的审判",
+    "contentTraditional": "你的揹包對我沉重的審判",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "pain",
       "sad"
@@ -2404,9 +3043,12 @@
   },
   {
     "id": 322,
-    "content": "怎麼説出口 也不過是分手",
+    "content": "怎么说出口 也不过是分手",
+    "contentTraditional": "怎麼説出口 也不過是分手",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "sad"
@@ -2415,9 +3057,12 @@
   },
   {
     "id": 323,
-    "content": "如果對於明天沒有要求 牽牽手就像旅遊",
+    "content": "如果对于明天没有要求 牵牵手就像旅游",
+    "contentTraditional": "如果對於明天沒有要求 牽牽手就像旅遊",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "philosophy",
       "sad"
@@ -2426,9 +3071,12 @@
   },
   {
     "id": 324,
-    "content": "我的回憶沒有皺摺 你卻用離開燙下句點",
+    "content": "我的回忆没有皱摺 你却用离开烫下句点",
+    "contentTraditional": "我的回憶沒有皺摺 你卻用離開燙下句點",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "memory",
@@ -2438,9 +3086,12 @@
   },
   {
     "id": 325,
-    "content": "只能説我認了 你的不安贏得你信任 我卻得到你安慰的淘汰",
+    "content": "只能说我认了 你的不安赢得你信任 我却得到你安慰的淘汰",
+    "contentTraditional": "只能説我認了 你的不安贏得你信任 我卻得到你安慰的淘汰",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "pain",
       "sad"
@@ -2449,9 +3100,12 @@
   },
   {
     "id": 326,
-    "content": "天空它像什麼 愛情就像什麼",
-    "song": "陰天快樂",
+    "content": "天空它像什么 爱情就像什么",
+    "contentTraditional": "天空它像什麼 愛情就像什麼",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "love",
       "philosophy"
@@ -2460,9 +3114,12 @@
   },
   {
     "id": 327,
-    "content": "來年陌生的是昨日最親的某某",
-    "song": "最佳損友",
+    "content": "来年陌生的是昨日最亲的某某",
+    "contentTraditional": "來年陌生的是昨日最親的某某",
+    "song": "最佳损友",
+    "songTraditional": "最佳損友",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "classic",
       "memory",
@@ -2472,9 +3129,12 @@
   },
   {
     "id": 328,
-    "content": "活像個孤獨患者 自我拉扯",
-    "song": "孤獨患者",
+    "content": "活像个孤独患者 自我拉扯",
+    "contentTraditional": "活像個孤獨患者 自我拉扯",
+    "song": "孤独患者",
+    "songTraditional": "孤獨患者",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "lonely",
       "sad"
@@ -2483,9 +3143,12 @@
   },
   {
     "id": 329,
-    "content": "外向的孤獨患者有何不可",
-    "song": "孤獨患者",
+    "content": "外向的孤独患者有何不可",
+    "contentTraditional": "外向的孤獨患者有何不可",
+    "song": "孤独患者",
+    "songTraditional": "孤獨患者",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "classic",
       "sad"
@@ -2494,9 +3157,12 @@
   },
   {
     "id": 331,
-    "content": "你當我是浮誇吧 誇張只因我很怕",
-    "song": "浮誇",
+    "content": "你当我是浮夸吧 夸张只因我很怕",
+    "contentTraditional": "你當我是浮誇吧 誇張只因我很怕",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "crazy"
@@ -2505,9 +3171,12 @@
   },
   {
     "id": 332,
-    "content": "其實怕被忘記至放大來演吧",
-    "song": "浮誇",
+    "content": "其实怕被忘记至放大来演吧",
+    "contentTraditional": "其實怕被忘記至放大來演吧",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -2516,9 +3185,12 @@
   },
   {
     "id": 333,
-    "content": "很不安怎去優雅",
-    "song": "浮誇",
+    "content": "很不安怎去优雅",
+    "contentTraditional": "很不安怎去優雅",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -2527,9 +3199,12 @@
   },
   {
     "id": 334,
-    "content": "世上還讚頌沉默嗎？不夠爆炸",
-    "song": "浮誇",
+    "content": "世上还赞颂沉默吗？不够爆炸",
+    "contentTraditional": "世上還讚頌沉默嗎？不夠爆炸",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "power"
@@ -2538,9 +3213,12 @@
   },
   {
     "id": 335,
-    "content": "怎麼有話題讓我誇 做大娛樂家",
-    "song": "浮誇",
+    "content": "怎么有话题让我夸 做大娱乐家",
+    "contentTraditional": "怎麼有話題讓我誇 做大娛樂家",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "crazy"
@@ -2549,9 +3227,12 @@
   },
   {
     "id": 336,
-    "content": "我只想嬉戲唱遊到下世紀",
+    "content": "我只想嬉戏唱游到下世纪",
+    "contentTraditional": "我只想嬉戲唱遊到下世紀",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "love",
       "sad"
@@ -2560,9 +3241,12 @@
   },
   {
     "id": 337,
-    "content": "請你別嫌我將這煽情奉獻給你",
+    "content": "请你别嫌我将这煽情奉献给你",
+    "contentTraditional": "請你別嫌我將這煽情奉獻給你",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "classic",
       "sad"
@@ -2571,9 +3255,12 @@
   },
   {
     "id": 338,
-    "content": "來吧送給你叫幾百萬人流淚過的歌",
+    "content": "来吧送给你叫几百万人流泪过的歌",
+    "contentTraditional": "來吧送給你叫幾百萬人流淚過的歌",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "classic",
       "sad"
@@ -2582,9 +3269,12 @@
   },
   {
     "id": 339,
-    "content": "我們還是一樣 陪在一個陌生人左右 走過漸漸熟悉的街頭",
+    "content": "我们还是一样 陪在一个陌生人左右 走过渐渐熟悉的街头",
+    "contentTraditional": "我們還是一樣 陪在一個陌生人左右 走過漸漸熟悉的街頭",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "life",
       "sad"
@@ -2593,9 +3283,12 @@
   },
   {
     "id": 340,
-    "content": "這風褸我給你磨到有襟花",
+    "content": "这风褛我给你磨到有襟花",
+    "contentTraditional": "這風褸我給你磨到有襟花",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "memory",
@@ -2605,9 +3298,12 @@
   },
   {
     "id": 341,
-    "content": "要擁有必先懂失去怎接受",
+    "content": "要拥有必先懂失去怎接受",
+    "contentTraditional": "要擁有必先懂失去怎接受",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "healing",
       "philosophy"
@@ -2616,9 +3312,12 @@
   },
   {
     "id": 342,
-    "content": "何不把悲哀感覺 假設是來自你虛構",
+    "content": "何不把悲哀感觉 假设是来自你虚构",
+    "contentTraditional": "何不把悲哀感覺 假設是來自你虛構",
     "song": "富士山下",
+    "songTraditional": "富士山下",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "healing",
       "philosophy"
@@ -2627,9 +3326,12 @@
   },
   {
     "id": 343,
-    "content": "為何舊知己在最後 變不到老友",
-    "song": "最佳損友",
+    "content": "为何旧知己在最后 变不到老友",
+    "contentTraditional": "為何舊知己在最後 變不到老友",
+    "song": "最佳损友",
+    "songTraditional": "最佳損友",
     "album": "Life Continues...",
+    "albumTraditional": "Life Continues...",
     "tags": [
       "friendship",
       "love",
@@ -2639,9 +3341,12 @@
   },
   {
     "id": 344,
-    "content": "難離難捨想抱緊些 茫茫人生好像荒野",
-    "song": "單車",
+    "content": "难离难舍想抱紧些 茫茫人生好像荒野",
+    "contentTraditional": "難離難捨想抱緊些 茫茫人生好像荒野",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "sad"
@@ -2650,9 +3355,12 @@
   },
   {
     "id": 345,
-    "content": "如孩兒能伏於爸爸的肩膊 誰要下車",
-    "song": "單車",
+    "content": "如孩儿能伏于爸爸的肩膊 谁要下车",
+    "contentTraditional": "如孩兒能伏於爸爸的肩膊 誰要下車",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "love"
@@ -2661,9 +3369,12 @@
   },
   {
     "id": 346,
-    "content": "我説了所有的謊你全都相信 簡單的我愛你你卻老不信",
+    "content": "我说了所有的谎你全都相信 简单的我爱你你却老不信",
+    "contentTraditional": "我説了所有的謊你全都相信 簡單的我愛你你卻老不信",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "sad"
@@ -2672,9 +3383,12 @@
   },
   {
     "id": 347,
-    "content": "幾朵雲在陰天 忘了該往哪兒走",
-    "song": "陰天快樂",
+    "content": "几朵云在阴天 忘了该往哪儿走",
+    "contentTraditional": "幾朵雲在陰天 忘了該往哪兒走",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "lonely",
       "love",
@@ -2684,9 +3398,12 @@
   },
   {
     "id": 348,
-    "content": "聽陰天説什麼 在昏暗中的我",
-    "song": "陰天快樂",
+    "content": "听阴天说什么 在昏暗中的我",
+    "contentTraditional": "聽陰天説什麼 在昏暗中的我",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "classic",
       "healing"
@@ -2695,9 +3412,12 @@
   },
   {
     "id": 349,
-    "content": "想對着天講 説無論如何陰天快樂",
-    "song": "陰天快樂",
+    "content": "想对着天讲 说无论如何阴天快乐",
+    "contentTraditional": "想對着天講 説無論如何陰天快樂",
+    "song": "阴天快乐",
+    "songTraditional": "陰天快樂",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "healing",
       "love"
@@ -2706,9 +3426,12 @@
   },
   {
     "id": 351,
-    "content": "愛若難以放進手裏 何不將這雙手放進心裏",
-    "song": "人來人往",
+    "content": "爱若难以放进手里 何不将这双手放进心里",
+    "contentTraditional": "愛若難以放進手裏 何不將這雙手放進心裏",
+    "song": "人来人往",
+    "songTraditional": "人來人往",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "love",
       "philosophy"
@@ -2717,9 +3440,12 @@
   },
   {
     "id": 352,
-    "content": "好想唱一闕歌叫你認清楚我 我也曾到來慶賀",
-    "song": "時代曲",
+    "content": "好想唱一阙歌叫你认清楚我 我也曾到来庆贺",
+    "contentTraditional": "好想唱一闕歌叫你認清楚我 我也曾到來慶賀",
+    "song": "时代曲",
+    "songTraditional": "時代曲",
     "album": "陈奕迅",
+    "albumTraditional": "陈奕迅",
     "tags": [
       "classic",
       "memory",
@@ -2729,9 +3455,12 @@
   },
   {
     "id": 353,
-    "content": "若問你會如何 你會罵我別傻 剩下光景不多",
-    "song": "時代曲",
+    "content": "若问你会如何 你会骂我别傻 剩下光景不多",
+    "contentTraditional": "若問你會如何 你會罵我別傻 剩下光景不多",
+    "song": "时代曲",
+    "songTraditional": "時代曲",
     "album": "陈奕迅",
+    "albumTraditional": "陈奕迅",
     "tags": [
       "philosophy",
       "sad"
@@ -2740,9 +3469,12 @@
   },
   {
     "id": 354,
-    "content": "重讀着你的告別信 抑壓而暗湧",
-    "song": "傷信",
+    "content": "重读着你的告别信 抑压而暗涌",
+    "contentTraditional": "重讀着你的告別信 抑壓而暗湧",
+    "song": "伤信",
+    "songTraditional": "傷信",
     "album": "陈奕迅",
+    "albumTraditional": "陈奕迅",
     "tags": [
       "classic",
       "memory",
@@ -2752,9 +3484,12 @@
   },
   {
     "id": 355,
-    "content": "如果可不要信 寧死都不要信 但看我手再激動仍只得傷信",
-    "song": "傷信",
+    "content": "如果可不要信 宁死都不要信 但看我手再激动仍只得伤信",
+    "contentTraditional": "如果可不要信 寧死都不要信 但看我手再激動仍只得傷信",
+    "song": "伤信",
+    "songTraditional": "傷信",
     "album": "陈奕迅",
+    "albumTraditional": "陈奕迅",
     "tags": [
       "pain",
       "sad"
@@ -2763,9 +3498,12 @@
   },
   {
     "id": 356,
-    "content": "都也是你 真了不起 親愛的你",
-    "song": "天下無雙",
+    "content": "都也是你 真了不起 亲爱的你",
+    "contentTraditional": "都也是你 真了不起 親愛的你",
+    "song": "天下无双",
+    "songTraditional": "天下無雙",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "love"
@@ -2774,9 +3512,12 @@
   },
   {
     "id": 357,
-    "content": "定是答你從無雙 多麼感激竟然有一雙我倆",
-    "song": "天下無雙",
+    "content": "定是答你从无双 多么感激竟然有一双我俩",
+    "contentTraditional": "定是答你從無雙 多麼感激竟然有一雙我倆",
+    "song": "天下无双",
+    "songTraditional": "天下無雙",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "brightness",
       "healing",
@@ -2786,9 +3527,12 @@
   },
   {
     "id": 358,
-    "content": "遺憾我當時年紀不可親手擁抱你欣賞",
-    "song": "時光倒流二十年",
+    "content": "遗憾我当时年纪不可亲手拥抱你欣赏",
+    "contentTraditional": "遺憾我當時年紀不可親手擁抱你欣賞",
+    "song": "时光倒流二十年",
+    "songTraditional": "時光倒流二十年",
     "album": "新生活",
+    "albumTraditional": "新生活",
     "tags": [
       "love",
       "regret",
@@ -2798,9 +3542,12 @@
   },
   {
     "id": 359,
-    "content": "從頭細看 你六歲當天 已是我偶像",
-    "song": "時光倒流二十年",
+    "content": "从头细看 你六岁当天 已是我偶像",
+    "contentTraditional": "從頭細看 你六歲當天 已是我偶像",
+    "song": "时光倒流二十年",
+    "songTraditional": "時光倒流二十年",
     "album": "新生活",
+    "albumTraditional": "新生活",
     "tags": [
       "classic",
       "love"
@@ -2809,9 +3556,12 @@
   },
   {
     "id": 360,
-    "content": "如果將街燈的光線代表真愛 或者熄燈了會更發現你存在",
-    "song": "黑夜不再來",
+    "content": "如果将街灯的光线代表真爱 或者熄灯了会更发现你存在",
+    "contentTraditional": "如果將街燈的光線代表真愛 或者熄燈了會更發現你存在",
+    "song": "黑夜不再来",
+    "songTraditional": "黑夜不再來",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "love",
       "philosophy"
@@ -2820,9 +3570,12 @@
   },
   {
     "id": 361,
-    "content": "熟悉的想講再會 陌生的都很匹配",
-    "song": "黑夜不再來",
+    "content": "熟悉的想讲再会 陌生的都很匹配",
+    "contentTraditional": "熟悉的想講再會 陌生的都很匹配",
+    "song": "黑夜不再来",
+    "songTraditional": "黑夜不再來",
     "album": "Nothing Really Matters",
+    "albumTraditional": "Nothing Really Matters",
     "tags": [
       "love",
       "sad"
@@ -2831,9 +3584,12 @@
   },
   {
     "id": 362,
-    "content": "喉嚨很乾 所以愛上你的吻 嘴巴需要覺得像被誰期待過",
-    "song": "低等動物",
+    "content": "喉咙很干 所以爱上你的吻 嘴巴需要觉得像被谁期待过",
+    "contentTraditional": "喉嚨很乾 所以愛上你的吻 嘴巴需要覺得像被誰期待過",
+    "song": "低等动物",
+    "songTraditional": "低等動物",
     "album": "打的火热",
+    "albumTraditional": "打的火热",
     "tags": [
       "crazy",
       "love"
@@ -2842,9 +3598,12 @@
   },
   {
     "id": 363,
-    "content": "為何未曾動心 都可以愛上那質感 未能淡忘肉身我是人",
-    "song": "低等動物",
+    "content": "为何未曾动心 都可以爱上那质感 未能淡忘肉身我是人",
+    "contentTraditional": "為何未曾動心 都可以愛上那質感 未能淡忘肉身我是人",
+    "song": "低等动物",
+    "songTraditional": "低等動物",
     "album": "打的火热",
+    "albumTraditional": "打的火热",
     "tags": [
       "crazy",
       "philosophy"
@@ -2853,9 +3612,12 @@
   },
   {
     "id": 364,
-    "content": "我不怕愛上你與你打得火熱 像這般親熱誰又需要撇脱",
-    "song": "打得火熱",
+    "content": "我不怕爱上你与你打得火热 像这般亲热谁又需要撇脱",
+    "contentTraditional": "我不怕愛上你與你打得火熱 像這般親熱誰又需要撇脱",
+    "song": "打得火热",
+    "songTraditional": "打得火熱",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "crazy",
       "love"
@@ -2864,9 +3626,12 @@
   },
   {
     "id": 365,
-    "content": "幸福的死穴情願一世倒貼",
-    "song": "打得火熱",
+    "content": "幸福的死穴情愿一世倒贴",
+    "contentTraditional": "幸福的死穴情願一世倒貼",
+    "song": "打得火热",
+    "songTraditional": "打得火熱",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "crazy",
       "love"
@@ -2875,9 +3640,12 @@
   },
   {
     "id": 366,
-    "content": "六月飛霜 個個笑得哀傷",
-    "song": "六月飛霜",
+    "content": "六月飞霜 个个笑得哀伤",
+    "contentTraditional": "六月飛霜 個個笑得哀傷",
+    "song": "六月飞霜",
+    "songTraditional": "六月飛霜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "dark",
       "life",
@@ -2888,9 +3656,12 @@
   },
   {
     "id": 367,
-    "content": "剩下砒霜當菜汁分享 猶如吞仙丹上月亮",
-    "song": "六月飛霜",
+    "content": "剩下砒霜当菜汁分享 犹如吞仙丹上月亮",
+    "contentTraditional": "剩下砒霜當菜汁分享 猶如吞仙丹上月亮",
+    "song": "六月飞霜",
+    "songTraditional": "六月飛霜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "crazy",
       "life",
@@ -2900,9 +3671,12 @@
   },
   {
     "id": 368,
-    "content": "誰於五線譜雕刻上承諾 誰於拍子機複製出假快樂",
+    "content": "谁于五线谱雕刻上承诺 谁于拍子机复制出假快乐",
+    "contentTraditional": "誰於五線譜雕刻上承諾 誰於拍子機複製出假快樂",
     "song": "主旋律",
+    "songTraditional": "主旋律",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "life",
       "philosophy",
@@ -2912,9 +3686,12 @@
   },
   {
     "id": 369,
-    "content": "在最重要的一句哭 大時代的小插曲",
+    "content": "在最重要的一句哭 大时代的小插曲",
+    "contentTraditional": "在最重要的一句哭 大時代的小插曲",
     "song": "主旋律",
+    "songTraditional": "主旋律",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "life",
       "philosophy"
@@ -2923,9 +3700,12 @@
   },
   {
     "id": 370,
-    "content": "逃避分開的孤獨 情願一起不舒服",
-    "song": "斯德哥爾摩情人",
+    "content": "逃避分开的孤独 情愿一起不舒服",
+    "contentTraditional": "逃避分開的孤獨 情願一起不舒服",
+    "song": "斯德哥尔摩情人",
+    "songTraditional": "斯德哥爾摩情人",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "crazy",
       "love"
@@ -2934,9 +3714,12 @@
   },
   {
     "id": 371,
-    "content": "也許早已戀上共綁匪苦海慈航",
-    "song": "斯德哥爾摩情人",
+    "content": "也许早已恋上共绑匪苦海慈航",
+    "contentTraditional": "也許早已戀上共綁匪苦海慈航",
+    "song": "斯德哥尔摩情人",
+    "songTraditional": "斯德哥爾摩情人",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "love",
       "philosophy"
@@ -2945,9 +3728,12 @@
   },
   {
     "id": 372,
-    "content": "還沒有開始才沒有終止 難忘未必永志",
-    "song": "失憶蝴蝶",
+    "content": "还没有开始才没有终止 难忘未必永志",
+    "contentTraditional": "還沒有開始才沒有終止 難忘未必永志",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy",
       "sad"
@@ -2956,9 +3742,12 @@
   },
   {
     "id": 373,
-    "content": "蝴蝶記憶很短 留下什麼恩怨 回頭像隔世一笑便算",
-    "song": "失憶蝴蝶",
+    "content": "蝴蝶记忆很短 留下什么恩怨 回头像隔世一笑便算",
+    "contentTraditional": "蝴蝶記憶很短 留下什麼恩怨 回頭像隔世一笑便算",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "healing",
       "philosophy"
@@ -2967,9 +3756,12 @@
   },
   {
     "id": 374,
-    "content": "每次殺不死你 殺不死你 也醫好你",
+    "content": "每次杀不死你 杀不死你 也医好你",
+    "contentTraditional": "每次殺不死你 殺不死你 也醫好你",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "power"
@@ -2978,9 +3770,12 @@
   },
   {
     "id": 375,
-    "content": "要治本必須重口味",
+    "content": "要治本必须重口味",
+    "contentTraditional": "要治本必須重口味",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "life"
@@ -2989,9 +3784,12 @@
   },
   {
     "id": 376,
-    "content": "人人負債 輕輕鬆鬆的欠下人情鉅債",
+    "content": "人人负债 轻轻松松的欠下人情巨债",
+    "contentTraditional": "人人負債 輕輕鬆鬆的欠下人情鉅債",
     "song": "碌卡",
+    "songTraditional": "碌卡",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "life",
       "social"
@@ -3001,8 +3799,11 @@
   {
     "id": 377,
     "content": "嘻嘻哈哈花光信用何其愉快",
+    "contentTraditional": "嘻嘻哈哈花光信用何其愉快",
     "song": "碌卡",
+    "songTraditional": "碌卡",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "life",
       "philosophy",
@@ -3012,34 +3813,43 @@
   },
   {
     "id": 378,
-    "content": "茫茫人際如何入世 只需禮貌名牌昂貴",
-    "song": "非禮",
+    "content": "茫茫人际如何入世 只需礼貌名牌昂贵",
+    "contentTraditional": "茫茫人際如何入世 只需禮貌名牌昂貴",
+    "song": "非礼",
+    "songTraditional": "非禮",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "dark",
       "life",
       "sad",
       "social"
     ],
-    "link": "https://music.163.com/#/search/m/?s=%E9%9D%9E%E7%A6%AE"
+    "link": "https://music.163.com/#/search/m/?s=%E9%99%9E%E7%A6%AE"
   },
   {
     "id": 379,
-    "content": "如何造勢如何造勢 只差禮貌全城頹廢",
-    "song": "非禮",
+    "content": "如何造势如何造势 只差礼貌全城颓废",
+    "contentTraditional": "如何造勢如何造勢 只差禮貌全城頹廢",
+    "song": "非礼",
+    "songTraditional": "非禮",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "life",
       "social"
     ],
-    "link": "https://music.163.com/#/search/m/?s=%E9%9D%9E%E7%A6%AE"
+    "link": "https://music.163.com/#/search/m/?s=%E9%99%9E%E7%A6%AE"
   },
   {
     "id": 380,
-    "content": "怎麼了這大雨還沒下完 你的心一直掉落不能留住過往",
-    "song": "空城記",
+    "content": "怎么了这大雨还没下完 你的心一直掉落不能留住过往",
+    "contentTraditional": "怎麼了這大雨還沒下完 你的心一直掉落不能留住過往",
+    "song": "空城记",
+    "songTraditional": "空城記",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "classic",
       "memory",
@@ -3049,9 +3859,12 @@
   },
   {
     "id": 381,
-    "content": "遺憾不堪思量 古城月色蒼茫",
-    "song": "空城記",
+    "content": "遗憾不堪思量 古城月色苍茫",
+    "contentTraditional": "遺憾不堪思量 古城月色蒼茫",
+    "song": "空城记",
+    "songTraditional": "空城記",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "classic",
       "sad"
@@ -3060,9 +3873,12 @@
   },
   {
     "id": 382,
-    "content": "一個人 還是一片雲 或者突然聚烏雲",
+    "content": "一个人 还是一片云 或者突然聚乌云",
+    "contentTraditional": "一個人 還是一片雲 或者突然聚烏雲",
     "song": "人啊人",
+    "songTraditional": "人啊人",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "philosophy"
@@ -3071,9 +3887,12 @@
   },
   {
     "id": 383,
-    "content": "誰明白過所有人啊人 信人 並騙人",
+    "content": "谁明白过所有人啊人 信人 并骗人",
+    "contentTraditional": "誰明白過所有人啊人 信人 並騙人",
     "song": "人啊人",
+    "songTraditional": "人啊人",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "philosophy",
@@ -3083,9 +3902,12 @@
   },
   {
     "id": 384,
-    "content": "眉頭狂跳太恐懼 鼻上紅印快消退",
+    "content": "眉头狂跳太恐惧 鼻上红印快消退",
+    "contentTraditional": "眉頭狂跳太恐懼 鼻上紅印快消退",
     "song": "焦焦焦",
+    "songTraditional": "焦焦焦",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "social"
@@ -3094,9 +3916,12 @@
   },
   {
     "id": 385,
-    "content": "Woo 天光已經焦慮 Woo 每樣煩好想通通也告吹",
+    "content": "Woo 天光已经焦虑 Woo 每样烦好想通通也告吹",
+    "contentTraditional": "Woo 天光已經焦慮 Woo 每樣煩好想通通也告吹",
     "song": "焦焦焦",
+    "songTraditional": "焦焦焦",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "crazy",
       "life",
@@ -3106,9 +3931,12 @@
   },
   {
     "id": 386,
-    "content": "在月兒面前講跳水 在大牀面前講遊花園",
-    "song": "不知所謂",
+    "content": "在月儿面前讲跳水 在大床面前讲游花园",
+    "contentTraditional": "在月兒面前講跳水 在大牀面前講遊花園",
+    "song": "不知所谓",
+    "songTraditional": "不知所謂",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "life",
       "love"
@@ -3117,9 +3945,12 @@
   },
   {
     "id": 387,
-    "content": "我抹角轉彎走到這個路口 我卻沒有講我很愛你",
-    "song": "不知所謂",
+    "content": "我抹角转弯走到这个路口 我却没有讲我很爱你",
+    "contentTraditional": "我抹角轉彎走到這個路口 我卻沒有講我很愛你",
+    "song": "不知所谓",
+    "songTraditional": "不知所謂",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "love",
       "regret",
@@ -3129,9 +3960,12 @@
   },
   {
     "id": 388,
-    "content": "而既然分開了 何必又想打擾",
-    "song": "少見不怪",
+    "content": "而既然分开了 何必又想打扰",
+    "contentTraditional": "而既然分開了 何必又想打擾",
+    "song": "少见不怪",
+    "songTraditional": "少見不怪",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "love",
       "sad"
@@ -3140,9 +3974,12 @@
   },
   {
     "id": 389,
-    "content": "為何愛人丟低了 才來明白對方緊要",
-    "song": "少見不怪",
+    "content": "为何爱人丢低了 才来明白对方紧要",
+    "contentTraditional": "為何愛人丟低了 才來明白對方緊要",
+    "song": "少见不怪",
+    "songTraditional": "少見不怪",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "regret",
       "sad"
@@ -3151,9 +3988,12 @@
   },
   {
     "id": 392,
-    "content": "抬頭望長裙下的風 連幻想的質感都一樣柔潤",
+    "content": "抬头望长裙下的风 连幻想的质感都一样柔润",
+    "contentTraditional": "抬頭望長裙下的風 連幻想的質感都一樣柔潤",
     "song": "裙下之臣",
+    "songTraditional": "裙下之臣",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "crazy",
       "love"
@@ -3162,9 +4002,12 @@
   },
   {
     "id": 393,
-    "content": "大概每個人 不只喜歡一個女人",
+    "content": "大概每个人 不只喜欢一个女人",
+    "contentTraditional": "大概每個人 不只喜歡一個女人",
     "song": "裙下之臣",
+    "songTraditional": "裙下之臣",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "crazy",
       "philosophy"
@@ -3173,9 +4016,12 @@
   },
   {
     "id": 394,
-    "content": "霎眼廿七歲 時日無多方不敢偷懶",
-    "song": "陀飛輪",
+    "content": "霎眼廿七岁 时日无多方不敢偷懒",
+    "contentTraditional": "霎眼廿七歲 時日無多方不敢偷懶",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "regret",
@@ -3185,9 +4031,12 @@
   },
   {
     "id": 395,
-    "content": "記住那關於光陰的教訓 回頭走天已暗",
-    "song": "陀飛輪",
+    "content": "记住那关于光阴的教训 回头走天已暗",
+    "contentTraditional": "記住那關於光陰的教訓 回頭走天已暗",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -3196,9 +4045,12 @@
   },
   {
     "id": 396,
-    "content": "被你牽動思覺 最後誰願纏繞到天國",
-    "song": "一絲不掛",
+    "content": "被你牵动思觉 最后谁愿缠绕到天国",
+    "contentTraditional": "被你牽動思覺 最後誰願纏繞到天國",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "pain",
@@ -3208,9 +4060,12 @@
   },
   {
     "id": 397,
-    "content": "難道愛本身可愛在於束縛",
-    "song": "一絲不掛",
+    "content": "难道爱本身可爱在于束缚",
+    "contentTraditional": "難道愛本身可愛在於束縛",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "philosophy"
@@ -3219,9 +4074,12 @@
   },
   {
     "id": 398,
-    "content": "真想不到當初我們也討厭吃苦瓜 今天竟吃得出那睿智愈來愈記掛",
+    "content": "真想不到当初我们也讨厌吃苦瓜 今天竟吃得出那睿智愈来愈记挂",
+    "contentTraditional": "真想不到當初我們也討厭吃苦瓜 今天竟吃得出那睿智愈來愈記掛",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "life",
       "philosophy"
@@ -3230,9 +4088,12 @@
   },
   {
     "id": 399,
-    "content": "到大徹大悟將虎咽的昇華 等消化學沏茶",
+    "content": "到大彻大悟将虎咽的升华 等消化学沏茶",
+    "contentTraditional": "到大徹大悟將虎咽的昇華 等消化學沏茶",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "healing",
       "life"
@@ -3241,9 +4102,12 @@
   },
   {
     "id": 400,
-    "content": "茫茫人生千百次聚頭 沒有貪新都會厭舊",
-    "song": "告別娑婆",
+    "content": "茫茫人生千百次聚头 没有贪新都会厌旧",
+    "contentTraditional": "茫茫人生千百次聚頭 沒有貪新都會厭舊",
+    "song": "告别娑婆",
+    "songTraditional": "告別娑婆",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "life",
       "philosophy"
@@ -3252,9 +4116,12 @@
   },
   {
     "id": 401,
-    "content": "決不輪迴不輪迴 這生餘業永在",
-    "song": "告別娑婆",
+    "content": "决不轮回不轮回 这生余业永在",
+    "contentTraditional": "決不輪迴不輪迴 這生餘業永在",
+    "song": "告别娑婆",
+    "songTraditional": "告別娑婆",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "dark",
       "philosophy",
@@ -3264,9 +4131,12 @@
   },
   {
     "id": 402,
-    "content": "假使你是情侶 假使你共同一起生活裏",
-    "song": "遠在咫尺",
+    "content": "假使你是情侣 假使你共同一起生活里",
+    "contentTraditional": "假使你是情侶 假使你共同一起生活裏",
+    "song": "远在咫尺",
+    "songTraditional": "遠在咫尺",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "love",
       "sad"
@@ -3275,9 +4145,12 @@
   },
   {
     "id": 403,
-    "content": "同樣會記掛她身於咫尺 心於千里不可抑壓像潮水",
-    "song": "遠在咫尺",
+    "content": "同样会记挂她身于咫尺 心于千里不可抑压像潮水",
+    "contentTraditional": "同樣會記掛她身於咫尺 心於千里不可抑壓像潮水",
+    "song": "远在咫尺",
+    "songTraditional": "遠在咫尺",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "love",
       "pain",
@@ -3287,9 +4160,12 @@
   },
   {
     "id": 406,
-    "content": "還未開始怎麼終止 難忘未必永志",
-    "song": "失憶蝴蝶",
+    "content": "还没有开始怎么终止 难忘未必永志",
+    "contentTraditional": "還未開始怎麼終止 難忘未必永志",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy",
       "sad"
@@ -3298,9 +4174,12 @@
   },
   {
     "id": 409,
-    "content": "隨時能歡喜亦隨時嫌棄 這樣遺憾或者更完美",
-    "song": "失憶蝴蝶",
+    "content": "随时能欢喜亦随时嫌弃 这样遗憾或者更完美",
+    "contentTraditional": "隨時能歡喜亦隨時嫌棄 這樣遺憾或者更完美",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "healing",
       "philosophy"
@@ -3309,9 +4188,12 @@
   },
   {
     "id": 410,
-    "content": "其實不必醫學根據 我有的病我會醫病",
+    "content": "其实不必医学根据 我有的病我会医病",
+    "contentTraditional": "其實不必醫學根據 我有的病我會醫病",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "power"
@@ -3320,9 +4202,12 @@
   },
   {
     "id": 411,
-    "content": "切記要爭口氣 要爭口氣你不要死",
+    "content": "切记要争口气 要争口气你不要死",
+    "contentTraditional": "切記要爭口氣 要爭口氣你不要死",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "life",
       "power"
@@ -3331,9 +4216,12 @@
   },
   {
     "id": 412,
-    "content": "眼淚裏含有止痛藥 誰亦靠啜泣啜泣啜泣去通眼耳口鼻",
+    "content": "眼泪里含有止痛药 谁亦靠啜泣啜泣啜泣去通眼耳口鼻",
+    "contentTraditional": "眼淚裏含有止痛藥 誰亦靠啜泣啜泣啜泣去通眼耳口鼻",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "healing"
@@ -3342,9 +4230,12 @@
   },
   {
     "id": 413,
-    "content": "情願從山埃找到了色香味 吸收心痛接受別離",
+    "content": "情愿从山埃找到了色香味 吸收心痛接受别离",
+    "contentTraditional": "情願從山埃找到了色香味 吸收心痛接受別離",
     "song": "重口味",
+    "songTraditional": "重口味",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "healing"
@@ -3353,9 +4244,12 @@
   },
   {
     "id": 414,
-    "content": "珍惜親戚老友與舊同學 即管千方百計策動娛樂",
+    "content": "珍惜亲戚老友与旧同学 即管千方百计策动娱乐",
+    "contentTraditional": "珍惜親戚老友與舊同學 即管千方百計策動娛樂",
     "song": "碌卡",
+    "songTraditional": "碌卡",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "life",
       "social"
@@ -3364,9 +4258,12 @@
   },
   {
     "id": 415,
-    "content": "碌卡要抱住最大期望 碌卡尷尬亦切忌流汗",
+    "content": "碌卡要抱住最大期望 碌卡尴尬亦切忌流汗",
+    "contentTraditional": "碌卡要抱住最大期望 碌卡尷尬亦切忌流汗",
     "song": "碌卡",
+    "songTraditional": "碌卡",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "crazy",
       "life",
@@ -3376,22 +4273,28 @@
   },
   {
     "id": 416,
-    "content": "如何自閉如何自閉如何自閉 都不可以沒禮",
-    "song": "非禮",
+    "content": "如何自闭如何自闭如何自闭 都不可以没礼",
+    "contentTraditional": "如何自閉如何自閉如何自閉 都不可以沒禮",
+    "song": "非礼",
+    "songTraditional": "非禮",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "dark",
       "life",
       "sad",
       "social"
     ],
-    "link": "https://music.163.com/#/search/m/?s=%E9%9D%9E%E7%A6%AE"
+    "link": "https://music.163.com/#/search/m/?s=%E9%99%9E%E7%A6%AE"
   },
   {
     "id": 417,
-    "content": "如果你是月亮 能不能夠陪伴",
-    "song": "空城記",
+    "content": "如果你是月亮 能不能够陪伴",
+    "contentTraditional": "如果你是月亮 能不能夠陪伴",
+    "song": "空城记",
+    "songTraditional": "空城記",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "love",
       "sad"
@@ -3400,9 +4303,12 @@
   },
   {
     "id": 418,
-    "content": "獨守着想念你的海岸",
-    "song": "空城記",
+    "content": "独守着想念你的海岸",
+    "contentTraditional": "獨守着想念你的海岸",
+    "song": "空城记",
+    "songTraditional": "空城記",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "lonely",
       "sad"
@@ -3411,9 +4317,12 @@
   },
   {
     "id": 419,
-    "content": "有幾多是意識是肉身 很謙卑的人 很矜誇的人",
+    "content": "有几多是意识是肉身 很谦卑的人 很矜夸的人",
+    "contentTraditional": "有幾多是意識是肉身 很謙卑的人 很矜誇的人",
     "song": "人啊人",
+    "songTraditional": "人啊人",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "humanity",
       "philosophy"
@@ -3422,9 +4331,12 @@
   },
   {
     "id": 420,
-    "content": "In one second 難題完全圍着我拖一拖",
+    "content": "In one second 难题完全围着我拖一拖",
+    "contentTraditional": "In one second 難題完全圍着我拖一拖",
     "song": "焦焦焦",
+    "songTraditional": "焦焦焦",
     "album": "CHIN UP!",
+    "albumTraditional": "CHIN UP!",
     "tags": [
       "life",
       "social"
@@ -3433,9 +4345,12 @@
   },
   {
     "id": 421,
-    "content": "由手機講到雞尾酒 由蕃茄講到北美洲",
-    "song": "不知所謂",
+    "content": "由手机讲到鸡尾酒 由蕃茄讲到北美洲",
+    "contentTraditional": "由手機講到雞尾酒 由蕃茄講到北美洲",
+    "song": "不知所谓",
+    "songTraditional": "不知所謂",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "life",
       "love"
@@ -3444,9 +4359,12 @@
   },
   {
     "id": 422,
-    "content": "笑我衝出口多於足夠",
-    "song": "不知所謂",
+    "content": "笑我冲出口多于足够",
+    "contentTraditional": "笑我衝出口多於足夠",
+    "song": "不知所谓",
+    "songTraditional": "不知所謂",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "love",
       "regret",
@@ -3456,9 +4374,12 @@
   },
   {
     "id": 423,
-    "content": "Hey 這邊的天氣漸回暖 而你可否開心似我所願",
-    "song": "少見不怪",
+    "content": "Hey 这边的天气渐回暖 而你可否开心似我所愿",
+    "contentTraditional": "Hey 這邊的天氣漸回暖 而你可否開心似我所願",
+    "song": "少见不怪",
+    "songTraditional": "少見不怪",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "love",
       "sad"
@@ -3467,9 +4388,12 @@
   },
   {
     "id": 424,
-    "content": "原來我仍想知你與情人近況 可會對我懷緬好",
-    "song": "少見不怪",
+    "content": "原来我仍想知你与情人近况 可会对我怀缅好",
+    "contentTraditional": "原來我仍想知你與情人近況 可會對我懷緬好",
+    "song": "少见不怪",
+    "songTraditional": "少見不怪",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "memory",
@@ -3479,9 +4403,12 @@
   },
   {
     "id": 429,
-    "content": "為何用到盡了至知哪樣緊要",
-    "song": "陀飛輪",
+    "content": "为何用到尽了至知哪样紧要",
+    "contentTraditional": "為何用到盡了至知哪樣緊要",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -3490,9 +4417,12 @@
   },
   {
     "id": 430,
-    "content": "靈魂若變賣了上鍊也沒心跳",
-    "song": "陀飛輪",
+    "content": "灵魂若变卖了上链也没心跳",
+    "contentTraditional": "靈魂若變賣了上鍊也沒心跳",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "philosophy",
       "soul"
@@ -3501,9 +4431,12 @@
   },
   {
     "id": 432,
-    "content": "分手時內疚的你一轉臉 為日後不想有什麼牽連",
-    "song": "一絲不掛",
+    "content": "分手时内疚的你一转脸 为日后不想有什么牵连",
+    "contentTraditional": "分手時內疚的你一轉臉 為日後不想有什麼牽連",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "sad"
@@ -3513,8 +4446,11 @@
   {
     "id": 433,
     "content": "青春的快餐只要求快不理哪一家",
+    "contentTraditional": "青春的快餐只要求快不理哪一家",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "life",
       "social"
@@ -3523,9 +4459,12 @@
   },
   {
     "id": 434,
-    "content": "哪有玩味的空當來欣賞細緻淡雅",
+    "content": "哪有玩味的空当来欣赏细致淡雅",
+    "contentTraditional": "哪有玩味的空當來欣賞細緻淡雅",
     "song": "苦瓜",
+    "songTraditional": "苦瓜",
     "album": "Stranger Under My Skin",
+    "albumTraditional": "Stranger Under My Skin",
     "tags": [
       "life",
       "philosophy"
@@ -3534,9 +4473,12 @@
   },
   {
     "id": 438,
-    "content": "鏡子裏面是誰是敢於冒險的玫瑰",
-    "song": "吟遊詩人",
+    "content": "镜子里面是谁是敢于冒险的玫瑰",
+    "contentTraditional": "鏡子裏面是誰是敢於冒險的玫瑰",
+    "song": "吟游诗人",
+    "songTraditional": "吟遊詩人",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "philosophy",
       "self"
@@ -3545,9 +4487,12 @@
   },
   {
     "id": 439,
-    "content": "把書本打開翻到某一回出走一回",
-    "song": "吟遊詩人",
+    "content": "把书本打开翻到某一回出走一回",
+    "contentTraditional": "把書本打開翻到某一回出走一回",
+    "song": "吟游诗人",
+    "songTraditional": "吟遊詩人",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "crazy",
       "freedom",
@@ -3557,9 +4502,12 @@
   },
   {
     "id": 440,
-    "content": "好風景多得是夕陽平常事 然而每天看見的永遠不相似",
-    "song": "夕陽無限好",
+    "content": "好风景多的是夕阳平常事 然而每天看见的永远不相似",
+    "contentTraditional": "好風景多得是夕陽平常事 然而每天看見的永遠不相似",
+    "song": "夕阳无限好",
+    "songTraditional": "夕陽無限好",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "life",
       "philosophy"
@@ -3568,9 +4516,12 @@
   },
   {
     "id": 441,
-    "content": "成人只寄望收穫 情人只聽見承諾",
+    "content": "成人只寄望收获 情人只听见承诺",
+    "contentTraditional": "成人只寄望收穫 情人只聽見承諾",
     "song": "Shall We Talk",
+    "songTraditional": "Shall We Talk",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "love",
       "philosophy"
@@ -3579,9 +4530,12 @@
   },
   {
     "id": 442,
-    "content": "為何都不大懂得努力珍惜對方",
+    "content": "为何都不大懂得努力珍惜对方",
+    "contentTraditional": "為何都不大懂得努力珍惜對方",
     "song": "Shall We Talk",
+    "songTraditional": "Shall We Talk",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "love",
       "regret",
@@ -3591,9 +4545,12 @@
   },
   {
     "id": 443,
-    "content": "生活 別過份地童話化",
+    "content": "生活 别过份地童话化",
+    "contentTraditional": "生活 別過份地童話化",
     "song": "落花流水",
+    "songTraditional": "落花流水",
     "album": "life continues",
+    "albumTraditional": "life continues",
     "tags": [
       "life",
       "philosophy"
@@ -3602,9 +4559,12 @@
   },
   {
     "id": 444,
-    "content": "感情總是善良 殘忍的是人會成長",
-    "song": "不如不見",
+    "content": "感情总是善良 残忍的是人会成长",
+    "contentTraditional": "感情總是善良 殘忍的是人會成長",
+    "song": "不如不见",
+    "songTraditional": "不如不見",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "philosophy",
       "sad"
@@ -3613,9 +4573,12 @@
   },
   {
     "id": 445,
-    "content": "幸福是個秘密 享受卻不知情",
-    "song": "倒帶人生",
+    "content": "幸福是个秘密 享受却不知情",
+    "contentTraditional": "幸福是個秘密 享受卻不知情",
+    "song": "倒带人生",
+    "songTraditional": "倒帶人生",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "love",
       "philosophy"
@@ -3624,9 +4587,12 @@
   },
   {
     "id": 446,
-    "content": "其實我還好 祈望你還好",
-    "song": "一切還好",
+    "content": "其实我还好 祈望你还好",
+    "contentTraditional": "其實我還好 祈望你還好",
+    "song": "一切还好",
+    "songTraditional": "一切還好",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "healing",
       "sad"
@@ -3635,9 +4601,12 @@
   },
   {
     "id": 447,
-    "content": "擁不擁有也會記住誰 快不快樂有天總過去",
-    "song": "人來人往",
+    "content": "拥不拥有也会记住谁 快不快乐有天总过去",
+    "contentTraditional": "擁不擁有也會記住誰 快不快樂有天總過去",
+    "song": "人来人往",
+    "songTraditional": "人來人往",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "memory",
@@ -3647,9 +4616,12 @@
   },
   {
     "id": 448,
-    "content": "若無其事是最殘忍的報復",
+    "content": "若无其事是最残忍的报复",
+    "contentTraditional": "若無其事是最殘忍的報復",
     "song": "想哭",
+    "songTraditional": "想哭",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "philosophy",
       "sad"
@@ -3658,9 +4630,12 @@
   },
   {
     "id": 449,
-    "content": "不緊要 當天放棄我的是你 今天你也有被放棄的那個滋味",
-    "song": "一切還好",
+    "content": "不紧要 当天放弃我的是你 今天你也有被放弃的那个滋味",
+    "contentTraditional": "不緊要 當天放棄我的是你 今天你也有被放棄的那個滋味",
+    "song": "一切还好",
+    "songTraditional": "一切還好",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "regret",
       "sad"
@@ -3669,9 +4644,12 @@
   },
   {
     "id": 450,
-    "content": "慘淡在是我不知不能回頭 欺騙我難約定未來回頭 我是牛我是牛",
+    "content": "惨淡在是我不知不能回头 欺骗我难约定未来回头 我是牛我是牛",
+    "contentTraditional": "慘淡在是我不知不能回頭 欺騙我難約定未來回頭 我是牛我是牛",
     "song": "阿牛",
+    "songTraditional": "阿牛",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -3680,9 +4658,12 @@
   },
   {
     "id": 451,
-    "content": "誰在催我成長 讓我失去迷途的膽量",
-    "song": "然後怎樣",
+    "content": "谁在催我成长 让我失去迷途的胆量",
+    "contentTraditional": "誰在催我成長 讓我失去迷途的膽量",
+    "song": "然后怎样",
+    "songTraditional": "然後怎樣",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "life",
       "philosophy"
@@ -3691,9 +4672,12 @@
   },
   {
     "id": 454,
-    "content": "最美長髮未留在我手 我也開心飲過酒",
-    "song": "人來人往",
+    "content": "最美长发未留在我手 我也开心饮过酒",
+    "contentTraditional": "最美長髮未留在我手 我也開心飲過酒",
+    "song": "人来人往",
+    "songTraditional": "人來人往",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "sad"
@@ -3702,9 +4686,12 @@
   },
   {
     "id": 456,
-    "content": "無論光陰怎麼蜕變 我亦在你的身邊",
-    "song": "每一個明天",
+    "content": "无论光阴怎么蜕变 我亦在你的身边",
+    "contentTraditional": "無論光陰怎麼蜕變 我亦在你的身邊",
+    "song": "每一个明天",
+    "songTraditional": "每一個明天",
     "album": "Every Best of Eason",
+    "albumTraditional": "Every Best of Eason",
     "tags": [
       "love",
       "promise"
@@ -3713,9 +4700,12 @@
   },
   {
     "id": 457,
-    "content": "希望每天見一面 互相擁有新一天",
-    "song": "每一個明天",
+    "content": "希望每天见一面 互相拥有新一天",
+    "contentTraditional": "希望每天見一面 互相擁有新一天",
+    "song": "每一个明天",
+    "songTraditional": "每一個明天",
     "album": "Every Best of Eason",
+    "albumTraditional": "Every Best of Eason",
     "tags": [
       "brightness",
       "healing",
@@ -3725,9 +4715,12 @@
   },
   {
     "id": 460,
-    "content": "愛上談情再愛入睡 直到想躺進陌生者的家裏",
-    "song": "黃金時代",
+    "content": "爱上谈情再爱入睡 直到想躺进陌生者的家里",
+    "contentTraditional": "愛上談情再愛入睡 直到想躺進陌生者的家裏",
+    "song": "黄金时代",
+    "songTraditional": "黃金時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "crazy",
       "love"
@@ -3736,9 +4729,12 @@
   },
   {
     "id": 461,
-    "content": "其實我寧願你不那麼好 其實我寧願你不那麼好",
-    "song": "一切還好",
+    "content": "其实我宁愿你不那么好 其实我宁愿你不那么好",
+    "contentTraditional": "其實我寧願你不那麼好 其實我寧願你不那麼好",
+    "song": "一切还好",
+    "songTraditional": "一切還好",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "crazy",
       "repeat",
@@ -3748,9 +4744,12 @@
   },
   {
     "id": 462,
-    "content": "千金不換它已熟悉我的汗 它是我肩膀上的指環",
-    "song": "你的揹包",
+    "content": "千金不换它已熟悉我的汗 它是我肩膀上的指环",
+    "contentTraditional": "千金不換它已熟悉我的汗 它是我肩膀上的指環",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory"
@@ -3760,8 +4759,11 @@
   {
     "id": 463,
     "content": "拥挤的房间一个人的心 有多孤独",
+    "contentTraditional": "擁擠的房間一個人的心 有多孤獨",
     "song": "K歌之王",
+    "songTraditional": "K歌之王",
     "album": "反正是我",
+    "albumTraditional": "反正是我",
     "tags": [
       "classic",
       "sad"
@@ -3770,9 +4772,12 @@
   },
   {
     "id": 464,
-    "content": "人群是那麼像羊群",
+    "content": "人群是那么像羊群",
+    "contentTraditional": "人群是那麼像羊群",
     "song": "任我行",
+    "songTraditional": "任我行",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy"
     ],
@@ -3781,8 +4786,11 @@
   {
     "id": 465,
     "content": "得不到的永远在骚动 被偏爱的都有恃无恐",
+    "contentTraditional": "得不到的永遠在騷動 被偏愛的都有恃無恐",
     "song": "红玫瑰",
+    "songTraditional": "紅玫瑰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "love",
@@ -3793,8 +4801,11 @@
   {
     "id": 466,
     "content": "谁说站在光里的才算英雄",
+    "contentTraditional": "誰說站在光裏的才算英雄",
     "song": "孤勇者",
+    "songTraditional": "孤勇者",
     "album": "孤勇者",
+    "albumTraditional": "孤勇者",
     "tags": [
       "power",
       "healing"
@@ -3804,8 +4815,11 @@
   {
     "id": 467,
     "content": "你的斑驳与众不同 你的沉默震耳欲聋",
+    "contentTraditional": "你的斑駁與眾不同 你的沉默震耳欲聾",
     "song": "孤勇者",
+    "songTraditional": "孤勇者",
     "album": "孤勇者",
+    "albumTraditional": "孤勇者",
     "tags": [
       "power",
       "healing"
@@ -3815,8 +4829,11 @@
   {
     "id": 468,
     "content": "直到和你做了多年朋友 才明白我的眼泪 不只为你而流 也为别人而流",
+    "contentTraditional": "直到和你做了多年朋友 才明白我的眼淚 不只為你而流 也為別人而流",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "sad"
@@ -3826,8 +4843,11 @@
   {
     "id": 469,
     "content": "如果那两个字没有颤抖 我不会发现我难受",
+    "contentTraditional": "如果那兩個字沒有顫抖 我不會發現我難受",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "sad"
@@ -3837,8 +4857,11 @@
   {
     "id": 470,
     "content": "情人最后难免沦为朋友",
+    "contentTraditional": "情人最後難免淪為朋友",
     "song": "十年",
+    "songTraditional": "十年",
     "album": "黑·白·灰",
+    "albumTraditional": "黑·白·灰",
     "tags": [
       "classic",
       "sad"
@@ -3848,8 +4871,11 @@
   {
     "id": 471,
     "content": "陪你把沿路感想活出了答案 陪你把独自孤单变成了勇敢",
+    "contentTraditional": "陪你把沿路感想活出了答案 陪你把獨自孤單變成了勇敢",
     "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "healing",
       "love"
@@ -3859,8 +4885,11 @@
   {
     "id": 472,
     "content": "陪伴是最长情的告白",
+    "contentTraditional": "陪伴是最長情的告白",
     "song": "陪你度过漫长岁月",
+    "songTraditional": "陪你度過漫長歲月",
     "album": "陪你度过漫长岁月",
+    "albumTraditional": "陪你度过漫长岁月",
     "tags": [
       "classic",
       "love"
@@ -3870,8 +4899,11 @@
   {
     "id": 473,
     "content": "对你说一句 只是说一句 好久不见",
+    "contentTraditional": "對你說一句 只是說一句 好久不見",
     "song": "好久不见",
+    "songTraditional": "好久不見",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "classic",
       "sad"
@@ -3880,9 +4912,12 @@
   },
   {
     "id": 474,
-    "content": "到這日才發現 層呼吸過空氣",
+    "content": "到这日才发现 曾呼吸过空气",
+    "contentTraditional": "到這日才發現 層呼吸過空氣",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "classic",
       "sad"
@@ -3891,9 +4926,12 @@
   },
   {
     "id": 475,
-    "content": "例如學會 承受失戀",
+    "content": "例如学会 承受失恋",
+    "contentTraditional": "例如學會 承受失戀",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "healing",
       "power"
@@ -3902,9 +4940,12 @@
   },
   {
     "id": 476,
-    "content": "明年今日 別要再失眠",
+    "content": "明年今日 别要再失眠",
+    "contentTraditional": "明年今日 別要再失眠",
     "song": "明年今日",
+    "songTraditional": "明年今日",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "healing"
     ],
@@ -3912,9 +4953,12 @@
   },
   {
     "id": 477,
-    "content": "我沒有辦法清醒應付新的對決 你卻輕易讓我的心委屈到極限",
-    "song": "心的距離",
+    "content": "我没有办法清醒应付新的对决 你却轻易让我的心委屈到极限",
+    "contentTraditional": "我沒有辦法清醒應付新的對決 你卻輕易讓我的心委屈到極限",
+    "song": "心的距离",
+    "songTraditional": "心的距離",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "sad",
       "love"
@@ -3923,9 +4967,12 @@
   },
   {
     "id": 478,
-    "content": "愛一個人是不是應該有默契 我以為你懂得每當我看着你",
-    "song": "不要説話",
+    "content": "爱一个人是不是应该有默契 我以为你懂得每当看着你",
+    "contentTraditional": "愛一個人是不是應該有默契 我以為你懂得每當我看着你",
+    "song": "不要说话",
+    "songTraditional": "不要説話",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "classic",
       "love"
@@ -3934,9 +4981,12 @@
   },
   {
     "id": 479,
-    "content": "請用心聽 不要説話",
-    "song": "不要説話",
+    "content": "请用心听 不要说话",
+    "contentTraditional": "請用心聽 不要説話",
+    "song": "不要说话",
+    "songTraditional": "不要説話",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "classic",
       "love"
@@ -3945,9 +4995,12 @@
   },
   {
     "id": 480,
-    "content": "你當我是浮誇吧誇張只因我很怕",
-    "song": "浮誇",
+    "content": "你当我是浮夸吧夸张只因我很怕",
+    "contentTraditional": "你當我是浮誇吧誇張只因我很怕",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -3956,9 +5009,12 @@
   },
   {
     "id": 481,
-    "content": "似木頭似石頭的話 得到注意嗎",
-    "song": "浮誇",
+    "content": "似木头似石头的话 得到注意吗",
+    "contentTraditional": "似木頭似石頭的話 得到注意嗎",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -3967,9 +5023,12 @@
   },
   {
     "id": 482,
-    "content": "其實怕被忘記 至放大來演吧 很不安怎去優雅 ",
-    "song": "浮誇",
+    "content": "其实怕被忘记 至放大来演吧 很不安怎去优雅 ",
+    "contentTraditional": "其實怕被忘記 至放大來演吧 很不安怎去優雅 ",
+    "song": "浮夸",
+    "songTraditional": "浮誇",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "crazy",
       "sad"
@@ -3978,9 +5037,12 @@
   },
   {
     "id": 483,
-    "content": "我想見的笑臉 只有懷念 不懂怎去再聊天",
-    "song": "不如不見",
+    "content": "我想见的笑脸 只有怀念 不懂怎去再聊天",
+    "contentTraditional": "我想見的笑臉 只有懷念 不懂怎去再聊天",
+    "song": "不如不见",
+    "songTraditional": "不如不見",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "classic",
       "sad"
@@ -3990,8 +5052,11 @@
   {
     "id": 484,
     "content": "似等了一百年 忽已明白",
-    "song": "不如不見",
+    "contentTraditional": "似等了一百年 忽已明白",
+    "song": "不如不见",
+    "songTraditional": "不如不見",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "sad"
     ],
@@ -3999,9 +5064,12 @@
   },
   {
     "id": 485,
-    "content": "但我拖著軀殼 發現沿途尋找的快樂",
-    "song": "一絲不掛",
+    "content": "但我拖着躯壳 发现沿途寻找的快乐",
+    "contentTraditional": "但我拖著軀殼 發現沿途尋找的快樂",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "philosophy",
       "sad"
@@ -4010,9 +5078,12 @@
   },
   {
     "id": 486,
-    "content": "仍系於你肩膊 或是其實在等我舍割",
-    "song": "一絲不掛",
+    "content": "仍系于你肩膊 或是其实在等我舍割",
+    "contentTraditional": "仍系於你肩膊 或是其實在等我舍割",
+    "song": "一丝不挂",
+    "songTraditional": "一絲不掛",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "sad"
@@ -4021,9 +5092,12 @@
   },
   {
     "id": 487,
-    "content": "那個揹包 載滿記念品和患難",
-    "song": "你的揹包",
+    "content": "那个背包 载满记念品和患难",
+    "contentTraditional": "那個揹包 載滿記念品和患難",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory"
@@ -4032,9 +5106,12 @@
   },
   {
     "id": 488,
-    "content": "千金不換它 已熟悉我的汗 它是我肩膀上的指環",
-    "song": "你的揹包",
+    "content": "千金不换它 已熟悉我的汗 它是我肩膀上的指环",
+    "contentTraditional": "千金不換它 已熟悉我的汗 它是我肩膀上的指環",
+    "song": "你的背包",
+    "songTraditional": "你的揹包",
     "album": "Special Thanks To...",
+    "albumTraditional": "Special Thanks To...",
     "tags": [
       "classic",
       "memory"
@@ -4043,9 +5120,12 @@
   },
   {
     "id": 489,
-    "content": "我的人生早留在你那裏 你要我來 我真的出席",
-    "song": "婚禮的祝福",
+    "content": "我的人生早留在你那里 你要我来 我真的出席",
+    "contentTraditional": "我的人生早留在你那裏 你要我來 我真的出席",
+    "song": "婚礼的祝福",
+    "songTraditional": "婚禮的祝福",
     "album": "婚礼的祝福",
+    "albumTraditional": "婚礼的祝福",
     "tags": [
       "classic",
       "sad"
@@ -4054,9 +5134,12 @@
   },
   {
     "id": 490,
-    "content": "讓我對這世界好奇 讓我信自己的真理",
-    "song": "我的快樂時代",
+    "content": "让我对这世界好奇 让我信自己的真理",
+    "contentTraditional": "讓我對這世界好奇 讓我信自己的真理",
+    "song": "我的快乐时代",
+    "songTraditional": "我的快樂時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "power"
@@ -4065,9 +5148,12 @@
   },
   {
     "id": 491,
-    "content": "長路漫漫是如何走過 寧願讓樂極忘形的我 ",
-    "song": "我的快樂時代",
+    "content": "长路漫漫是如何走过 宁愿让乐极忘形的我 ",
+    "contentTraditional": "長路漫漫是如何走過 寧願讓樂極忘形的我 ",
+    "song": "我的快乐时代",
+    "songTraditional": "我的快樂時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "philosophy"
@@ -4076,9 +5162,12 @@
   },
   {
     "id": 492,
-    "content": "離時代遠遠沒人間煙火 毫無代價唱最幸福的歌",
-    "song": "我的快樂時代",
+    "content": "离时代远远没人间烟火 毫无代价唱最幸福的歌",
+    "contentTraditional": "離時代遠遠沒人間煙火 毫無代價唱最幸福的歌",
+    "song": "我的快乐时代",
+    "songTraditional": "我的快樂時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "philosophy"
@@ -4087,9 +5176,12 @@
   },
   {
     "id": 493,
-    "content": "結伴創將來多麼的美 你的路我的途再也不分己與彼",
-    "song": "每一個明天",
+    "content": "结伴创将来多么的美 你的路我的途再也不分己与彼",
+    "contentTraditional": "結伴創將來多麼的美 你的路我的途再也不分己與彼",
+    "song": "每一个明天",
+    "songTraditional": "每一個明天",
     "album": "Every Best of Eason",
+    "albumTraditional": "Every Best of Eason",
     "tags": [
       "brightness",
       "healing"
@@ -4098,9 +5190,12 @@
   },
   {
     "id": 494,
-    "content": "有浪有風來 不捨不棄 每一明天也贈你",
-    "song": "每一個明天",
+    "content": "有浪有风来 不舍不弃 每一明天也赠你",
+    "contentTraditional": "有浪有風來 不捨不棄 每一明天也贈你",
+    "song": "每一个明天",
+    "songTraditional": "每一個明天",
     "album": "Every Best of Eason",
+    "albumTraditional": "Every Best of Eason",
     "tags": [
       "love",
       "power"
@@ -4109,9 +5204,12 @@
   },
   {
     "id": 495,
-    "content": "抬頭吧 相信愛你便能飛",
+    "content": "抬头吧 相信爱你便能飞",
+    "contentTraditional": "抬頭吧 相信愛你便能飛",
     "song": "今日",
+    "songTraditional": "今日",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "healing",
       "power"
@@ -4120,9 +5218,12 @@
   },
   {
     "id": 496,
-    "content": "別要驚別要驚亂世下佈滿樽頸 這都市已吃夠血腥",
-    "song": "黑擇明",
+    "content": "别要惊别要惊乱世下布满樽颈 这都市已吃够血腥",
+    "contentTraditional": "別要驚別要驚亂世下佈滿樽頸 這都市已吃夠血腥",
+    "song": "黑择明",
+    "songTraditional": "黑擇明",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "healing",
       "power"
@@ -4131,9 +5232,12 @@
   },
   {
     "id": 497,
-    "content": "死亡遲早都找你 切勿憑自己",
-    "song": "黑擇明",
+    "content": "死亡迟早都找你 切勿凭自己",
+    "contentTraditional": "死亡遲早都找你 切勿憑自己",
+    "song": "黑择明",
+    "songTraditional": "黑擇明",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "healing",
       "philosophy"
@@ -4142,9 +5246,12 @@
   },
   {
     "id": 498,
-    "content": "你也需要 一個相信你的人",
+    "content": "你也需要 一个相信你的人",
+    "contentTraditional": "你也需要 一個相信你的人",
     "song": "相信你的人",
+    "songTraditional": "相信你的人",
     "album": "相信你的人",
+    "albumTraditional": "相信你的人",
     "tags": [
       "healing",
       "love"
@@ -4153,9 +5260,12 @@
   },
   {
     "id": 499,
-    "content": "暖暖看你 不同於人們的眼神",
+    "content": "暖暖看你 不同于人们的眼神",
+    "contentTraditional": "暖暖看你 不同於人們的眼神",
     "song": "相信你的人",
+    "songTraditional": "相信你的人",
     "album": "相信你的人",
+    "albumTraditional": "相信你的人",
     "tags": [
       "healing",
       "love"
@@ -4164,9 +5274,12 @@
   },
   {
     "id": 500,
-    "content": "當你懷抱傷痕 仍舊朝夢想狂奔",
+    "content": "当你怀抱伤痕 仍旧朝梦想狂奔",
+    "contentTraditional": "當你懷抱傷痕 仍舊朝夢想狂奔",
     "song": "相信你的人",
+    "songTraditional": "相信你的人",
     "album": "相信你的人",
+    "albumTraditional": "相信你的人",
     "tags": [
       "healing",
       "power"
@@ -4175,9 +5288,12 @@
   },
   {
     "id": 501,
-    "content": "他會心疼不忍 同時又為你興奮",
+    "content": "他会心疼不忍 同时又为你兴奋",
+    "contentTraditional": "他會心疼不忍 同時又為你興奮",
     "song": "相信你的人",
+    "songTraditional": "相信你的人",
     "album": "相信你的人",
+    "albumTraditional": "相信你的人",
     "tags": [
       "healing",
       "love"
@@ -4186,9 +5302,12 @@
   },
   {
     "id": 502,
-    "content": "嘔心搞些搞作 但青春都給揮霍",
+    "content": "呕心搞些搞作 但青春都给挥霍",
+    "contentTraditional": "嘔心搞些搞作 但青春都給揮霍",
     "song": "大人",
+    "songTraditional": "大人",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy",
       "sad"
@@ -4197,9 +5316,12 @@
   },
   {
     "id": 503,
-    "content": "悔不當初輕輕放過 現在懲罰我分手分錯了麼",
+    "content": "悔不当初轻轻放过 现在惩罚我分手分错了吗",
+    "contentTraditional": "悔不當初輕輕放過 現在懲罰我分手分錯了麼",
     "song": "十面埋伏",
+    "songTraditional": "十面埋伏",
     "album": "Live For Today",
+    "albumTraditional": "Live For Today",
     "tags": [
       "regret",
       "sad"
@@ -4208,9 +5330,12 @@
   },
   {
     "id": 504,
-    "content": "用我尚有換我沒有 其實已用盡所擁有",
-    "song": "陀飛輪",
+    "content": "用我尚有换我没有 其实已用尽所拥有",
+    "contentTraditional": "用我尚有換我沒有 其實已用盡所擁有",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -4219,9 +5344,12 @@
   },
   {
     "id": 505,
-    "content": "曾付出幾多心跳 來換取一堆堆的發票",
-    "song": "陀飛輪",
+    "content": "曾付出几多心跳 来换取一堆堆的发票",
+    "contentTraditional": "曾付出幾多心跳 來換取一堆堆的發票",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -4230,9 +5358,12 @@
   },
   {
     "id": 506,
-    "content": "每當我回頭 內疚是劊子手 摧殘我回憶中的所有",
-    "song": "內疚",
+    "content": "每当我回头 内疚是刽子手 摧残我回忆中的所有",
+    "contentTraditional": "每當我回頭 內疚是劊子手 摧殘我回憶中的所有",
+    "song": "内疚",
+    "songTraditional": "內疚",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "regret",
       "sad"
@@ -4241,9 +5372,12 @@
   },
   {
     "id": 507,
-    "content": "誰人叫我出生入死 也來幽會 沿途寸寸慢慢成灰 心肺就只受你支配",
+    "content": "谁人叫我出生入死 也来幽会 沿途寸寸慢慢成灰 心肺就只受你支配",
+    "contentTraditional": "誰人叫我出生入死 也來幽會 沿途寸寸慢慢成灰 心肺就只受你支配",
     "song": "尼古丁",
+    "songTraditional": "尼古丁",
     "album": "Solidays",
+    "albumTraditional": "Solidays",
     "tags": [
       "crazy",
       "love",
@@ -4253,9 +5387,12 @@
   },
   {
     "id": 508,
-    "content": "一呼一吸既快樂又愚昧 無止境 從熱吻中火拼",
+    "content": "一呼一吸既快乐又愚昧 无止境 从热吻中火拼",
+    "contentTraditional": "一呼一吸既快樂又愚昧 無止境 從熱吻中火拼",
     "song": "尼古丁",
+    "songTraditional": "尼古丁",
     "album": "Solidays",
+    "albumTraditional": "Solidays",
     "tags": [
       "crazy",
       "love"
@@ -4264,9 +5401,12 @@
   },
   {
     "id": 509,
-    "content": "原本應該一早戒了 還是不捨得我的尼古丁",
+    "content": "原本应该一早戒了 还是不舍得我的尼古丁",
+    "contentTraditional": "原本應該一早戒了 還是不捨得我的尼古丁",
     "song": "尼古丁",
+    "songTraditional": "尼古丁",
     "album": "Solidays",
+    "albumTraditional": "Solidays",
     "tags": [
       "love",
       "sad"
@@ -4275,9 +5415,12 @@
   },
   {
     "id": 510,
-    "content": "真的可以了我可以了 放棄相愛資格 耽誤的青春是美好的天真",
+    "content": "真的可以了我可以了 放弃相爱资格 耽误的青春是美好的天真",
+    "contentTraditional": "真的可以了我可以了 放棄相愛資格 耽誤的青春是美好的天真",
     "song": "可以了",
+    "songTraditional": "可以了",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "healing",
       "sad"
@@ -4286,9 +5429,12 @@
   },
   {
     "id": 511,
-    "content": "當潮流愛新鮮 當旁人愛標籤 幸得伴着你我 是窩心的自然",
-    "song": "無條件",
+    "content": "当潮流爱新鲜 当旁人爱标签 幸得伴着你我 是窝心的自然",
+    "contentTraditional": "當潮流愛新鮮 當旁人愛標籤 幸得伴着你我 是窩心的自然",
+    "song": "无条件",
+    "songTraditional": "無條件",
     "album": "准备中",
+    "albumTraditional": "准备中",
     "tags": [
       "healing",
       "love"
@@ -4297,9 +5443,12 @@
   },
   {
     "id": 512,
-    "content": "美好的沉澱了 沒有火花不要燒",
-    "song": "失戀太少",
+    "content": "美好的沉淀了 没有火花不要烧",
+    "contentTraditional": "美好的沉澱了 沒有火花不要燒",
+    "song": "失恋太少",
+    "songTraditional": "失戀太少",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "healing",
       "philosophy"
@@ -4308,9 +5457,12 @@
   },
   {
     "id": 513,
-    "content": "愛過的成熟了 犯錯只因失戀太少",
-    "song": "失戀太少",
+    "content": "爱过的成熟了 犯错只因失恋太少",
+    "contentTraditional": "愛過的成熟了 犯錯只因失戀太少",
+    "song": "失恋太少",
+    "songTraditional": "失戀太少",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "classic",
       "philosophy"
@@ -4319,9 +5471,12 @@
   },
   {
     "id": 514,
-    "content": "你看看大夥兒合照 就你一個人沒有笑",
-    "song": "你給我聽好",
+    "content": "你看看大伙儿合照 就你一个人没有笑",
+    "contentTraditional": "你看看大夥兒合照 就你一個人沒有笑",
+    "song": "你给我听好",
+    "songTraditional": "你給我聽好",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "life",
       "sad"
@@ -4330,9 +5485,12 @@
   },
   {
     "id": 515,
-    "content": "其實你知道煩惱 會解決煩惱",
-    "song": "你給我聽好",
+    "content": "其实你知道烦恼 会解决烦恼",
+    "contentTraditional": "其實你知道煩惱 會解決煩惱",
+    "song": "你给我听好",
+    "songTraditional": "你給我聽好",
     "album": "Rice & Shine",
+    "albumTraditional": "Rice & Shine",
     "tags": [
       "healing",
       "philosophy"
@@ -4341,9 +5499,12 @@
   },
   {
     "id": 516,
-    "content": "從來沒細心數清楚 一個夏雨天 一次愉快的睡眠 斷多少發線",
-    "song": "綿綿",
+    "content": "从来没细心数清楚 一个夏雨天 一次愉快的睡眠 断多少发线",
+    "contentTraditional": "從來沒細心數清楚 一個夏雨天 一次愉快的睡眠 斷多少發線",
+    "song": "绵绵",
+    "songTraditional": "綿綿",
     "album": "打得火热",
+    "albumTraditional": "打得火热",
     "tags": [
       "love",
       "sad"
@@ -4352,9 +5513,12 @@
   },
   {
     "id": 517,
-    "content": "仍然沒有 遇到那位跟我絕配的戀人",
+    "content": "仍然没有 遇到那位跟我绝配的恋人",
+    "contentTraditional": "仍然沒有 遇到那位跟我絕配的戀人",
     "song": "1874",
+    "songTraditional": "1874",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "philosophy",
       "sad"
@@ -4363,9 +5527,12 @@
   },
   {
     "id": 518,
-    "content": "忽然001 還未倒數9 8 7 平日的壓力已在瞬間消失",
-    "song": "2001太空漫遊",
+    "content": "忽然001 还未倒数9 8 7 平日的压力已在瞬间消失",
+    "contentTraditional": "忽然001 還未倒數9 8 7 平日的壓力已在瞬間消失",
+    "song": "2001太空漫游",
+    "songTraditional": "2001太空漫遊",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "brightness",
       "healing"
@@ -4374,9 +5541,12 @@
   },
   {
     "id": 519,
-    "content": "宇宙再大猶如咫尺 卻未夠膽亂行亂闖",
-    "song": "隨意門",
+    "content": "宇宙再大犹如咫尺 却未够胆乱行乱闯",
+    "contentTraditional": "宇宙再大猶如咫尺 卻未夠膽亂行亂闖",
+    "song": "随意门",
+    "songTraditional": "隨意門",
     "album": "The Line-Up",
+    "albumTraditional": "The Line-Up",
     "tags": [
       "brightness"
     ],
@@ -4384,9 +5554,12 @@
   },
   {
     "id": 520,
-    "content": "多經典的歌后 一剎眼已走 纏綿着青葱的山丘 轉眼變蟻丘",
-    "song": "夕陽無限好",
+    "content": "多经典的歌后 一刹眼已走 缠绵着青葱的山丘 转眼变蚁丘",
+    "contentTraditional": "多經典的歌后 一剎眼已走 纏綿着青葱的山丘 轉眼變蟻丘",
+    "song": "夕阳无限好",
+    "songTraditional": "夕陽無限好",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "philosophy"
@@ -4395,9 +5568,12 @@
   },
   {
     "id": 521,
-    "content": "夕陽無限好 天色已黃昏",
-    "song": "夕陽無限好",
+    "content": "夕阳无限好 天色已黄昏",
+    "contentTraditional": "夕陽無限好 天色已黃昏",
+    "song": "夕阳无限好",
+    "songTraditional": "夕陽無限好",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "philosophy"
@@ -4406,9 +5582,12 @@
   },
   {
     "id": 522,
-    "content": "本想去憑愛 去換最燦爛一生 想不到長吻 帶來更永恆傷感",
-    "song": "夕陽無限好",
+    "content": "本想去凭爱 去换最灿烂一生 想不到长吻 带来更永恒伤感",
+    "contentTraditional": "本想去憑愛 去換最燦爛一生 想不到長吻 帶來更永恆傷感",
+    "song": "夕阳无限好",
+    "songTraditional": "夕陽無限好",
     "album": "U87",
+    "albumTraditional": "U87",
     "tags": [
       "classic",
       "sad"
@@ -4417,9 +5596,12 @@
   },
   {
     "id": 523,
-    "content": "其實人生並非虛耗 何來塵埃飛舞",
-    "song": "沙龍",
+    "content": "其实人生并非虚耗 何来尘埃飞舞",
+    "contentTraditional": "其實人生並非虛耗 何來塵埃飛舞",
+    "song": "沙龙",
+    "songTraditional": "沙龍",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "philosophy"
     ],
@@ -4427,9 +5609,12 @@
   },
   {
     "id": 524,
-    "content": "這個世界最壞罪名 叫太易動情 但我喜歡這罪名",
-    "song": "無人之境",
+    "content": "这个世界最坏罪名 叫太易动情 但我喜欢这罪名",
+    "contentTraditional": "這個世界最壞罪名 叫太易動情 但我喜歡這罪名",
+    "song": "无人之境",
+    "songTraditional": "無人之境",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "crazy"
@@ -4438,9 +5623,12 @@
   },
   {
     "id": 525,
-    "content": "但我想跟你亂纏",
-    "song": "無人之境",
+    "content": "但我想跟你乱缠",
+    "contentTraditional": "但我想跟你亂纏",
+    "song": "无人之境",
+    "songTraditional": "無人之境",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "love",
       "crazy"
@@ -4449,9 +5637,12 @@
   },
   {
     "id": 526,
-    "content": "一刻心也跳着 命能懸着 尚能延着",
+    "content": "一刻心也跳着 命能悬着 尚能延着",
+    "contentTraditional": "一刻心也跳著 命能懸著 尚能延著",
     "song": "完",
+    "songTraditional": "完",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "philosophy"
     ],
@@ -4459,9 +5650,12 @@
   },
   {
     "id": 527,
-    "content": "光陰雖倒計着 但呢喃下 照樣漫長",
+    "content": "光阴虽倒计着 但呢喃下 照样漫长",
+    "contentTraditional": "光陰雖倒計著 但呢喃下 照樣漫長",
     "song": "完",
+    "songTraditional": "完",
     "album": "3mm",
+    "albumTraditional": "3mm",
     "tags": [
       "philosophy"
     ],
@@ -4469,9 +5663,12 @@
   },
   {
     "id": 528,
-    "content": "喂喂 我這麼稱呼你 喂喂 我這麼喜歡你",
-    "song": "冤氣",
+    "content": "喂喂 我这么称呼你 喂喂 我这么喜欢你",
+    "contentTraditional": "喂喂 我這麼稱呼你 喂喂 我這麼喜歡你",
+    "song": "冤气",
+    "songTraditional": "冤氣",
     "album": "Mixed Up",
+    "albumTraditional": "Mixed Up",
     "tags": [
       "love"
     ],
@@ -4479,9 +5676,12 @@
   },
   {
     "id": 529,
-    "content": "頹廢混雜着煙味 我滿臉鬍渣 在自得其樂的世界",
-    "song": "煙味",
+    "content": "颓废混杂着烟味 我满脸胡渣 在自得其乐的世界",
+    "contentTraditional": "頹廢混雜着煙味 我滿臉鬍渣 在自得其樂的世界",
+    "song": "烟味",
+    "songTraditional": "煙味",
     "album": "七",
+    "albumTraditional": "七",
     "tags": [
       "sad"
     ],
@@ -4489,9 +5689,12 @@
   },
   {
     "id": 530,
-    "content": "白如白牙熱情被吞噬 香檳早揮發的徹底",
+    "content": "白如白牙热情被吞噬 香槟早挥发的彻底",
+    "contentTraditional": "白如白牙熱情被吞噬 香檳早揮發的徹底",
     "song": "白玫瑰",
+    "songTraditional": "白玫瑰",
     "album": "What's Going On...?",
+    "albumTraditional": "What's Going On...?",
     "tags": [
       "love",
       "sad"
@@ -4500,9 +5703,12 @@
   },
   {
     "id": 531,
-    "content": "可是我 相信愛 我信異想才有日會天開",
-    "song": "給你",
+    "content": "可是我 相信爱 我信异想才有日会天开",
+    "contentTraditional": "可是我 相信愛 我信異想才有日會天開",
+    "song": "给你",
+    "songTraditional": "給你",
     "album": "上五楼的快活",
+    "albumTraditional": "上五楼的快活",
     "tags": [
       "healing",
       "love"
@@ -4511,9 +5717,12 @@
   },
   {
     "id": 532,
-    "content": "固執的一對 漸發現各自也不對",
-    "song": "牀頭牀尾",
+    "content": "固执的一对 渐发现各自也不对",
+    "contentTraditional": "固執的一對 漸發現各自也不對",
+    "song": "床头床尾",
+    "songTraditional": "牀頭牀尾",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "love",
       "sad"
@@ -4522,9 +5731,12 @@
   },
   {
     "id": 533,
-    "content": "一覺甦醒了 驀然回看 不想再追",
-    "song": "牀頭牀尾",
+    "content": "一觉苏醒了 蓦然回看 不想再追",
+    "contentTraditional": "一覺甦醒了 驀然回看 不想再追",
+    "song": "床头床尾",
+    "songTraditional": "牀頭牀尾",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "love",
       "sad"
@@ -4534,8 +5746,11 @@
   {
     "id": 534,
     "content": "你知不知 你是禁忌",
-    "song": "龍舌蘭",
+    "contentTraditional": "你知不知 你是禁忌",
+    "song": "龙舌兰",
+    "songTraditional": "龍舌蘭",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "sad"
@@ -4544,9 +5759,12 @@
   },
   {
     "id": 535,
-    "content": "情人遊天地 日月換行李 如果失憶我渴望再多一次認識你",
-    "song": "我們萬歲",
+    "content": "情人游天地 日月换行李 如果失忆我渴望再多一次认识你",
+    "contentTraditional": "情人遊天地 日月換行李 如果失憶我渴望再多一次認識你",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "healing"
@@ -4555,9 +5773,12 @@
   },
   {
     "id": 536,
-    "content": "證明可不捨不棄 吻停不知幾多歲的你",
-    "song": "我們萬歲",
+    "content": "证明可不舍不弃 吻停不知几多岁的你",
+    "contentTraditional": "證明可不捨不棄 吻停不知幾多歲的你",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "healing"
@@ -4566,9 +5787,12 @@
   },
   {
     "id": 537,
-    "content": "證明可不捨不棄 吻停你到下世紀",
-    "song": "我們萬歲",
+    "content": "证明可不舍不弃 吻停你到下世纪",
+    "contentTraditional": "證明可不捨不棄 吻停你到下世紀",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "healing"
@@ -4577,9 +5801,12 @@
   },
   {
     "id": 538,
-    "content": "能重頭偷望你 能重頭追逐你 能重頭親近你",
-    "song": "我們萬歲",
+    "content": "能重头偷望你 能重头追逐你 能重头亲近你",
+    "contentTraditional": "能重頭偷望你 能重頭追逐你 能重頭親近你",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "healing"
@@ -4588,9 +5815,12 @@
   },
   {
     "id": 539,
-    "content": "永恒的不舍不棄 降臨你我合葬的墓碑",
-    "song": "我們萬歲",
+    "content": "永恒的不舍不弃 降临你我合葬的墓碑",
+    "contentTraditional": "永恒的不舍不棄 降臨你我合葬的墓碑",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love"
     ],
@@ -4598,9 +5828,12 @@
   },
   {
     "id": 540,
-    "content": "能重頭呵護你 能重頭感動你 能重享受愛你",
-    "song": "我們萬歲",
+    "content": "能重头呵护你 能重头感动你 能重享受爱你",
+    "contentTraditional": "能重頭呵護你 能重頭感動你 能重享受愛你",
+    "song": "我们万岁",
+    "songTraditional": "我們萬歲",
     "album": "L.O.V.E.",
+    "albumTraditional": "L.O.V.E.",
     "tags": [
       "love",
       "healing"
@@ -4609,9 +5842,12 @@
   },
   {
     "id": 541,
-    "content": "再與你轉個圈 發覺你會更耐看",
+    "content": "再与你转个圈 发觉你会更耐看",
+    "contentTraditional": "再與你轉個圈 發覺你會更耐看",
     "song": "致明日的舞",
+    "songTraditional": "致明日的舞",
     "album": "致明日的舞",
+    "albumTraditional": "致明日的舞",
     "tags": [
       "healing"
     ],
@@ -4619,9 +5855,12 @@
   },
   {
     "id": 542,
-    "content": "若如若時晨未到 似水點散下落花變朝露",
-    "song": "盲婚啞嫁",
+    "content": "若如若时晨未到 似水点散下落花变朝露",
+    "contentTraditional": "若如若時晨未到 似水點散下落花變朝露",
+    "song": "盲婚哑嫁",
+    "songTraditional": "盲婚啞嫁",
     "album": "盲婚哑嫁",
+    "albumTraditional": "盲婚哑嫁",
     "tags": [
       "philosophy"
     ],
@@ -4629,9 +5868,12 @@
   },
   {
     "id": 543,
-    "content": "厭倦一個人晚餐 就算粗茶淡飯 原來有你的陪伴 故事變得燦爛",
+    "content": "厌倦一个人晚餐 就算粗茶淡饭 原来有你的陪伴 故事变得灿烂",
+    "contentTraditional": "厭倦一個人晚餐 就算粗茶淡飯 原來有你的陪伴 故事變得燦爛",
     "song": "I Do",
+    "songTraditional": "I Do",
     "album": "C'mon In~",
+    "albumTraditional": "C'mon In~",
     "tags": [
       "love",
       "healing"
@@ -4640,9 +5882,12 @@
   },
   {
     "id": 544,
-    "content": "有一種預感 愛就要離岸",
-    "song": "預感",
+    "content": "有一种预感 爱就要离岸",
+    "contentTraditional": "有一種預感 愛就要離岸",
+    "song": "预感",
+    "songTraditional": "預感",
     "album": "酝酿",
+    "albumTraditional": "酝酿",
     "tags": [
       "sad"
     ],
@@ -4650,9 +5895,12 @@
   },
   {
     "id": 545,
-    "content": "我坐立難安 望眼欲穿",
-    "song": "預感",
+    "content": "我坐立难安 望眼欲穿",
+    "contentTraditional": "我坐立難安 望眼欲穿",
+    "song": "预感",
+    "songTraditional": "預感",
     "album": "酝酿",
+    "albumTraditional": "酝酿",
     "tags": [
       "sad"
     ],
@@ -4660,9 +5908,12 @@
   },
   {
     "id": 546,
-    "content": "任世間再冷酷 想起這單車 還有幸福可借",
-    "song": "單車",
+    "content": "任世间再冷酷 想起这单车 还有幸福可借",
+    "contentTraditional": "任世間再冷酷 想起這單車 還有幸福可借",
+    "song": "单车",
+    "songTraditional": "單車",
     "album": "Shall We Dance? Shall We Talk!",
+    "albumTraditional": "Shall We Dance? Shall We Talk!",
     "tags": [
       "healing",
       "classic"
@@ -4671,9 +5922,12 @@
   },
   {
     "id": 547,
-    "content": "我真佩服我 還能幽默 掉眼淚時用笑掩過",
-    "song": "孤獨患者",
+    "content": "我真佩服我 还能幽默 掉眼泪时用笑掩过",
+    "contentTraditional": "我真佩服我 還能幽默 掉眼淚時用笑掩過",
+    "song": "孤独患者",
+    "songTraditional": "孤獨患者",
     "album": "？",
+    "albumTraditional": "？",
     "tags": [
       "sad",
       "philosophy"
@@ -4682,9 +5936,12 @@
   },
   {
     "id": 548,
-    "content": "我們的回憶 沒有皺摺 你卻用離開燙下句點",
+    "content": "我们的回忆 没有皱摺 你却用离开烫下句点",
+    "contentTraditional": "我們的回憶 沒有皺摺 你卻用離開燙下句點",
     "song": "淘汰",
+    "songTraditional": "淘汰",
     "album": "认了吧",
+    "albumTraditional": "认了吧",
     "tags": [
       "sad",
       "love"
@@ -4693,9 +5950,12 @@
   },
   {
     "id": 549,
-    "content": "你我永遠不肯定 愛不愛誰 約不約定誰",
-    "song": "黃金時代",
+    "content": "你我永远不肯定 爱不爱谁 约不约定谁",
+    "contentTraditional": "你我永遠不肯定 愛不愛誰 約不約定誰",
+    "song": "黄金时代",
+    "songTraditional": "黃金時代",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "philosophy"
@@ -4704,9 +5964,12 @@
   },
   {
     "id": 550,
-    "content": "若有些事有些歌能作證 倒想再聽人在生 每場革命 那歌詠",
-    "song": "貝多芬與我",
+    "content": "若有些事有些歌能作证 倒想再听人在生 每场革命 那歌咏",
+    "contentTraditional": "若有些事有些歌能作證 倒想再聽人在生 每場革命 那歌詠",
+    "song": "贝多芬与我",
+    "songTraditional": "貝多芬與我",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "classic",
       "philosophy"
@@ -4715,9 +5978,12 @@
   },
   {
     "id": 551,
-    "content": "每次我餵你也有愛煞你滋味",
-    "song": "冤氣",
+    "content": "每次我喂你也有爱煞你滋味",
+    "contentTraditional": "每次我餵你也有愛煞你滋味",
+    "song": "冤气",
+    "songTraditional": "冤氣",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "love"
     ],
@@ -4725,9 +5991,12 @@
   },
   {
     "id": 552,
-    "content": "我每次叫你名字彷彿都緊張得喘氣",
-    "song": "冤氣",
+    "content": "我每次叫你名字仿佛都紧张得喘气",
+    "contentTraditional": "我每次叫你名字彷彿都緊張得喘氣",
+    "song": "冤气",
+    "songTraditional": "冤氣",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "love"
     ],
@@ -4735,9 +6004,12 @@
   },
   {
     "id": 553,
-    "content": "被窩中轉身心交瘁 互建情緒敵對堡壘",
-    "song": "牀頭牀尾",
+    "content": "被窝中转身心交瘁 互建情绪敌对堡垒",
+    "contentTraditional": "被窩中轉身心交瘁 互建情緒敵對堡壘",
+    "song": "床头床尾",
+    "songTraditional": "牀頭牀尾",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "sad"
     ],
@@ -4745,9 +6017,12 @@
   },
   {
     "id": 554,
-    "content": "沉默的夜太黑 閉上眼睛畫面浮現怎麼睡",
-    "song": "吟遊詩人",
+    "content": "沉默的夜太黑 闭上眼睛画面浮现怎么睡",
+    "contentTraditional": "沉默的夜太黑 閉上眼睛畫面浮現怎麼睡",
+    "song": "吟游诗人",
+    "songTraditional": "吟遊詩人",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "sad"
     ],
@@ -4755,9 +6030,12 @@
   },
   {
     "id": 555,
-    "content": "月光不敵雨水 數着綿羊都可以流眼淚",
-    "song": "吟遊詩人",
+    "content": "月光不敌雨水 数着绵羊都可以流眼泪",
+    "contentTraditional": "月光不敵雨水 數着綿羊都可以流眼淚",
+    "song": "吟游诗人",
+    "songTraditional": "吟遊詩人",
     "album": "H3M",
+    "albumTraditional": "H3M",
     "tags": [
       "sad"
     ],
@@ -4765,9 +6043,12 @@
   },
   {
     "id": 556,
-    "content": "言盡最好於此 留下什麼意思 讓大家只差半步成詩",
-    "song": "失憶蝴蝶",
+    "content": "言尽最好于此 留下什么意思 让大家只差半步成诗",
+    "contentTraditional": "言盡最好於此 留下什麼意思 讓大家只差半步成詩",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "sad",
       "philosophy"
@@ -4776,9 +6057,12 @@
   },
   {
     "id": 557,
-    "content": "並未在一起亦無從離棄 不用淪為伴侶 別尋是惹非",
-    "song": "失憶蝴蝶",
+    "content": "并未在一起亦无从离弃 不用沦为伴侣 别寻是惹非",
+    "contentTraditional": "並未在一起亦無從離棄 不用淪為伴侶 別尋是惹非",
+    "song": "失忆蝴蝶",
+    "songTraditional": "失憶蝴蝶",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy"
     ],
@@ -4786,9 +6070,12 @@
   },
   {
     "id": 558,
-    "content": "秒速捉得緊了 而皮膚竟偷偷鬆了",
-    "song": "陀飛輪",
+    "content": "秒速捉得紧了 而皮肤竟偷偷松了",
+    "contentTraditional": "秒速捉得緊了 而皮膚竟偷偷鬆了",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -4797,9 +6084,12 @@
   },
   {
     "id": 559,
-    "content": "銀或金都不緊要 誰造機芯一樣了",
-    "song": "陀飛輪",
+    "content": "银或金都不紧要 谁造机芯一样了",
+    "contentTraditional": "銀或金都不緊要 誰造機芯一樣了",
+    "song": "陀飞轮",
+    "songTraditional": "陀飛輪",
     "album": "Time Flies",
+    "albumTraditional": "Time Flies",
     "tags": [
       "life",
       "philosophy"
@@ -4808,9 +6098,12 @@
   },
   {
     "id": 560,
-    "content": "茫茫人生走到了盡頭 重生再邂逅",
-    "song": "告別娑婆",
+    "content": "茫茫人生走到了尽头 重生再邂逅",
+    "contentTraditional": "茫茫人生走到了盡頭 重生再邂逅",
+    "song": "告别娑婆",
+    "songTraditional": "告別娑婆",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy"
     ],
@@ -4818,9 +6111,12 @@
   },
   {
     "id": 561,
-    "content": "靈魂囚身體裏盼自由 因果裏聽候",
-    "song": "告別娑婆",
+    "content": "灵魂囚身体里盼自由 因果里听候",
+    "contentTraditional": "靈魂囚身體裏盼自由 因果裏聽候",
+    "song": "告别娑婆",
+    "songTraditional": "告別娑婆",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy"
     ],
@@ -4828,9 +6124,12 @@
   },
   {
     "id": 562,
-    "content": "得不到多麼好當得到 不知怎算好",
-    "song": "遠在咫尺",
+    "content": "得不到多么好当得到 不知怎算好",
+    "contentTraditional": "得不到多麼好當得到 不知怎算好",
+    "song": "远在咫尺",
+    "songTraditional": "遠在咫尺",
     "album": "The Key",
+    "albumTraditional": "The Key",
     "tags": [
       "philosophy"
     ],
@@ -4838,9 +6137,12 @@
   },
   {
     "id": 563,
-    "content": "為何我的問題 總得等待別人的答案",
-    "song": "然後怎樣",
+    "content": "为何我的问题 总得等待别人的答案",
+    "contentTraditional": "為何我的問題 總得等待別人的答案",
+    "song": "然后怎样",
+    "songTraditional": "然後怎樣",
     "album": "不想放手",
+    "albumTraditional": "不想放手",
     "tags": [
       "philosophy"
     ],
@@ -4848,9 +6150,12 @@
   },
   {
     "id": 564,
-    "content": "若問世界誰無雙 會令昨天明天也閃亮",
-    "song": "天下無雙",
+    "content": "若问世界谁无双 会令昨天明天也闪亮",
+    "contentTraditional": "若問世界誰無雙 會令昨天明天也閃亮",
+    "song": "天下无双",
+    "songTraditional": "天下無雙",
     "album": "我的快乐时代",
+    "albumTraditional": "我的快乐时代",
     "tags": [
       "classic",
       "love"
@@ -4859,9 +6164,12 @@
   },
   {
     "id": 566,
-    "content": "天荒地老流連在摩天輪 在高處凝望世界流動",
-    "song": "幸福摩天輪",
+    "content": "天荒地老流连在摩天轮 在高处凝望世界流动",
+    "contentTraditional": "天荒地老流連在摩天輪 在高處凝望世界流動",
+    "song": "幸福摩天轮",
+    "songTraditional": "幸福摩天輪",
     "album": "天佑爱人",
+    "albumTraditional": "天佑爱人",
     "tags": [
       "classic",
       "love"
@@ -4870,9 +6178,12 @@
   },
   {
     "id": 567,
-    "content": "最後塵埃跌定 我便會翻身",
-    "song": "開不了心",
+    "content": "最后尘埃跌定 我便会翻身",
+    "contentTraditional": "最後塵埃跌定 我便會翻身",
+    "song": "开不了心",
+    "songTraditional": "開不了心",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "classic",
       "healing",
@@ -4884,9 +6195,12 @@
   },
   {
     "id": 568,
-    "content": "一想起再累也是要做的人 我的思緒便繃緊",
-    "song": "開不了心",
+    "content": "一想起再累也是要做的人 我的思绪便绷紧",
+    "contentTraditional": "一想起再累也是要做的人 我的思緒便繃緊",
+    "song": "开不了心",
+    "songTraditional": "開不了心",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "classic",
       "healing",
@@ -4898,9 +6212,12 @@
   },
   {
     "id": 569,
-    "content": "不開心就不開心 也別勉強的慰問",
-    "song": "開不了心",
+    "content": "不开心就不开心 也别勉强的慰问",
+    "contentTraditional": "不開心就不開心 也別勉強的慰問",
+    "song": "开不了心",
+    "songTraditional": "開不了心",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "classic",
       "healing",
@@ -4912,9 +6229,12 @@
   },
   {
     "id": 570,
-    "content": "猶幸我愛惜這個地方 仍然盛放 wo~",
-    "song": "開不了心",
+    "content": "犹幸我爱惜这个地方 仍然盛放 wo~",
+    "contentTraditional": "猶幸我愛惜這個地方 仍然盛放 wo~",
+    "song": "开不了心",
+    "songTraditional": "開不了心",
     "album": "Great 5000 Secs",
+    "albumTraditional": "Great 5000 Secs",
     "tags": [
       "classic",
       "healing",

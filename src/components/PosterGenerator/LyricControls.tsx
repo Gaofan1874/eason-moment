@@ -6,17 +6,16 @@ import lyricsData from '../../assets/lyrics.json';
 interface LyricControlsProps {
   lyric: LyricData;
   setLyric: (lyric: LyricData) => void;
-  handleRandomLyric: () => void;
 }
 
 const LyricControls: React.FC<LyricControlsProps> = ({
   lyric,
   setLyric,
-  handleRandomLyric,
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState<typeof lyricsData>([]);
   const [showResults, setShowResults] = useState(false);
+  const [useTraditional, setUseTraditional] = useState(false);
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -30,6 +29,20 @@ const LyricControls: React.FC<LyricControlsProps> = ({
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
+
+  const handleRandomLyric = () => {
+    const randomIndex = Math.floor(Math.random() * lyricsData.length);
+    const item = lyricsData[randomIndex];
+    
+    setLyric({
+      content: useTraditional ? (item.contentTraditional || item.content) : item.content,
+      song: useTraditional ? (item.songTraditional || item.song) : item.song,
+      album: useTraditional ? (item.albumTraditional || item.album) : item.album,
+      contentTraditional: item.contentTraditional,
+      songTraditional: item.songTraditional,
+      albumTraditional: item.albumTraditional,
+    });
+  };
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     const term = e.target.value;
@@ -52,12 +65,35 @@ const LyricControls: React.FC<LyricControlsProps> = ({
 
   const handleSelectLyric = (item: typeof lyricsData[0]) => {
     setLyric({
-      content: item.content,
-      song: item.song,
-      album: item.album,
+      content: useTraditional ? (item.contentTraditional || item.content) : item.content,
+      song: useTraditional ? (item.songTraditional || item.song) : item.song,
+      album: useTraditional ? (item.albumTraditional || item.album) : item.album,
+      contentTraditional: item.contentTraditional,
+      songTraditional: item.songTraditional,
+      albumTraditional: item.albumTraditional,
     });
     setSearchTerm('');
     setShowResults(false);
+  };
+
+  const toggleTraditional = () => {
+    const newUseTraditional = !useTraditional;
+    setUseTraditional(newUseTraditional);
+    
+    // Try to switch current content if it matches a known lyric
+    const currentContent = lyric.content;
+    const foundItem = lyricsData.find(item => 
+      item.content === currentContent || item.contentTraditional === currentContent
+    );
+
+    if (foundItem) {
+      setLyric({
+        ...lyric,
+        content: newUseTraditional ? (foundItem.contentTraditional || foundItem.content) : foundItem.content,
+        song: newUseTraditional ? (foundItem.songTraditional || foundItem.song) : foundItem.song,
+        album: newUseTraditional ? (foundItem.albumTraditional || foundItem.album) : foundItem.album,
+      });
+    }
   };
 
   const clearSearch = () => {
@@ -72,9 +108,22 @@ const LyricControls: React.FC<LyricControlsProps> = ({
         <span className="control-label">
           <Type size={14} /> 歌词内容
         </span>
-        <button className="btn-secondary" onClick={handleRandomLyric}>
-          <Shuffle size={12} /> 随机一句
-        </button>
+        <div style={{ display: 'flex', gap: '8px' }}>
+          <button 
+            className={`btn-secondary ${useTraditional ? 'active' : ''}`} 
+            onClick={toggleTraditional}
+            title="切换繁简中文"
+            style={{ 
+              backgroundColor: useTraditional ? 'var(--accent-color)' : '', 
+              color: useTraditional ? '#fff' : '' 
+            }}
+          >
+            繁
+          </button>
+          <button className="btn-secondary" onClick={handleRandomLyric}>
+            <Shuffle size={12} /> 随机一句
+          </button>
+        </div>
       </div>
 
       <div className="search-wrapper" ref={wrapperRef}>
@@ -139,7 +188,7 @@ const LyricControls: React.FC<LyricControlsProps> = ({
             placeholder="歌曲名"
             value={lyric.song}
             onChange={(e) => setLyric({ ...lyric, song: e.target.value })}
-            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+            className="meta-input"
           />
         </div>
         <div className="meta-input-group">
@@ -148,7 +197,7 @@ const LyricControls: React.FC<LyricControlsProps> = ({
             placeholder="专辑名"
             value={lyric.album}
             onChange={(e) => setLyric({ ...lyric, album: e.target.value })}
-            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+            className="meta-input"
           />
         </div>
         <div className="meta-input-group">
@@ -157,7 +206,7 @@ const LyricControls: React.FC<LyricControlsProps> = ({
             placeholder="作词"
             value={lyric.lyricist || ''}
             onChange={(e) => setLyric({ ...lyric, lyricist: e.target.value })}
-            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+            className="meta-input"
           />
         </div>
         <div className="meta-input-group">
@@ -166,7 +215,7 @@ const LyricControls: React.FC<LyricControlsProps> = ({
             placeholder="作曲"
             value={lyric.composer || ''}
             onChange={(e) => setLyric({ ...lyric, composer: e.target.value })}
-            style={{ width: '100%', fontSize: '11px', padding: '6px', borderRadius: '4px', border: '1px solid var(--border-color)', background: 'var(--input-bg)', color: 'var(--text-primary)' }}
+            className="meta-input"
           />
         </div>
       </div>
