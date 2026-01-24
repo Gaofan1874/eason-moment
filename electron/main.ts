@@ -76,7 +76,7 @@ ipcMain.on('check-for-update', async () => {
   // 1. Dev Environment Guard
   if (!app.isPackaged) {
     win?.webContents.send('update-message', { 
-      type: 'error', // Use error type to trigger an alert
+      type: 'error', 
       text: '开发环境无法检查更新 (Dev Mode)' 
     });
     return;
@@ -87,22 +87,39 @@ ipcMain.on('check-for-update', async () => {
   // 2. Notify Frontend: Checking Started
   win?.webContents.send('update-message', { type: 'checking', text: '正在检查更新...' });
 
-  // 3. Remove any previous one-time listeners to avoid duplicates if user clicked multiple times quickly
+  // 3. Remove any previous one-time listeners
   autoUpdater.removeAllListeners('update-available');
   autoUpdater.removeAllListeners('update-not-available');
   autoUpdater.removeAllListeners('error');
 
-  // 4. Set up explicit listeners for this manual check session
-  // We re-bind these because the global ones in setupAutoUpdater might not be enough 
-  // or we want to ensure *this* specific request gets a response.
-  
+  // Timeout Logic to prevent infinite loading
+  let isHandled = false;
+  const timeoutId = setTimeout(() => {
+    if (!isHandled) {
+      isHandled = true;
+      cleanup();
+      win?.webContents.send('update-message', { 
+        type: 'error', 
+        text: '检查更新超时，请稍后重试' 
+      });
+    }
+  }, 15000); // 15s timeout
+
+  // 4. Set up explicit listeners
   const onAvailable = (info: any) => {
-    // Global listener handles the UI message ('available'), but we log here
+    if (isHandled) return;
+    isHandled = true;
+    clearTimeout(timeoutId);
     console.log('Manual check: Update available', info.version);
+    // Let the frontend know details
+    win?.webContents.send('update-message', { type: 'available', text: '发现新版本', info });
     cleanup();
   };
 
   const onNotAvailable = (info: any) => {
+    if (isHandled) return;
+    isHandled = true;
+    clearTimeout(timeoutId);
     win?.webContents.send('update-message', { 
       type: 'not-available', 
       text: '当前已是最新版本', 
@@ -112,6 +129,9 @@ ipcMain.on('check-for-update', async () => {
   };
 
   const onError = (err: any) => {
+    if (isHandled) return;
+    isHandled = true;
+    clearTimeout(timeoutId);
     win?.webContents.send('update-message', { 
       type: 'error', 
       text: '检查更新失败: ' + (err.message || '网络错误') 
@@ -123,18 +143,6 @@ ipcMain.on('check-for-update', async () => {
     autoUpdater.removeListener('update-available', onAvailable);
     autoUpdater.removeListener('update-not-available', onNotAvailable);
     autoUpdater.removeListener('error', onError);
-    
-    // Restore global listeners if needed? 
-    // Actually, 'electron-updater' emits events to all listeners. 
-    // The global listeners in setupAutoUpdater are still active.
-    // We added these local ones just to handle the 'not-available' and 'error' specifically for the manual trigger feedback.
-    // But wait, if we have global listeners AND local listeners, we might send duplicate messages?
-    // Let's rely on the fact that:
-    // - Global 'update-available' sends message.
-    // - Global 'error' logs but doesn't alert.
-    // - Local 'error' sends alert.
-    // - Local 'not-available' sends alert.
-    // This is a good mix.
   };
 
   autoUpdater.on('update-available', onAvailable);
@@ -144,14 +152,19 @@ ipcMain.on('check-for-update', async () => {
   // 5. Execute Check
   try {
     const result = await autoUpdater.checkForUpdates();
-    // If result is null, it usually means check failed immediately or was cancelled.
-    // But 'error' event should have fired.
-    if (!result) {
-       // Just in case
-       // onError(new Error('Update check returned null'));
+    // If result is null, it usually means check failed immediately or was cancelled/already running
+    if (!result && !isHandled) {
+       // Wait a short bit to see if events fire, if not, trigger error
+       // But usually null means "cannot check"
+       isHandled = true;
+       clearTimeout(timeoutId);
+       cleanup();
+       win?.webContents.send('update-message', { 
+         type: 'error', 
+         text: '检查更新服务未响应 (Result is null)' 
+       });
     }
   } catch (e: any) {
-    // Catch synchronous errors or promise rejections from checkForUpdates
     onError(e);
   }
 });
