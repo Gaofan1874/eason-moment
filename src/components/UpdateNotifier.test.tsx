@@ -31,12 +31,9 @@ describe('UpdateNotifier', () => {
     expect(container).toBeEmptyDOMElement();
   });
 
-  it('should show "update available" message', () => {
+  it('should show "update available" message with buttons', () => {
     render(<UpdateNotifier />);
     
-    // Get the listener registered in useEffect
-    // The first call to .on is likely inside useEffect
-    // We assume UpdateNotifier registers 'update-message'
     expect(mockIpcRenderer.on).toHaveBeenCalledWith('update-message', expect.any(Function));
     
     const handleUpdate = mockIpcRenderer.on.mock.calls.find(call => call[0] === 'update-message')?.[1];
@@ -45,7 +42,35 @@ describe('UpdateNotifier', () => {
       handleUpdate && handleUpdate({}, { type: 'available', info: { version: '1.0.0' } });
     });
 
-    expect(screen.getByText(/发现新版本 v1.0.0，准备下载.../i)).toBeInTheDocument();
+    expect(screen.getByText(/发现新版本 v1.0.0/i)).toBeInTheDocument();
+    expect(screen.getByText('立即更新')).toBeInTheDocument();
+    expect(screen.getByText('前往下载')).toBeInTheDocument();
+  });
+
+  it('should handle "start-download" action', () => {
+    render(<UpdateNotifier />);
+    const handleUpdate = mockIpcRenderer.on.mock.calls.find(call => call[0] === 'update-message')?.[1];
+
+    act(() => {
+      handleUpdate && handleUpdate({}, { type: 'available', info: { version: '1.0.0' } });
+    });
+
+    const updateBtn = screen.getByText('立即更新');
+    fireEvent.click(updateBtn);
+    expect(mockIpcRenderer.send).toHaveBeenCalledWith('start-download');
+  });
+
+  it('should handle "manual-download" action', () => {
+    render(<UpdateNotifier />);
+    const handleUpdate = mockIpcRenderer.on.mock.calls.find(call => call[0] === 'update-message')?.[1];
+
+    act(() => {
+      handleUpdate && handleUpdate({}, { type: 'available', info: { version: '1.0.0' } });
+    });
+
+    const manualBtn = screen.getByText('前往下载');
+    fireEvent.click(manualBtn);
+    expect(mockIpcRenderer.send).toHaveBeenCalledWith('open-download-link');
   });
 
   it('should update progress bar', () => {
@@ -56,7 +81,7 @@ describe('UpdateNotifier', () => {
       handleUpdate && handleUpdate({}, { type: 'progress', progress: { percent: 50.5 } });
     });
 
-    expect(screen.getByText(/正在下载更新 50.5%/i)).toBeInTheDocument();
+    expect(screen.getByText(/正在下载 50.5%/i)).toBeInTheDocument();
   });
 
   it('should show restart button when downloaded', () => {
@@ -67,12 +92,12 @@ describe('UpdateNotifier', () => {
       handleUpdate && handleUpdate({}, { type: 'downloaded' });
     });
 
-    expect(screen.getByText(/新版本下载完成，请重启生效/i)).toBeInTheDocument();
+    expect(screen.getByText(/下载完成，请重启安装/i)).toBeInTheDocument();
     
-    const restartBtn = screen.getByText(/立即重启更新/i);
+    const restartBtn = screen.getByText(/立即重启/i);
     expect(restartBtn).toBeInTheDocument();
 
     fireEvent.click(restartBtn);
-    expect(mockIpcRenderer.send).toHaveBeenCalledWith('restart_app');
+    expect(mockIpcRenderer.send).toHaveBeenCalledWith('install-update');
   });
 });

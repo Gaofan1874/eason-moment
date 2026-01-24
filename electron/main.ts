@@ -1,4 +1,4 @@
-import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog, screen } from 'electron'
+import { app, BrowserWindow, Tray, Menu, nativeImage, ipcMain, dialog, screen, shell } from 'electron'
 import path from 'node:path'
 import fs from 'node:fs'
 // @ts-ignore
@@ -7,31 +7,54 @@ import lyricsData from '../src/assets/lyrics.json'
 process.env.DIST = path.join(__dirname, '../dist')
 process.env.VITE_PUBLIC = app.isPackaged ? process.env.DIST : path.join(process.env.DIST, '../public')
 
-// ... (existing code)
+
 
 // --- Auto Update Logic ---
-function setupAutoUpdater() {
+const UPDATE_FEED_URL = 'https://easonlab.faygift.com/api';
+
+function configureAutoUpdater() {
   const { autoUpdater } = require('electron-updater');
   autoUpdater.logger = console;
   // @ts-ignore
   autoUpdater.logger.transports.file.level = 'info';
+  
+  // Set the feed URL explicitly
+  autoUpdater.setFeedURL({
+    provider: 'generic',
+    url: UPDATE_FEED_URL
+  });
 
-  autoUpdater.checkForUpdatesAndNotify();
+  // Ensure auto-download is disabled so we can prompt the user
+  autoUpdater.autoDownload = false;
+  
+  return autoUpdater;
+}
 
+function setupAutoUpdater() {
+  if (!app.isPackaged) return;
+
+  const autoUpdater = configureAutoUpdater();
+
+  // Global listeners for background update process
   autoUpdater.on('checking-for-update', () => {
-    win?.webContents.send('update-message', { type: 'checking', text: 'Checking for updates...' });
+    // Only send this if we want to show status in UI, mostly for manual checks
+    // But good for debugging
+    console.log('Checking for updates...');
   });
 
   autoUpdater.on('update-available', (info: any) => {
-    win?.webContents.send('update-message', { type: 'available', text: 'Update available.', info });
+    win?.webContents.send('update-message', { type: 'available', text: '发现新版本', info });
   });
 
   autoUpdater.on('update-not-available', (info: any) => {
-    win?.webContents.send('update-message', { type: 'not-available', text: 'Update not available.', info });
+    // For background check, we usually don't bother the user, 
+    // unless they manually checked (handled in IPC)
+    console.log('Update not available:', info?.version);
   });
 
   autoUpdater.on('error', (err: any) => {
-    win?.webContents.send('update-message', { type: 'error', text: 'Error in auto-updater. ' + err });
+    console.error('AutoUpdater Error:', err);
+    // Silent fail for background check, manual check will catch its own error
   });
 
   autoUpdater.on('download-progress', (progressObj: any) => {
@@ -39,9 +62,103 @@ function setupAutoUpdater() {
   });
 
   autoUpdater.on('update-downloaded', (info: any) => {
-    win?.webContents.send('update-message', { type: 'downloaded', text: 'Update downloaded', info });
+    win?.webContents.send('update-message', { type: 'downloaded', text: '下载完成，请重启安装', info });
+  });
+
+  // Start background check
+  autoUpdater.checkForUpdatesAndNotify().catch((err: any) => {
+    console.error('Failed to check for updates on startup:', err);
   });
 }
+
+// IPC listener for manual update check
+ipcMain.on('check-for-update', async () => {
+  // 1. Dev Environment Guard
+  if (!app.isPackaged) {
+    win?.webContents.send('update-message', { 
+      type: 'error', // Use error type to trigger an alert
+      text: '开发环境无法检查更新 (Dev Mode)' 
+    });
+    return;
+  }
+
+  const autoUpdater = configureAutoUpdater();
+
+  // 2. Notify Frontend: Checking Started
+  win?.webContents.send('update-message', { type: 'checking', text: '正在检查更新...' });
+
+  // 3. Remove any previous one-time listeners to avoid duplicates if user clicked multiple times quickly
+  autoUpdater.removeAllListeners('update-available');
+  autoUpdater.removeAllListeners('update-not-available');
+  autoUpdater.removeAllListeners('error');
+
+  // 4. Set up explicit listeners for this manual check session
+  // We re-bind these because the global ones in setupAutoUpdater might not be enough 
+  // or we want to ensure *this* specific request gets a response.
+  
+  const onAvailable = (info: any) => {
+    // Global listener handles the UI message ('available'), but we log here
+    console.log('Manual check: Update available', info.version);
+    cleanup();
+  };
+
+  const onNotAvailable = (info: any) => {
+    win?.webContents.send('update-message', { 
+      type: 'not-available', 
+      text: '当前已是最新版本', 
+      info 
+    });
+    cleanup();
+  };
+
+  const onError = (err: any) => {
+    win?.webContents.send('update-message', { 
+      type: 'error', 
+      text: '检查更新失败: ' + (err.message || '网络错误') 
+    });
+    cleanup();
+  };
+
+  const cleanup = () => {
+    autoUpdater.removeListener('update-available', onAvailable);
+    autoUpdater.removeListener('update-not-available', onNotAvailable);
+    autoUpdater.removeListener('error', onError);
+    
+    // Restore global listeners if needed? 
+    // Actually, 'electron-updater' emits events to all listeners. 
+    // The global listeners in setupAutoUpdater are still active.
+    // We added these local ones just to handle the 'not-available' and 'error' specifically for the manual trigger feedback.
+    // But wait, if we have global listeners AND local listeners, we might send duplicate messages?
+    // Let's rely on the fact that:
+    // - Global 'update-available' sends message.
+    // - Global 'error' logs but doesn't alert.
+    // - Local 'error' sends alert.
+    // - Local 'not-available' sends alert.
+    // This is a good mix.
+  };
+
+  autoUpdater.on('update-available', onAvailable);
+  autoUpdater.on('update-not-available', onNotAvailable);
+  autoUpdater.on('error', onError);
+
+  // 5. Execute Check
+  try {
+    const result = await autoUpdater.checkForUpdates();
+    // If result is null, it usually means check failed immediately or was cancelled.
+    // But 'error' event should have fired.
+    if (!result) {
+       // Just in case
+       // onError(new Error('Update check returned null'));
+    }
+  } catch (e: any) {
+    // Catch synchronous errors or promise rejections from checkForUpdates
+    onError(e);
+  }
+});
+
+ipcMain.on('get-app-version', (event) => {
+  event.returnValue = app.getVersion();
+});
 
 // IPC listener for restarting the app
 ipcMain.on('restart_app', () => {
@@ -49,8 +166,21 @@ ipcMain.on('restart_app', () => {
   autoUpdater.quitAndInstall();
 });
 
-// ... (existing code)
+// --- New Update IPC Handlers ---
+ipcMain.on('start-download', () => {
+  const autoUpdater = configureAutoUpdater();
+  autoUpdater.downloadUpdate();
+});
 
+ipcMain.on('install-update', () => {
+  const autoUpdater = configureAutoUpdater();
+  autoUpdater.quitAndInstall();
+});
+
+ipcMain.on('open-download-link', (_event, url) => {
+  const targetUrl = url || 'https://easonlab.faygift.com/api/download/mac';
+  shell.openExternal(targetUrl);
+});
 
 
 let win: BrowserWindow | null;
