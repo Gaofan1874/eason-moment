@@ -7,7 +7,6 @@ const UpdateNotifier: React.FC = () => {
   const [state, setState] = useState<UpdateState>('idle');
   const [statusText, setStatusText] = useState<string>('');
   const [progress, setProgress] = useState<number>(0);
-  const [versionInfo, setVersionInfo] = useState<string>('');
 
   useEffect(() => {
     // Only run in Electron environment
@@ -23,7 +22,6 @@ const UpdateNotifier: React.FC = () => {
           break;
         case 'available':
           setState('available');
-          setVersionInfo(message.info?.version || '');
           setStatusText(`发现新版本 v${message.info?.version}`);
           break;
         case 'not-available':
