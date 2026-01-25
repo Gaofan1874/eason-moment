@@ -1,6 +1,6 @@
 {
   "name": "eason-moment",
-  "version": "0.1.10",
+  "version": "0.1.9",
   "description": "Eason Moment - Capture your mood with lyrics and posters.",
   "repository": {
     "type": "git",
@@ -52,7 +52,8 @@
       "category": "public.app-category.music",
       "icon": "src/assets/eason_moment.icns",
       "target": [
-        "dmg"
+        "dmg",
+        "zip"
       ],
       "publish": [
         {

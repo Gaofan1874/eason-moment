@@ -15,8 +15,6 @@ const UPDATE_FEED_URL = 'https://easonlab.faygift.com/api';
 function configureAutoUpdater() {
   const { autoUpdater } = require('electron-updater');
   autoUpdater.logger = console;
-  // @ts-ignore
-  autoUpdater.logger.transports.file.level = 'info';
   
   // Set the feed URL explicitly
   autoUpdater.setFeedURL({
@@ -73,8 +71,11 @@ function setupAutoUpdater() {
 
 // IPC listener for manual update check
 ipcMain.on('check-for-update', async () => {
+  console.log('[Main] IPC: check-for-update received');
+
   // 1. Dev Environment Guard
   if (!app.isPackaged) {
+    console.log('[Main] App is not packaged, sending error');
     win?.webContents.send('update-message', { 
       type: 'error', 
       text: '开发环境无法检查更新 (Dev Mode)' 
@@ -85,6 +86,7 @@ ipcMain.on('check-for-update', async () => {
   const autoUpdater = configureAutoUpdater();
 
   // 2. Notify Frontend: Checking Started
+  console.log('[Main] Sending "checking" to renderer');
   win?.webContents.send('update-message', { type: 'checking', text: '正在检查更新...' });
 
   // 3. Remove any previous one-time listeners
@@ -92,10 +94,11 @@ ipcMain.on('check-for-update', async () => {
   autoUpdater.removeAllListeners('update-not-available');
   autoUpdater.removeAllListeners('error');
 
-  // Timeout Logic to prevent infinite loading
+  // Timeout Logic
   let isHandled = false;
   const timeoutId = setTimeout(() => {
     if (!isHandled) {
+      console.error('[Main] Update check TIMED OUT (15s)');
       isHandled = true;
       cleanup();
       win?.webContents.send('update-message', { 
@@ -103,20 +106,21 @@ ipcMain.on('check-for-update', async () => {
         text: '检查更新超时，请稍后重试' 
       });
     }
-  }, 15000); // 15s timeout
+  }, 15000);
 
   // 4. Set up explicit listeners
   const onAvailable = (info: any) => {
+    console.log('[Main] Event: update-available', info?.version);
     if (isHandled) return;
     isHandled = true;
     clearTimeout(timeoutId);
-    console.log('Manual check: Update available', info.version);
-    // Let the frontend know details
+    
     win?.webContents.send('update-message', { type: 'available', text: '发现新版本', info });
     cleanup();
   };
 
   const onNotAvailable = (info: any) => {
+    console.log('[Main] Event: update-not-available', info?.version);
     if (isHandled) return;
     isHandled = true;
     clearTimeout(timeoutId);
@@ -129,6 +133,7 @@ ipcMain.on('check-for-update', async () => {
   };
 
   const onError = (err: any) => {
+    console.error('[Main] Event: error', err);
     if (isHandled) return;
     isHandled = true;
     clearTimeout(timeoutId);
@@ -140,6 +145,7 @@ ipcMain.on('check-for-update', async () => {
   };
 
   const cleanup = () => {
+    console.log('[Main] Cleaning up listeners');
     autoUpdater.removeListener('update-available', onAvailable);
     autoUpdater.removeListener('update-not-available', onNotAvailable);
     autoUpdater.removeListener('error', onError);
@@ -151,20 +157,29 @@ ipcMain.on('check-for-update', async () => {
 
   // 5. Execute Check
   try {
+    console.log('[Main] Calling autoUpdater.checkForUpdates()...');
     const result = await autoUpdater.checkForUpdates();
-    // If result is null, it usually means check failed immediately or was cancelled/already running
+    console.log('[Main] checkForUpdates returned:', result ? 'Result Object' : 'null');
+    
     if (!result && !isHandled) {
+       console.warn('[Main] Result is null, but no event fired yet. Waiting for timeout or late event...');
        // Wait a short bit to see if events fire, if not, trigger error
        // But usually null means "cannot check"
-       isHandled = true;
-       clearTimeout(timeoutId);
-       cleanup();
-       win?.webContents.send('update-message', { 
-         type: 'error', 
-         text: '检查更新服务未响应 (Result is null)' 
-       });
+       setTimeout(() => {
+          if (!isHandled) {
+             console.error('[Main] Null result handled after delay');
+             isHandled = true;
+             clearTimeout(timeoutId);
+             cleanup();
+             win?.webContents.send('update-message', { 
+               type: 'error', 
+               text: '检查更新服务未响应 (Result is null)' 
+             });
+          }
+       }, 2000);
     }
   } catch (e: any) {
+    console.error('[Main] Exception in checkForUpdates:', e);
     onError(e);
   }
 });
@@ -180,9 +195,19 @@ ipcMain.on('restart_app', () => {
 });
 
 // --- New Update IPC Handlers ---
-ipcMain.on('start-download', () => {
+ipcMain.on('start-download', async () => {
+  console.log('[Main] IPC: start-download received');
   const autoUpdater = configureAutoUpdater();
-  autoUpdater.downloadUpdate();
+  try {
+    await autoUpdater.downloadUpdate();
+    console.log('[Main] downloadUpdate call initiated');
+  } catch (err: any) {
+    console.error('[Main] downloadUpdate failed:', err);
+    win?.webContents.send('update-message', { 
+      type: 'error', 
+      text: '自动下载失败，请尝试手动下载' 
+    });
+  }
 });
 
 ipcMain.on('install-update', () => {
