@@ -19,7 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings, Palette, Info, ExternalLink, RefreshCw, Download, AlertCircle, CheckCircle2 } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette, RefreshCw, CheckCircle2 } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -48,21 +48,6 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
         <div className="section-title">{title}</div>
       </div>
       <div className="section-content">{children}</div>
-    </div>
-  );
-};
-
-// --- Release Note Component ---
-const ReleaseNote: React.FC<{ notes: string | null }> = ({ notes }) => {
-  if (!notes) return null;
-  return (
-    <div className="release-note-box">
-      <div className="release-note-title">更新内容：</div>
-      <div className="release-note-content">
-        {notes.split('\n').map((line, i) => (
-          <div key={i}>{line}</div>
-        ))}
-      </div>
     </div>
   );
 };
@@ -631,8 +616,8 @@ const PosterGenerator: React.FC = () => {
                     </div>
 
                     <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                       {/* Idle / Check Button */}
-                       {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error') && (
+                       {/* Idle / Check Button / Checking */}
+                       {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error' || updateStatus === 'checking') && (
                           <button 
                             onClick={handleCheckForUpdate}
                             disabled={updateStatus === 'checking'}
