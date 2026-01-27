@@ -19,7 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings, Palette, Info } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette, Info, ExternalLink, RefreshCw, Download, AlertCircle, CheckCircle2 } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -52,7 +52,23 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
   );
 };
 
+// --- Release Note Component ---
+const ReleaseNote: React.FC<{ notes: string | null }> = ({ notes }) => {
+  if (!notes) return null;
+  return (
+    <div className="release-note-box">
+      <div className="release-note-title">更新内容：</div>
+      <div className="release-note-content">
+        {notes.split('\n').map((line, i) => (
+          <div key={i}>{line}</div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 type TabType = 'lyrics' | 'style' | 'image' | 'settings';
+type UpdateStatus = 'idle' | 'checking' | 'available' | 'downloading' | 'downloaded' | 'error' | 'up-to-date';
 
 const PosterGenerator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -67,8 +83,13 @@ const PosterGenerator: React.FC = () => {
   const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema' | 'vertical'>('classic');
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
+  
+  // Update State
   const [appVersion, setAppVersion] = useState<string>('0.0.0');
-  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
+  const [updateStatus, setUpdateStatus] = useState<UpdateStatus>('idle');
+  const [updateInfo, setUpdateInfo] = useState<any>(null);
+  const [downloadProgress, setDownloadProgress] = useState<number>(0);
+  const [updateError, setUpdateError] = useState<string>('');
   
   // Helper to update lyric state and sync with main process (Desktop Lyric)
   const updateLyricAndSync = (newLyric: LyricData) => {
@@ -176,14 +197,31 @@ const PosterGenerator: React.FC = () => {
       if (version) setAppVersion(version);
 
       const handleUpdateMessage = (_event: any, message: any) => {
-        if (message.type === 'not-available') {
-          setIsCheckingUpdate(false);
-          alert('当前已是最新版本');
-        } else if (message.type === 'error') {
-          setIsCheckingUpdate(false);
-          alert('检查更新失败: ' + (message.text || '未知错误'));
-        } else if (message.type === 'available') {
-          setIsCheckingUpdate(false);
+        console.log('Renderer received update message:', message);
+        switch (message.type) {
+          case 'checking':
+            setUpdateStatus('checking');
+            break;
+          case 'available':
+            setUpdateStatus('available');
+            setUpdateInfo({ ...message.info, notes: message.notes });
+            break;
+          case 'not-available':
+            setUpdateStatus('up-to-date');
+            setTimeout(() => setUpdateStatus('idle'), 3000);
+            break;
+          case 'progress':
+            setUpdateStatus('downloading');
+            setDownloadProgress(message.progress.percent);
+            break;
+          case 'downloaded':
+            setUpdateStatus('downloaded');
+            setUpdateInfo({ ...message.info, notes: message.notes });
+            break;
+          case 'error':
+            setUpdateStatus('error');
+            setUpdateError(message.text);
+            break;
         }
       };
       (window as any).ipcRenderer.on('update-message', handleUpdateMessage);
@@ -235,13 +273,32 @@ const PosterGenerator: React.FC = () => {
     }
   };
 
+  // Update Handlers
   const handleCheckForUpdate = () => {
-    if (isCheckingUpdate) return;
-    setIsCheckingUpdate(true);
+    if (updateStatus === 'checking' || updateStatus === 'downloading') return;
     if ((window as any).ipcRenderer) {
       (window as any).ipcRenderer.send('check-for-update');
     }
   };
+
+  const handleStartDownload = () => {
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('start-download');
+    }
+  };
+
+  const handleInstallUpdate = () => {
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('install-update');
+    }
+  };
+
+  const handleManualDownload = () => {
+     if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('open-download-link', 'https://github.com/Gaofan1874/eason-moment/releases');
+    }
+  };
+
 
   const draw = useCallback(() => {
     const canvas = canvasRef.current;
@@ -557,35 +614,167 @@ const PosterGenerator: React.FC = () => {
               </Section>
 
               <Section title="关于与更新">
-                <div className="control-group" style={{ 
-                  background: 'var(--accent-light)', 
-                  padding: '12px', 
+                <div className="update-card" style={{ 
+                  background: 'var(--bg-surface)', 
+                  padding: '16px', 
                   borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--accent-color)',
-                  opacity: 0.9
+                  border: '1px solid var(--border-color)',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
                 }}>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                  {/* Header Row */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <Info size={14} color="var(--accent-color)" />
-                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-primary)' }}>当前版本</span>
+                      <div style={{ 
+                        width: 32, height: 32, 
+                        background: 'var(--accent-light)', 
+                        borderRadius: '8px', 
+                        display: 'flex', alignItems: 'center', justifyContent: 'center'
+                      }}>
+                        <Info size={18} color="var(--accent-color)" />
+                      </div>
+                      <div>
+                        <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>Eason Moment</div>
+                        <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>当前版本 v{appVersion}</div>
+                      </div>
                     </div>
-                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--accent-color)' }}>v{appVersion}</span>
+                    {updateStatus === 'up-to-date' && (
+                      <span className="badge-success" style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 8px', borderRadius: 12, background: '#E3F9E5', color: '#1F7A1F', fontSize: 11 }}>
+                        <CheckCircle2 size={12} /> 最新
+                      </span>
+                    )}
                   </div>
-                  <button 
-                    className="btn-secondary" 
-                    onClick={handleCheckForUpdate}
-                    disabled={isCheckingUpdate}
-                    style={{ 
-                      width: '100%', 
-                      justifyContent: 'center',
-                      background: 'var(--bg-surface)',
-                      borderColor: 'var(--accent-color)',
-                      color: 'var(--accent-color)',
-                      opacity: isCheckingUpdate ? 0.6 : 1
-                    }}
-                  >
-                    {isCheckingUpdate ? '正在检查...' : '检查更新'}
-                  </button>
+
+                  {/* Dynamic Content Area */}
+                  
+                  {/* 1. New Version Found */}
+                  {updateStatus === 'available' && updateInfo && (
+                    <div className="update-alert-box" style={{ 
+                      background: 'linear-gradient(to right, var(--accent-light), rgba(255,255,255,0))',
+                      borderLeft: '3px solid var(--accent-color)',
+                      padding: '10px',
+                      marginBottom: '12px',
+                      borderRadius: '0 4px 4px 0'
+                    }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
+                        <span style={{ fontWeight: 600, color: 'var(--accent-color)', fontSize: '13px' }}>发现新版本 v{updateInfo.version}</span>
+                        <a 
+                          href="#" 
+                          onClick={(e) => { e.preventDefault(); handleManualDownload(); }}
+                          style={{ fontSize: '11px', color: 'var(--text-secondary)', textDecoration: 'underline' }}
+                        >
+                          手动下载
+                        </a>
+                      </div>
+                      <ReleaseNote notes={updateInfo.notes} />
+                      <button 
+                        className="btn-primary"
+                        onClick={handleStartDownload}
+                        style={{ width: '100%', marginTop: '8px', justifyContent: 'center', height: '32px' }}
+                      >
+                        <Download size={14} style={{ marginRight: 6 }} /> 立即更新
+                      </button>
+                    </div>
+                  )}
+
+                  {/* 2. Downloading */}
+                  {updateStatus === 'downloading' && (
+                    <div style={{ marginBottom: '12px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginBottom: '4px' }}>
+                        <span>正在下载更新...</span>
+                        <span>{downloadProgress.toFixed(0)}%</span>
+                      </div>
+                      <div style={{ width: '100%', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}>
+                        <div style={{ width: `${downloadProgress}%`, height: '100%', background: 'var(--accent-color)', transition: 'width 0.3s' }} />
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 3. Downloaded */}
+                  {updateStatus === 'downloaded' && (
+                    <div style={{ marginBottom: '12px' }}>
+                       <div className="update-alert-box" style={{ 
+                          background: '#E3F9E5',
+                          border: '1px solid #bceac0',
+                          padding: '10px',
+                          borderRadius: '6px',
+                          marginBottom: '8px'
+                        }}>
+                          <div style={{ fontWeight: 600, color: '#1F7A1F', fontSize: '13px', display: 'flex', alignItems: 'center', gap: 6 }}>
+                             <CheckCircle2 size={14} /> 更新已就绪
+                          </div>
+                          <div style={{ fontSize: '11px', color: '#1F7A1F', marginTop: 4 }}>
+                            如果重启未生效，请尝试 <a href="#" onClick={(e) => { e.preventDefault(); handleManualDownload(); }} style={{ color: 'inherit', textDecoration: 'underline' }}>手动安装</a>
+                          </div>
+                       </div>
+                       <button 
+                          className="btn-primary"
+                          onClick={handleInstallUpdate}
+                          style={{ width: '100%', justifyContent: 'center', height: '36px', background: '#1F7A1F' }}
+                        >
+                          <RefreshCw size={14} style={{ marginRight: 6 }} /> 立即重启安装
+                        </button>
+                    </div>
+                  )}
+
+                  {/* 4. Error */}
+                  {updateStatus === 'error' && (
+                    <div style={{ 
+                      padding: '8px', background: '#FFEBEE', color: '#C62828', 
+                      borderRadius: '4px', fontSize: '12px', display: 'flex', gap: 6, marginBottom: '12px' 
+                    }}>
+                      <AlertCircle size={14} style={{ flexShrink: 0, marginTop: 2 }} />
+                      <span>{updateError}</span>
+                    </div>
+                  )}
+
+                  {/* Default Action: Check Button */}
+                  {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error') && (
+                    <button 
+                      className="btn-secondary" 
+                      onClick={handleCheckForUpdate}
+                      disabled={updateStatus === 'checking'}
+                      style={{ 
+                        width: '100%', 
+                        justifyContent: 'center',
+                        borderColor: 'var(--border-color)',
+                        color: 'var(--text-primary)'
+                      }}
+                    >
+                      {updateStatus === 'checking' ? (
+                        <>
+                          <div className="spinner-small" style={{ marginRight: 8 }}></div> 正在检查...
+                        </>
+                      ) : '检查更新'}
+                    </button>
+                  )}
+                  
+                  {/* Links Footer */}
+                  <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'center', gap: '16px' }}>
+                     <a 
+                       href="#" 
+                       onClick={(e) => { 
+                         e.preventDefault(); 
+                         if ((window as any).ipcRenderer) {
+                            (window as any).ipcRenderer.send('open-download-link', 'https://github.com/Gaofan1874/eason-moment/releases');
+                         }
+                       }}
+                       style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
+                     >
+                       <ExternalLink size={10} /> 版本历史
+                     </a>
+                     <a 
+                       href="#" 
+                       onClick={(e) => { 
+                          e.preventDefault(); 
+                          if ((window as any).ipcRenderer) {
+                            (window as any).ipcRenderer.send('open-download-link', 'https://easonlab.faygift.com');
+                         }
+                       }}
+                       style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
+                     >
+                       <ExternalLink size={10} /> 访问官网
+                     </a>
+                  </div>
                 </div>
               </Section>
             </>

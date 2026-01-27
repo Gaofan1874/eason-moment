@@ -41,7 +41,12 @@ function setupAutoUpdater() {
   });
 
   autoUpdater.on('update-available', (info: any) => {
-    win?.webContents.send('update-message', { type: 'available', text: '发现新版本', info });
+    win?.webContents.send('update-message', { 
+      type: 'available', 
+      text: '发现新版本', 
+      info,
+      notes: info.releaseNotes 
+    });
   });
 
   autoUpdater.on('update-not-available', (info: any) => {
