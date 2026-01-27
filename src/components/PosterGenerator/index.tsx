@@ -19,7 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings, Palette, RefreshCw, CheckCircle2 } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette, RefreshCw, CheckCircle2, X, Download, AlertCircle } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -55,6 +55,106 @@ const Section: React.FC<SectionProps> = ({ title, children }) => {
 type TabType = 'lyrics' | 'style' | 'image' | 'settings';
 type UpdateStatus = 'idle' | 'checking' | 'available' | 'downloading' | 'downloaded' | 'error' | 'up-to-date';
 
+// --- Update Modal Component ---
+interface UpdateModalProps {
+  status: UpdateStatus;
+  version: string;
+  info: any;
+  onClose: () => void;
+  onCheck: () => void;
+  onManual: () => void;
+}
+
+const UpdateModal: React.FC<UpdateModalProps> = ({ 
+  status, version, info, onClose, onCheck, onManual 
+}) => {
+  return (
+    <div className="modal-overlay" style={{
+      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+      background: 'rgba(0,0,0,0.4)', zIndex: 1000,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      backdropFilter: 'blur(2px)'
+    }}>
+      <div className="modal-content" style={{
+        width: '320px', background: 'var(--bg-surface)', 
+        borderRadius: '12px', padding: '24px',
+        boxShadow: '0 8px 30px rgba(0,0,0,0.12)',
+        border: '1px solid var(--border-color)'
+      }}>
+        {/* Header */}
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+          <h3 style={{ margin: 0, fontSize: '16px', fontWeight: 600 }}>
+            {status === 'checking' ? '正在检查...' : 
+             status === 'available' ? '发现新版本' :
+             status === 'up-to-date' ? '已是最新' : '软件更新'}
+          </h3>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 4 }}>
+            <X size={18} color="var(--text-secondary)" />
+          </button>
+        </div>
+
+        {/* Content Body */}
+        <div style={{ minHeight: '60px', fontSize: '13px', color: 'var(--text-primary)', marginBottom: '24px' }}>
+          
+          {status === 'checking' && (
+             <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--text-secondary)' }}>
+                <RefreshCw className="spin" size={16} /> 正在连接服务器...
+             </div>
+          )}
+
+          {status === 'up-to-date' && (
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8, padding: '10px 0' }}>
+               <CheckCircle2 size={32} color="#1F7A1F" />
+               <span>当前版本 v{version} 已是最新</span>
+            </div>
+          )}
+
+          {status === 'available' && info && (
+            <div>
+               <div style={{ marginBottom: 10, fontWeight: 600, color: 'var(--accent-color)', fontSize: '14px' }}>
+                 v{info.version} 来了！
+               </div>
+               <div style={{ 
+                 background: 'var(--bg-secondary)', padding: '12px', 
+                 borderRadius: '8px', maxHeight: '150px', overflowY: 'auto',
+                 whiteSpace: 'pre-wrap', fontSize: '12px', lineHeight: '1.6',
+                 color: 'var(--text-secondary)', border: '1px solid var(--border-color)'
+               }}>
+                 {info.notes || '优化了一些细节体验。'}
+               </div>
+            </div>
+          )}
+
+          {(status === 'error' || status === 'idle') && (
+            <div style={{ color: 'var(--text-secondary)' }}>
+               点击下方按钮检查是否有新版本可用。
+            </div>
+          )}
+        </div>
+
+        {/* Footer Actions */}
+        <div style={{ display: 'flex', gap: '12px' }}>
+          {status === 'available' ? (
+             <>
+               <button className="btn-secondary" onClick={onClose} style={{ flex: 1, justifyContent: 'center' }}>
+                 暂不更新
+               </button>
+               <button className="btn-primary" onClick={onManual} style={{ flex: 1.5, justifyContent: 'center' }}>
+                 <Download size={14} style={{ marginRight: 6 }} /> 立即下载
+               </button>
+             </>
+          ) : (
+             <button className="btn-primary" onClick={status === 'checking' ? undefined : onCheck} style={{ width: '100%', justifyContent: 'center' }} disabled={status === 'checking'}>
+               {status === 'checking' ? '检查中...' : '检查更新'}
+             </button>
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
 const PosterGenerator: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -75,6 +175,7 @@ const PosterGenerator: React.FC = () => {
   const [updateInfo, setUpdateInfo] = useState<any>(null);
   const [downloadProgress, setDownloadProgress] = useState<number>(0);
   const [updateError, setUpdateError] = useState<string>('');
+  const [showUpdateModal, setShowUpdateModal] = useState(false);
   
   // Helper to update lyric state and sync with main process (Desktop Lyric)
   const updateLyricAndSync = (newLyric: LyricData) => {
@@ -190,10 +291,10 @@ const PosterGenerator: React.FC = () => {
           case 'available':
             setUpdateStatus('available');
             setUpdateInfo({ ...message.info, notes: message.notes });
+            // Don't auto show modal, just let the badge show
             break;
           case 'not-available':
             setUpdateStatus('up-to-date');
-            setTimeout(() => setUpdateStatus('idle'), 3000);
             break;
           case 'progress':
             setUpdateStatus('downloading');
@@ -202,6 +303,9 @@ const PosterGenerator: React.FC = () => {
           case 'downloaded':
             setUpdateStatus('downloaded');
             setUpdateInfo({ ...message.info, notes: message.notes });
+            // Optionally auto-open modal when download finishes? 
+            // Better to let user click the badge which will now indicate "ready"
+            setShowUpdateModal(true); 
             break;
           case 'error':
             setUpdateStatus('error');
@@ -260,7 +364,13 @@ const PosterGenerator: React.FC = () => {
 
   // Update Handlers
   const handleCheckForUpdate = () => {
-    if (updateStatus === 'checking' || updateStatus === 'downloading') return;
+    // If we already have status, just open modal
+    if (updateStatus !== 'idle' && updateStatus !== 'error') {
+       setShowUpdateModal(true);
+       return;
+    }
+
+    setShowUpdateModal(true); // Open modal to show "Checking..."
     if ((window as any).ipcRenderer) {
       (window as any).ipcRenderer.send('check-for-update');
     }
@@ -418,6 +528,21 @@ const PosterGenerator: React.FC = () => {
     <div className={`app-container ${appTheme}`}>
       {isMac && <div className="titlebar-drag-region" />}
       {!isMac && <TitleBar />}
+      
+      {showUpdateModal && (
+        <UpdateModal
+          status={updateStatus}
+          version={appVersion}
+          info={updateInfo}
+          progress={downloadProgress}
+          error={updateError}
+          onClose={() => setShowUpdateModal(false)}
+          onCheck={handleCheckForUpdate}
+          onDownload={handleStartDownload}
+          onInstall={handleInstallUpdate}
+          onManual={handleManualDownload}
+        />
+      )}
 
       <div className="workspace" style={{ paddingTop: isMac ? 'var(--titlebar-height)' : '32px' }}>
         <div className="canvas-wrapper">
@@ -597,155 +722,39 @@ const PosterGenerator: React.FC = () => {
                   setAnimationType={setAnimationType}
                 />
               </Section>
+              
+              {/* Minimal Version & Update Trigger */}
+              <div style={{ 
+                marginTop: 'auto', 
+                padding: '16px 20px', 
+                borderTop: '1px solid var(--border-color)',
+                display: 'flex', alignItems: 'center', justifyContent: 'flex-end',
+                color: 'var(--text-secondary)',
+                fontSize: '11px'
+              }}>
+                 <span style={{ marginRight: 8, opacity: 0.7 }}>v{appVersion}</span>
+                 <button 
+                   onClick={handleCheckForUpdate}
+                   title="检查更新"
+                   style={{
+                     background: 'none', border: 'none', cursor: 'pointer',
+                     display: 'flex', alignItems: 'center', justifyContent: 'center',
+                     padding: '4px', position: 'relative',
+                     color: updateStatus === 'available' ? 'var(--accent-color)' : 'inherit'
+                   }}
+                 >
+                   <RefreshCw size={12} className={updateStatus === 'checking' ? 'spin' : ''} />
+                   {(updateStatus === 'available' || updateStatus === 'downloaded') && (
+                     <span style={{
+                       position: 'absolute', top: 2, right: 2,
+                       width: 6, height: 6, borderRadius: '50%',
+                       background: '#C62828',
+                       boxShadow: '0 0 0 1px var(--bg-surface)'
+                     }} />
+                   )}
+                 </button>
+              </div>
 
-              <Section title="关于">
-                <div style={{ 
-                  padding: '0 4px',
-                  fontSize: '12px',
-                  color: 'var(--text-secondary)'
-                }}>
-                  {/* Minimal Header Row */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '32px' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <span style={{ fontWeight: 500 }}>v{appVersion}</span>
-                      {updateStatus === 'up-to-date' && (
-                        <span style={{ color: '#1F7A1F', display: 'flex', alignItems: 'center', gap: 2, fontSize: '11px' }}>
-                          <CheckCircle2 size={10} /> 最新
-                        </span>
-                      )}
-                    </div>
-
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                       {/* Idle / Check Button / Checking */}
-                       {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error' || updateStatus === 'checking') && (
-                          <button 
-                            onClick={handleCheckForUpdate}
-                            disabled={updateStatus === 'checking'}
-                            className="text-btn"
-                            style={{ 
-                              background: 'none', border: 'none', padding: 0, 
-                              color: 'var(--accent-color)', cursor: 'pointer',
-                              display: 'flex', alignItems: 'center', gap: 4,
-                              fontSize: '12px'
-                            }}
-                          >
-                            {updateStatus === 'checking' ? '检查中...' : '检查更新'}
-                            {updateStatus !== 'checking' && <RefreshCw size={10} />}
-                          </button>
-                       )}
-                    </div>
-                  </div>
-
-                  {/* Error Message (Compact) */}
-                  {updateStatus === 'error' && (
-                    <div style={{ color: '#C62828', fontSize: '11px', marginTop: '-4px', marginBottom: '8px' }}>
-                      {updateError || '检查失败'}
-                    </div>
-                  )}
-
-                  {/* Update Available (Compact) */}
-                  {updateStatus === 'available' && updateInfo && (
-                    <div style={{ 
-                      marginTop: '4px', 
-                      background: 'var(--accent-light)', 
-                      borderRadius: '6px',
-                      padding: '8px 10px'
-                    }}>
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                        <span style={{ fontWeight: 600, color: 'var(--accent-color)' }}>
-                          新版本 v{updateInfo.version}
-                        </span>
-                        <div style={{ display: 'flex', gap: '8px' }}>
-                           <button 
-                            onClick={handleManualDownload}
-                            style={{ 
-                              background: 'none', border: 'none', padding: 0, 
-                              color: 'var(--text-secondary)', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline'
-                            }}
-                           >
-                             手动下载
-                           </button>
-                           <button 
-                              className="btn-primary"
-                              onClick={handleStartDownload}
-                              style={{ height: '24px', padding: '0 12px', fontSize: '11px' }}
-                            >
-                              更新
-                            </button>
-                        </div>
-                      </div>
-                      
-                      {/* Collapsible Notes */}
-                      <details style={{ marginTop: '6px' }}>
-                        <summary style={{ cursor: 'pointer', fontSize: '11px', color: 'var(--text-secondary)' }}>查看更新内容</summary>
-                        <div style={{ marginTop: '4px', fontSize: '11px', lineHeight: '1.4', color: 'var(--text-primary)', maxHeight: '100px', overflowY: 'auto' }}>
-                          {updateInfo.notes}
-                        </div>
-                      </details>
-                    </div>
-                  )}
-
-                  {/* Downloading (Compact) */}
-                  {updateStatus === 'downloading' && (
-                    <div style={{ marginTop: '8px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginBottom: '2px' }}>
-                        <span>下载中...</span>
-                        <span>{downloadProgress.toFixed(0)}%</span>
-                      </div>
-                      <div style={{ width: '100%', height: '4px', background: 'var(--border-color)', borderRadius: '2px', overflow: 'hidden' }}>
-                        <div style={{ width: `${downloadProgress}%`, height: '100%', background: 'var(--accent-color)', transition: 'width 0.3s' }} />
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Ready (Compact) */}
-                  {updateStatus === 'downloaded' && (
-                    <div style={{ marginTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                      <span style={{ color: '#1F7A1F', fontWeight: 500, fontSize: '11px' }}>下载完成</span>
-                      <button 
-                          className="btn-primary"
-                          onClick={handleInstallUpdate}
-                          style={{ height: '24px', padding: '0 12px', fontSize: '11px', background: '#1F7A1F' }}
-                        >
-                          重启安装
-                        </button>
-                    </div>
-                  )}
-
-                  {/* Links Row */}
-                  <div style={{ 
-                    display: 'flex', gap: '16px', marginTop: '12px', 
-                    paddingTop: '8px', borderTop: '1px solid var(--border-color)',
-                    opacity: 0.7 
-                  }}>
-                     <a 
-                       href="#" 
-                       onClick={(e) => { 
-                         e.preventDefault(); 
-                         if ((window as any).ipcRenderer) {
-                            (window as any).ipcRenderer.send('open-download-link', 'https://github.com/Gaofan1874/eason-moment/releases');
-                         }
-                       }}
-                       style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
-                     >
-                       版本历史
-                     </a>
-                     <a 
-                       href="#" 
-                       onClick={(e) => { 
-                          e.preventDefault(); 
-                          if ((window as any).ipcRenderer) {
-                            (window as any).ipcRenderer.send('open-download-link', 'https://easonlab.faygift.com');
-                         }
-                       }}
-                       style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
-                     >
-                       访问官网
-                     </a>
-                  </div>
-
-                </div>
-              </Section>
             </>
           )}
 
