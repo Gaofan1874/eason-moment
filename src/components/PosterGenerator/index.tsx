@@ -613,143 +613,126 @@ const PosterGenerator: React.FC = () => {
                 />
               </Section>
 
-              <Section title="关于与更新">
-                <div className="update-card" style={{ 
-                  background: 'var(--bg-surface)', 
-                  padding: '16px', 
-                  borderRadius: 'var(--radius-md)',
-                  border: '1px solid var(--border-color)',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.05)'
+              <Section title="关于">
+                <div style={{ 
+                  padding: '0 4px',
+                  fontSize: '12px',
+                  color: 'var(--text-secondary)'
                 }}>
-                  {/* Header Row */}
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px' }}>
+                  {/* Minimal Header Row */}
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '32px' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <div style={{ 
-                        width: 32, height: 32, 
-                        background: 'var(--accent-light)', 
-                        borderRadius: '8px', 
-                        display: 'flex', alignItems: 'center', justifyContent: 'center'
-                      }}>
-                        <Info size={18} color="var(--accent-color)" />
-                      </div>
-                      <div>
-                        <div style={{ fontSize: '13px', fontWeight: 600, color: 'var(--text-primary)' }}>Eason Moment</div>
-                        <div style={{ fontSize: '11px', color: 'var(--text-secondary)' }}>当前版本 v{appVersion}</div>
-                      </div>
+                      <span style={{ fontWeight: 500 }}>v{appVersion}</span>
+                      {updateStatus === 'up-to-date' && (
+                        <span style={{ color: '#1F7A1F', display: 'flex', alignItems: 'center', gap: 2, fontSize: '11px' }}>
+                          <CheckCircle2 size={10} /> 最新
+                        </span>
+                      )}
                     </div>
-                    {updateStatus === 'up-to-date' && (
-                      <span className="badge-success" style={{ display: 'flex', alignItems: 'center', gap: 4, padding: '4px 8px', borderRadius: 12, background: '#E3F9E5', color: '#1F7A1F', fontSize: 11 }}>
-                        <CheckCircle2 size={12} /> 最新
-                      </span>
-                    )}
+
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                       {/* Idle / Check Button */}
+                       {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error') && (
+                          <button 
+                            onClick={handleCheckForUpdate}
+                            disabled={updateStatus === 'checking'}
+                            className="text-btn"
+                            style={{ 
+                              background: 'none', border: 'none', padding: 0, 
+                              color: 'var(--accent-color)', cursor: 'pointer',
+                              display: 'flex', alignItems: 'center', gap: 4,
+                              fontSize: '12px'
+                            }}
+                          >
+                            {updateStatus === 'checking' ? '检查中...' : '检查更新'}
+                            {updateStatus !== 'checking' && <RefreshCw size={10} />}
+                          </button>
+                       )}
+                    </div>
                   </div>
 
-                  {/* Dynamic Content Area */}
-                  
-                  {/* 1. New Version Found */}
-                  {updateStatus === 'available' && updateInfo && (
-                    <div className="update-alert-box" style={{ 
-                      background: 'linear-gradient(to right, var(--accent-light), rgba(255,255,255,0))',
-                      borderLeft: '3px solid var(--accent-color)',
-                      padding: '10px',
-                      marginBottom: '12px',
-                      borderRadius: '0 4px 4px 0'
-                    }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                        <span style={{ fontWeight: 600, color: 'var(--accent-color)', fontSize: '13px' }}>发现新版本 v{updateInfo.version}</span>
-                        <a 
-                          href="#" 
-                          onClick={(e) => { e.preventDefault(); handleManualDownload(); }}
-                          style={{ fontSize: '11px', color: 'var(--text-secondary)', textDecoration: 'underline' }}
-                        >
-                          手动下载
-                        </a>
-                      </div>
-                      <ReleaseNote notes={updateInfo.notes} />
-                      <button 
-                        className="btn-primary"
-                        onClick={handleStartDownload}
-                        style={{ width: '100%', marginTop: '8px', justifyContent: 'center', height: '32px' }}
-                      >
-                        <Download size={14} style={{ marginRight: 6 }} /> 立即更新
-                      </button>
+                  {/* Error Message (Compact) */}
+                  {updateStatus === 'error' && (
+                    <div style={{ color: '#C62828', fontSize: '11px', marginTop: '-4px', marginBottom: '8px' }}>
+                      {updateError || '检查失败'}
                     </div>
                   )}
 
-                  {/* 2. Downloading */}
+                  {/* Update Available (Compact) */}
+                  {updateStatus === 'available' && updateInfo && (
+                    <div style={{ 
+                      marginTop: '4px', 
+                      background: 'var(--accent-light)', 
+                      borderRadius: '6px',
+                      padding: '8px 10px'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                        <span style={{ fontWeight: 600, color: 'var(--accent-color)' }}>
+                          新版本 v{updateInfo.version}
+                        </span>
+                        <div style={{ display: 'flex', gap: '8px' }}>
+                           <button 
+                            onClick={handleManualDownload}
+                            style={{ 
+                              background: 'none', border: 'none', padding: 0, 
+                              color: 'var(--text-secondary)', fontSize: '11px', cursor: 'pointer', textDecoration: 'underline'
+                            }}
+                           >
+                             手动下载
+                           </button>
+                           <button 
+                              className="btn-primary"
+                              onClick={handleStartDownload}
+                              style={{ height: '24px', padding: '0 12px', fontSize: '11px' }}
+                            >
+                              更新
+                            </button>
+                        </div>
+                      </div>
+                      
+                      {/* Collapsible Notes */}
+                      <details style={{ marginTop: '6px' }}>
+                        <summary style={{ cursor: 'pointer', fontSize: '11px', color: 'var(--text-secondary)' }}>查看更新内容</summary>
+                        <div style={{ marginTop: '4px', fontSize: '11px', lineHeight: '1.4', color: 'var(--text-primary)', maxHeight: '100px', overflowY: 'auto' }}>
+                          {updateInfo.notes}
+                        </div>
+                      </details>
+                    </div>
+                  )}
+
+                  {/* Downloading (Compact) */}
                   {updateStatus === 'downloading' && (
-                    <div style={{ marginBottom: '12px' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginBottom: '4px' }}>
-                        <span>正在下载更新...</span>
+                    <div style={{ marginTop: '8px' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', marginBottom: '2px' }}>
+                        <span>下载中...</span>
                         <span>{downloadProgress.toFixed(0)}%</span>
                       </div>
-                      <div style={{ width: '100%', height: '6px', background: 'var(--border-color)', borderRadius: '3px', overflow: 'hidden' }}>
+                      <div style={{ width: '100%', height: '4px', background: 'var(--border-color)', borderRadius: '2px', overflow: 'hidden' }}>
                         <div style={{ width: `${downloadProgress}%`, height: '100%', background: 'var(--accent-color)', transition: 'width 0.3s' }} />
                       </div>
                     </div>
                   )}
 
-                  {/* 3. Downloaded */}
+                  {/* Ready (Compact) */}
                   {updateStatus === 'downloaded' && (
-                    <div style={{ marginBottom: '12px' }}>
-                       <div className="update-alert-box" style={{ 
-                          background: '#E3F9E5',
-                          border: '1px solid #bceac0',
-                          padding: '10px',
-                          borderRadius: '6px',
-                          marginBottom: '8px'
-                        }}>
-                          <div style={{ fontWeight: 600, color: '#1F7A1F', fontSize: '13px', display: 'flex', alignItems: 'center', gap: 6 }}>
-                             <CheckCircle2 size={14} /> 更新已就绪
-                          </div>
-                          <div style={{ fontSize: '11px', color: '#1F7A1F', marginTop: 4 }}>
-                            如果重启未生效，请尝试 <a href="#" onClick={(e) => { e.preventDefault(); handleManualDownload(); }} style={{ color: 'inherit', textDecoration: 'underline' }}>手动安装</a>
-                          </div>
-                       </div>
-                       <button 
+                    <div style={{ marginTop: '8px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                      <span style={{ color: '#1F7A1F', fontWeight: 500, fontSize: '11px' }}>下载完成</span>
+                      <button 
                           className="btn-primary"
                           onClick={handleInstallUpdate}
-                          style={{ width: '100%', justifyContent: 'center', height: '36px', background: '#1F7A1F' }}
+                          style={{ height: '24px', padding: '0 12px', fontSize: '11px', background: '#1F7A1F' }}
                         >
-                          <RefreshCw size={14} style={{ marginRight: 6 }} /> 立即重启安装
+                          重启安装
                         </button>
                     </div>
                   )}
 
-                  {/* 4. Error */}
-                  {updateStatus === 'error' && (
-                    <div style={{ 
-                      padding: '8px', background: '#FFEBEE', color: '#C62828', 
-                      borderRadius: '4px', fontSize: '12px', display: 'flex', gap: 6, marginBottom: '12px' 
-                    }}>
-                      <AlertCircle size={14} style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span>{updateError}</span>
-                    </div>
-                  )}
-
-                  {/* Default Action: Check Button */}
-                  {(updateStatus === 'idle' || updateStatus === 'up-to-date' || updateStatus === 'error') && (
-                    <button 
-                      className="btn-secondary" 
-                      onClick={handleCheckForUpdate}
-                      disabled={updateStatus === 'checking'}
-                      style={{ 
-                        width: '100%', 
-                        justifyContent: 'center',
-                        borderColor: 'var(--border-color)',
-                        color: 'var(--text-primary)'
-                      }}
-                    >
-                      {updateStatus === 'checking' ? (
-                        <>
-                          <div className="spinner-small" style={{ marginRight: 8 }}></div> 正在检查...
-                        </>
-                      ) : '检查更新'}
-                    </button>
-                  )}
-                  
-                  {/* Links Footer */}
-                  <div style={{ marginTop: '12px', paddingTop: '12px', borderTop: '1px solid var(--border-color)', display: 'flex', justifyContent: 'center', gap: '16px' }}>
+                  {/* Links Row */}
+                  <div style={{ 
+                    display: 'flex', gap: '16px', marginTop: '12px', 
+                    paddingTop: '8px', borderTop: '1px solid var(--border-color)',
+                    opacity: 0.7 
+                  }}>
                      <a 
                        href="#" 
                        onClick={(e) => { 
@@ -760,7 +743,7 @@ const PosterGenerator: React.FC = () => {
                        }}
                        style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
                      >
-                       <ExternalLink size={10} /> 版本历史
+                       版本历史
                      </a>
                      <a 
                        href="#" 
@@ -772,9 +755,10 @@ const PosterGenerator: React.FC = () => {
                        }}
                        style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: '11px', color: 'var(--text-secondary)' }}
                      >
-                       <ExternalLink size={10} /> 访问官网
+                       访问官网
                      </a>
                   </div>
+
                 </div>
               </Section>
             </>
