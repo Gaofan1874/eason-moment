@@ -19,7 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings, Palette } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette, Info } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -67,6 +67,8 @@ const PosterGenerator: React.FC = () => {
   const [theme, setTheme] = useState<'classic' | 'polaroid' | 'cinema' | 'vertical'>('classic');
   const [ratio, setRatio] = useState<AspectRatioType>('portrait');
   const [lyric, setLyric] = useState(DEFAULT_LYRIC);
+  const [appVersion, setAppVersion] = useState<string>('0.0.0');
+  const [isCheckingUpdate, setIsCheckingUpdate] = useState(false);
   
   // Helper to update lyric state and sync with main process (Desktop Lyric)
   const updateLyricAndSync = (newLyric: LyricData) => {
@@ -169,6 +171,26 @@ const PosterGenerator: React.FC = () => {
           setActiveTab(tab);
       });
       (window as any).ipcRenderer.send('get-current-lyric');
+      
+      const version = (window as any).ipcRenderer.sendSync('get-app-version');
+      if (version) setAppVersion(version);
+
+      const handleUpdateMessage = (_event: any, message: any) => {
+        if (message.type === 'not-available') {
+          setIsCheckingUpdate(false);
+          alert('当前已是最新版本');
+        } else if (message.type === 'error') {
+          setIsCheckingUpdate(false);
+          alert('检查更新失败: ' + (message.text || '未知错误'));
+        } else if (message.type === 'available') {
+          setIsCheckingUpdate(false);
+        }
+      };
+      (window as any).ipcRenderer.on('update-message', handleUpdateMessage);
+      
+      return () => {
+        (window as any).ipcRenderer.removeAllListeners('update-message');
+      };
     }
   }, []);
 
@@ -210,6 +232,14 @@ const PosterGenerator: React.FC = () => {
     setDesktopColor(newColor);
     if ((window as any).ipcRenderer) {
       (window as any).ipcRenderer.send('update-desktop-lyric-style', { color: newColor });
+    }
+  };
+
+  const handleCheckForUpdate = () => {
+    if (isCheckingUpdate) return;
+    setIsCheckingUpdate(true);
+    if ((window as any).ipcRenderer) {
+      (window as any).ipcRenderer.send('check-for-update');
     }
   };
 
@@ -417,11 +447,13 @@ const PosterGenerator: React.FC = () => {
 
         <div className="scroll-content">
           {activeTab === 'lyrics' && (
-            <Section title="歌词与灵感">
-              <LyricControls 
-                lyric={lyric} 
-                setLyric={updateLyricAndSync} 
-              />
+            <>
+              <Section title="歌词与灵感">
+                <LyricControls 
+                  lyric={lyric} 
+                  setLyric={updateLyricAndSync} 
+                />
+              </Section>
               <div className="control-group" style={{ marginTop: '16px', paddingTop: '12px', borderTop: '1px solid var(--border-color)' }}>
                 <label className="checkbox-wrapper">
                   <input
@@ -432,7 +464,7 @@ const PosterGenerator: React.FC = () => {
                   <span className="control-value" style={{ fontSize: '12px' }}>紧凑模式 (自动压缩空格换行)</span>
                 </label>
               </div>
-            </Section>
+            </>
           )}
 
           {activeTab === 'style' && (
@@ -522,6 +554,39 @@ const PosterGenerator: React.FC = () => {
                   animationType={animationType}
                   setAnimationType={setAnimationType}
                 />
+              </Section>
+
+              <Section title="关于与更新">
+                <div className="control-group" style={{ 
+                  background: 'var(--accent-light)', 
+                  padding: '12px', 
+                  borderRadius: 'var(--radius-md)',
+                  border: '1px solid var(--accent-color)',
+                  opacity: 0.9
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <Info size={14} color="var(--accent-color)" />
+                      <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--text-primary)' }}>当前版本</span>
+                    </div>
+                    <span style={{ fontSize: '12px', fontWeight: 700, color: 'var(--accent-color)' }}>v{appVersion}</span>
+                  </div>
+                  <button 
+                    className="btn-secondary" 
+                    onClick={handleCheckForUpdate}
+                    disabled={isCheckingUpdate}
+                    style={{ 
+                      width: '100%', 
+                      justifyContent: 'center',
+                      background: 'var(--bg-surface)',
+                      borderColor: 'var(--accent-color)',
+                      color: 'var(--accent-color)',
+                      opacity: isCheckingUpdate ? 0.6 : 1
+                    }}
+                  >
+                    {isCheckingUpdate ? '正在检查...' : '检查更新'}
+                  </button>
+                </div>
               </Section>
             </>
           )}
