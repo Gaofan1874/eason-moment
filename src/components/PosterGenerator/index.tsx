@@ -19,7 +19,7 @@ import TypographyControls from './TypographyControls';
 import ImageControls from './ImageControls';
 import DesktopLyricControls from './DesktopLyricControls';
 import ExportControls from './ExportControls';
-import { Music, Layout, Image as ImageIcon, Settings, Palette, RefreshCw, CheckCircle2, X, Download, AlertCircle } from 'lucide-react';
+import { Music, Layout, Image as ImageIcon, Settings, Palette, RefreshCw, CheckCircle2, X, Download } from 'lucide-react';
 
 const DEFAULT_LYRIC: LyricData = {
   content: lyricsData[0].content,
@@ -65,10 +65,9 @@ interface UpdateModalProps {
   onManual: () => void;
 }
 
-const UpdateModal: React.FC<UpdateModalProps> = ({ 
-  status, version, info, onClose, onCheck, onManual 
-}) => {
-  return (
+const UpdateModal: React.FC<UpdateModalProps> = ({
+  status, version, info, onClose, onCheck, onManual
+}) => {  return (
     <div className="modal-overlay" style={{
       position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
       background: 'rgba(0,0,0,0.4)', zIndex: 1000,
