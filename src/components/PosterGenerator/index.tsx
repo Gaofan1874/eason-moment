@@ -65,9 +65,10 @@ interface UpdateModalProps {
   onManual: () => void;
 }
 
-const UpdateModal: React.FC<UpdateModalProps> = ({
-  status, version, info, onClose, onCheck, onManual
-}) => {  return (
+const UpdateModal: React.FC<UpdateModalProps> = ({ 
+  status, version, info, onClose, onCheck, onManual 
+}) => {
+  return (
     <div className="modal-overlay" style={{
       position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
       background: 'rgba(0,0,0,0.4)', zIndex: 1000,
@@ -172,8 +173,6 @@ const PosterGenerator: React.FC = () => {
   const [appVersion, setAppVersion] = useState<string>('0.0.0');
   const [updateStatus, setUpdateStatus] = useState<UpdateStatus>('idle');
   const [updateInfo, setUpdateInfo] = useState<any>(null);
-  const [downloadProgress, setDownloadProgress] = useState<number>(0);
-  const [updateError, setUpdateError] = useState<string>('');
   const [showUpdateModal, setShowUpdateModal] = useState(false);
   
   // Helper to update lyric state and sync with main process (Desktop Lyric)
@@ -295,10 +294,6 @@ const PosterGenerator: React.FC = () => {
           case 'not-available':
             setUpdateStatus('up-to-date');
             break;
-          case 'progress':
-            setUpdateStatus('downloading');
-            setDownloadProgress(message.progress.percent);
-            break;
           case 'downloaded':
             setUpdateStatus('downloaded');
             setUpdateInfo({ ...message.info, notes: message.notes });
@@ -308,7 +303,6 @@ const PosterGenerator: React.FC = () => {
             break;
           case 'error':
             setUpdateStatus('error');
-            setUpdateError(message.text);
             break;
         }
       };
@@ -375,21 +369,9 @@ const PosterGenerator: React.FC = () => {
     }
   };
 
-  const handleStartDownload = () => {
-    if ((window as any).ipcRenderer) {
-      (window as any).ipcRenderer.send('start-download');
-    }
-  };
-
-  const handleInstallUpdate = () => {
-    if ((window as any).ipcRenderer) {
-      (window as any).ipcRenderer.send('install-update');
-    }
-  };
-
   const handleManualDownload = () => {
      if ((window as any).ipcRenderer) {
-      (window as any).ipcRenderer.send('open-download-link', 'https://github.com/Gaofan1874/eason-moment/releases');
+      (window as any).ipcRenderer.send('open-download-link', 'https://easonlab.faygift.com/eason-moment');
     }
   };
 
@@ -533,12 +515,8 @@ const PosterGenerator: React.FC = () => {
           status={updateStatus}
           version={appVersion}
           info={updateInfo}
-          progress={downloadProgress}
-          error={updateError}
           onClose={() => setShowUpdateModal(false)}
           onCheck={handleCheckForUpdate}
-          onDownload={handleStartDownload}
-          onInstall={handleInstallUpdate}
           onManual={handleManualDownload}
         />
       )}
